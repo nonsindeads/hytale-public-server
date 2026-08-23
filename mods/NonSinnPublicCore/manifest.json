@@ -1,12 +1,14 @@
 {
   "Group": "de.nonsinn",
   "Name": "NonSinnPublicCore",
-  "Version": "0.2.3",
-  "Description": "Guest guard, rules quiz and player promotion for the NonSinn public server",
+  "Version": "0.3.0",
+  "Description": "Guest guard, rules quiz, player promotion and tiered build-world plots for the NonSinn public server",
   "Authors": [{"Name": "NonSinn"}],
   "ServerVersion": ">=0.5.8",
   "Dependencies": {
-    "LuckPerms:LuckPerms": "*"
+    "LuckPerms:LuckPerms": "*",
+    "de.glymera:GlymeraPlotWorld": "*",
+    "TheNewEconomy:VaultUnlocked": "*"
   },
   "OptionalDependencies": {},
   "DisabledByDefault": false,

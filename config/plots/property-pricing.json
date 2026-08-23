@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "worldKey": "bauwelt",
+  "currencyName": "Gold",
+  "plotPrices": [0, 1000, 3000, 7500],
+  "notes": "The first 64x64 plot is free. Prices are charged atomically by /grundstueck kaufen; loose Plot Deeds are never sold."
+}

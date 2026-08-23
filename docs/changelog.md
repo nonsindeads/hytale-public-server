@@ -8,6 +8,14 @@
 - Geschuetzte Spieler-Claims auf der Default-Welt vorgesehen
 - Economy-Auditregeln und GitHub-Issueformulare angelegt
 
+## 0.3.0 - 23.08.2026
+
+- Die Himmelsinsel ist der zentrale geschuetzte Hub.
+- Eine dauerhafte Bauwelt mit 64x64-Grundstuecken wird zusaetzlich zu Survival-Claims eingefuehrt.
+- Das erste Bauwelt-Grundstueck ist kostenlos; weitere kosten 1.000, 3.000 und 7.500 Gold.
+- Default bleibt resetbar. Claims starten mit 3 Chunks, enden bei 9 Chunks und schuetzen nicht vor Weltresets.
+- Der komplette Landausbau kostet 12.460 Gold; lose Plot Deeds sind weder craftbar noch handelbar.
+
 ## 0.2.3 - 23.08.2026
 
 - QuestLines Claims ist nur in der Welt `default` fuer Spieler freigegeben.

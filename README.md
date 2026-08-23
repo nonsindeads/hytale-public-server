@@ -7,7 +7,9 @@ Dieses Repository ist die nachvollziehbare Quelle fuer Dokumentation, freigabefa
 - Welten, Spielerdateien, Datenbanken, Zugangsdaten, Tokens und Mod-JARs werden nicht eingecheckt.
 - Neue Spieler beginnen als `gast` und werden erst nach dem Regel-Onboarding zu `spieler`.
 - Wirtschaftsaenderungen werden erst nach automatischem Zyklus- und Arbitrage-Test aktiviert.
-- `default` bleibt Abenteuerwelt und erhaelt geschuetzte, zusammenhaengende Spieler-Claims.
+- `himmelsinsel` ist der geschuetzte zentrale Hub.
+- `bauwelt` ist dauerhaft; gebaut und abgebaut wird nur auf eigenen oder freigegebenen Grundstuecken.
+- `default` bleibt resetbare Survivalwelt und erhaelt kleinere, zusammenhaengende Spieler-Claims.
 - Floating Islands, Under und Limbo sind Hochrisiko-Welten; der Hub bleibt sicher.
 - Sicherheits- und Economy-Exploits werden nicht als oeffentliche Issues mit reproduzierbaren Details gemeldet.
 
@@ -20,7 +22,7 @@ Dieses Repository ist die nachvollziehbare Quelle fuer Dokumentation, freigabefa
 - `.github/`: Formulare fuer Fehler und Vorschlaege
 - `scripts/`: lokale, nicht veraendernde Validierungswerkzeuge
 
-Die drei externen Public-Layer-Mods und `NonSinnPublicCore` wurden am 23.08.2026 mit Server 0.5.8 gemeinsam in einer isolierten Laufzeit erfolgreich geladen. Floating Islands mit Structures wurde ebenfalls freigegeben. Die Zielinstanz bleibt bis zur geschlossenen Abnahme offline.
+Die vier externen Public-Layer-Mods und `NonSinnPublicCore` wurden am 23.08.2026 mit Server 0.5.8 gemeinsam erfolgreich geladen. Floating Islands mit Structures wurde ebenfalls freigegeben. Die Zielinstanz bleibt bis zur geschlossenen Abnahme deaktiviert und wird nur fuer Abnahmetests manuell gestartet.
 
 `NonSinnPublicCore` stellt beim Start die LuckPerms-Basisgruppen `gast`, `spieler`, `moderator`, `admin` und `owner` sowie die Owner-Zuweisung fuer NonSinn sicher. Die Operation ist idempotent und schreibt ueber die LuckPerms-API statt direkt in deren Datenbank.
 
@@ -43,4 +45,5 @@ Worker und Farmer sind pro Station eng begrenzt und duerfen im Public-Profil nic
 ```bash
 python3 scripts/validate_configs.py
 python3 scripts/audit_merchants.py
+python3 scripts/audit_progression_economy.py
 ```

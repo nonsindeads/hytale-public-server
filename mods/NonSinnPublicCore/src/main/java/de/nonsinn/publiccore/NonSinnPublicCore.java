@@ -26,6 +26,8 @@ import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
+import de.glymera.plotworld.GlymeraPlotWorld;
+import net.cfh.vault.VaultUnlocked;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.LuckPermsProvider;
 import net.luckperms.api.model.group.Group;
@@ -33,9 +35,12 @@ import net.luckperms.api.model.group.GroupManager;
 import net.luckperms.api.model.user.User;
 import net.luckperms.api.node.types.InheritanceNode;
 import net.luckperms.api.node.types.PermissionNode;
+import net.milkbowl.vault2.economy.Economy;
+import net.milkbowl.vault2.economy.EconomyResponse;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.AtomicMoveNotSupportedException;
 import java.nio.file.Files;
@@ -55,6 +60,8 @@ import java.util.concurrent.ThreadLocalRandom;
 public final class NonSinnPublicCore extends JavaPlugin {
     private static final String HUB_WORLD = "himmelsinsel";
     private static final String PLAYER_GROUP = "spieler";
+    private static final String PLOT_DEED_ID = "GlymeraPlotWorld_Deed";
+    private static final String ECONOMY_CONTEXT = "NonSinnPublicCore";
     private static final UUID OWNER_UUID = UUID.fromString("2e07651a-2a27-4165-a440-5b3f7abb3392");
     private static final long NOTICE_INTERVAL_MS = 3_000L;
 
@@ -63,9 +70,13 @@ public final class NonSinnPublicCore extends JavaPlugin {
     private final Map<UUID, Long> cooldowns = new ConcurrentHashMap<>();
     private final Map<UUID, Long> lastGuardNotice = new ConcurrentHashMap<>();
     private final Map<String, Approval> approvals = new ConcurrentHashMap<>();
+    private final Map<String, Integer> propertyProgress = new ConcurrentHashMap<>();
+    private final Map<UUID, Boolean> propertyTransactions = new ConcurrentHashMap<>();
 
     private QuestionsConfig questions;
     private Path approvalsPath;
+    private PropertyPricing propertyPricing;
+    private Path propertyProgressPath;
 
     public NonSinnPublicCore(JavaPluginInit init) {
         super(init);
@@ -82,6 +93,7 @@ public final class NonSinnPublicCore extends JavaPlugin {
         getCommandRegistry().registerCommand(new UnlockCommand(this));
         getCommandRegistry().registerCommand(new AnswerCommand(this));
         getCommandRegistry().registerCommand(new RulesCommand(this));
+        getCommandRegistry().registerCommand(new PropertyCommand(this));
 
         getEventRegistry().registerGlobal(PlayerConnectEvent.class, this::onPlayerConnect);
         getEventRegistry().registerGlobal(DrainPlayerFromWorldEvent.class, this::onPlayerDrain);
@@ -185,6 +197,7 @@ public final class NonSinnPublicCore extends JavaPlugin {
     @Override
     protected void shutdown() {
         saveApprovals();
+        savePropertyProgress();
     }
 
     boolean isGuest(UUID uuid) {
@@ -368,6 +381,48 @@ public final class NonSinnPublicCore extends JavaPlugin {
                 approvals.putAll(store.approvals);
             }
         }
+
+        Path propertyPricingPath = getDataDirectory().resolve("property-pricing.json");
+        if (!Files.exists(propertyPricingPath)) {
+            try (InputStream defaults = getClass().getResourceAsStream("/defaults/property-pricing.json")) {
+                if (defaults == null) {
+                    throw new IOException("defaults/property-pricing.json fehlt im Plugin");
+                }
+                Files.copy(defaults, propertyPricingPath);
+            }
+        }
+        propertyPricing = gson.fromJson(
+                Files.readString(propertyPricingPath, StandardCharsets.UTF_8),
+                PropertyPricing.class
+        );
+        validatePropertyPricing();
+
+        propertyProgressPath = getDataDirectory().resolve("property-progress.json");
+        if (Files.exists(propertyProgressPath)) {
+            PropertyProgressStore store = gson.fromJson(
+                    Files.readString(propertyProgressPath, StandardCharsets.UTF_8),
+                    PropertyProgressStore.class
+            );
+            if (store != null && store.highestOwned != null) {
+                propertyProgress.putAll(store.highestOwned);
+            }
+        }
+    }
+
+    private void validatePropertyPricing() {
+        if (propertyPricing == null || propertyPricing.worldKey == null || propertyPricing.worldKey.isBlank()) {
+            throw new IllegalStateException("Bauwelt fehlt in property-pricing.json");
+        }
+        if (propertyPricing.plotPrices == null || propertyPricing.plotPrices.isEmpty()) {
+            throw new IllegalStateException("Grundstueckspreise fehlen");
+        }
+        int previous = -1;
+        for (Integer price : propertyPricing.plotPrices) {
+            if (price == null || price < 0 || price < previous) {
+                throw new IllegalStateException("Grundstueckspreise muessen aufsteigend und nicht negativ sein");
+            }
+            previous = price;
+        }
     }
 
     private void validateQuestions() {
@@ -416,6 +471,182 @@ public final class NonSinnPublicCore extends JavaPlugin {
             }
         } catch (IOException exception) {
             getLogger().atSevere().withCause(exception).log("Freischaltungen konnten nicht gespeichert werden");
+        }
+    }
+
+    private synchronized void savePropertyProgress() {
+        if (propertyProgressPath == null) {
+            return;
+        }
+        PropertyProgressStore store = new PropertyProgressStore();
+        store.highestOwned.putAll(propertyProgress);
+        Path temporary = propertyProgressPath.resolveSibling("property-progress.json.tmp");
+        try {
+            Files.writeString(
+                    temporary,
+                    gson.toJson(store),
+                    StandardCharsets.UTF_8,
+                    StandardOpenOption.CREATE,
+                    StandardOpenOption.TRUNCATE_EXISTING
+            );
+            try {
+                Files.move(temporary, propertyProgressPath, StandardCopyOption.REPLACE_EXISTING,
+                        StandardCopyOption.ATOMIC_MOVE);
+            } catch (AtomicMoveNotSupportedException ignored) {
+                Files.move(temporary, propertyProgressPath, StandardCopyOption.REPLACE_EXISTING);
+            }
+        } catch (IOException exception) {
+            getLogger().atSevere().withCause(exception).log("Grundstuecksfortschritt konnte nicht gespeichert werden");
+        }
+    }
+
+    private int currentPlotCount(GlymeraPlotWorld plotWorld, UUID uuid) {
+        return plotWorld.plotsOfPlayer(uuid.toString()).size();
+    }
+
+    private int nextPlotPrice(UUID uuid, int currentPlots) {
+        int highestOwned = propertyProgress.getOrDefault(uuid.toString(), 0);
+        int priceIndex = Math.max(currentPlots, highestOwned);
+        priceIndex = Math.min(priceIndex, propertyPricing.plotPrices.size() - 1);
+        return propertyPricing.plotPrices.get(priceIndex);
+    }
+
+    private void showPropertyStatus(PlayerRef playerRef) {
+        GlymeraPlotWorld plotWorld = GlymeraPlotWorld.get();
+        if (plotWorld == null) {
+            playerRef.sendMessage(Message.raw("Die Bauwelt ist derzeit nicht verfuegbar."));
+            return;
+        }
+        int currentPlots = currentPlotCount(plotWorld, playerRef.getUuid());
+        int maximum = propertyPricing.plotPrices.size();
+        if (currentPlots >= maximum) {
+            playerRef.sendMessage(Message.raw("Du besitzt das Maximum von " + maximum + " Bauwelt-Grundstuecken."));
+            return;
+        }
+        int price = nextPlotPrice(playerRef.getUuid(), currentPlots);
+        String priceText = price == 0 ? "kostenlos" : price + " " + propertyPricing.currencyName;
+        playerRef.sendMessage(Message.raw(
+                "Bauwelt: " + currentPlots + "/" + maximum + " Grundstuecke. Naechstes Grundstueck: "
+                        + priceText + ". Stelle dich auf ein freies Grundstueck und nutze /grundstueck kaufen."
+        ));
+    }
+
+    private void buyProperty(Store<EntityStore> store, Ref<EntityStore> ref, PlayerRef playerRef, World world) {
+        UUID uuid = playerRef.getUuid();
+        if (isGuest(uuid)) {
+            notifyGuestGuard(playerRef);
+            return;
+        }
+        if (world == null || !propertyPricing.worldKey.equals(world.getName())) {
+            playerRef.sendMessage(Message.raw("Grundstuecke koennen nur direkt in der Bauwelt gekauft werden."));
+            return;
+        }
+        if (propertyTransactions.putIfAbsent(uuid, Boolean.TRUE) != null) {
+            playerRef.sendMessage(Message.raw("Ein Grundstueckskauf fuer dich wird bereits verarbeitet."));
+            return;
+        }
+
+        Economy transactionEconomy = null;
+        int transactionPrice = 0;
+        boolean withdrawn = false;
+        boolean completed = false;
+        GlymeraPlotWorld transactionPlotWorld = null;
+        boolean deedIssued = false;
+        try {
+            GlymeraPlotWorld plotWorld = GlymeraPlotWorld.get();
+            if (plotWorld == null) {
+                playerRef.sendMessage(Message.raw("Die Bauwelt ist derzeit nicht verfuegbar."));
+                return;
+            }
+            transactionPlotWorld = plotWorld;
+            int currentPlots = currentPlotCount(plotWorld, uuid);
+            int maximum = propertyPricing.plotPrices.size();
+            if (currentPlots >= maximum) {
+                playerRef.sendMessage(Message.raw("Du besitzt bereits das Maximum von " + maximum + " Grundstuecken."));
+                return;
+            }
+
+            int price = nextPlotPrice(uuid, currentPlots);
+            Economy economy = null;
+            if (price > 0) {
+                economy = VaultUnlocked.economyObj();
+                if (economy == null) {
+                    playerRef.sendMessage(Message.raw("Die Wirtschaft ist derzeit nicht verfuegbar."));
+                    return;
+                }
+                if (!economy.hasAccount(uuid)) {
+                    economy.createAccount(uuid, playerRef.getUsername(), true);
+                }
+                BigDecimal amount = BigDecimal.valueOf(price);
+                if (!economy.has(ECONOMY_CONTEXT, uuid, amount)) {
+                    playerRef.sendMessage(Message.raw("Dafuer benoetigst du " + price + " "
+                            + propertyPricing.currencyName + "."));
+                    return;
+                }
+                EconomyResponse response = economy.withdraw(ECONOMY_CONTEXT, uuid, amount);
+                if (response == null || !response.transactionSuccess()) {
+                    playerRef.sendMessage(Message.raw("Die Zahlung wurde abgelehnt; es wurde kein Grundstueck vergeben."));
+                    return;
+                }
+                withdrawn = true;
+                transactionEconomy = economy;
+                transactionPrice = price;
+            }
+
+            if (plotWorld.claimTokenRequired(uuid)) {
+                plotWorld.giveToken(store, ref, PLOT_DEED_ID);
+                deedIssued = true;
+            }
+            String result = plotWorld.claimUnderFeet(store, ref, world, playerRef);
+            int updatedPlots = currentPlotCount(plotWorld, uuid);
+            if (updatedPlots <= currentPlots) {
+                plotWorld.consumeToken(store, ref, PLOT_DEED_ID);
+                deedIssued = false;
+                if (withdrawn && economy != null) {
+                    economy.deposit(ECONOMY_CONTEXT, uuid, BigDecimal.valueOf(price));
+                    withdrawn = false;
+                }
+                playerRef.sendMessage(Message.raw("Kein Kauf: " + result));
+                return;
+            }
+
+            deedIssued = false;
+            propertyProgress.merge(uuid.toString(), updatedPlots, Math::max);
+            savePropertyProgress();
+            completed = true;
+            String paid = price == 0 ? "kostenlos" : "fuer " + price + " " + propertyPricing.currencyName;
+            playerRef.sendMessage(Message.raw("Grundstueck " + paid + " erworben. " + updatedPlots + "/"
+                    + maximum + " Grundstuecke belegt."));
+        } catch (Exception exception) {
+            getLogger().atSevere().withCause(exception).log("Grundstueckskauf fuer %s fehlgeschlagen", uuid);
+            playerRef.sendMessage(Message.raw("Der Grundstueckskauf ist fehlgeschlagen. Bitte melde dich beim Team."));
+        } finally {
+            if (deedIssued && !completed && transactionPlotWorld != null) {
+                try {
+                    transactionPlotWorld.consumeToken(store, ref, PLOT_DEED_ID);
+                } catch (Exception cleanupError) {
+                    getLogger().atSevere().withCause(cleanupError).log(
+                            "Temporare Plot Deed fuer %s konnte nicht entfernt werden",
+                            uuid
+                    );
+                }
+            }
+            if (withdrawn && !completed && transactionEconomy != null) {
+                try {
+                    transactionEconomy.deposit(
+                            ECONOMY_CONTEXT,
+                            uuid,
+                            BigDecimal.valueOf(transactionPrice)
+                    );
+                } catch (Exception refundError) {
+                    getLogger().atSevere().withCause(refundError).log(
+                            "Rueckerstattung von %d Gold fuer %s fehlgeschlagen",
+                            transactionPrice,
+                            uuid
+                    );
+                }
+            }
+            propertyTransactions.remove(uuid);
         }
     }
 
@@ -484,6 +715,48 @@ public final class NonSinnPublicCore extends JavaPlugin {
         }
     }
 
+    private static final class PropertyCommand extends AbstractPlayerCommand {
+        private final NonSinnPublicCore plugin;
+
+        private PropertyCommand(NonSinnPublicCore plugin) {
+            super("grundstueck", "Bauwelt-Grundstuecke anzeigen und kaufen");
+            this.plugin = plugin;
+            addAliases("bauplatz");
+            addSubCommand(new BuyPropertyCommand(plugin));
+        }
+
+        @Override
+        public boolean canGeneratePermission() {
+            return false;
+        }
+
+        @Override
+        protected void execute(CommandContext context, Store<EntityStore> store, Ref<EntityStore> ref,
+                               PlayerRef playerRef, World world) {
+            plugin.showPropertyStatus(playerRef);
+        }
+    }
+
+    private static final class BuyPropertyCommand extends AbstractPlayerCommand {
+        private final NonSinnPublicCore plugin;
+
+        private BuyPropertyCommand(NonSinnPublicCore plugin) {
+            super("kaufen", "Freies Bauwelt-Grundstueck kaufen");
+            this.plugin = plugin;
+        }
+
+        @Override
+        public boolean canGeneratePermission() {
+            return false;
+        }
+
+        @Override
+        protected void execute(CommandContext context, Store<EntityStore> store, Ref<EntityStore> ref,
+                               PlayerRef playerRef, World world) {
+            plugin.buyProperty(store, ref, playerRef, world);
+        }
+    }
+
     private static final class QuizSession {
         private final List<Integer> order;
         private int position;
@@ -521,5 +794,17 @@ public final class NonSinnPublicCore extends JavaPlugin {
     private static final class ApprovalStore {
         private int schemaVersion = 1;
         private Map<String, Approval> approvals = new LinkedHashMap<>();
+    }
+
+    private static final class PropertyPricing {
+        private int schemaVersion;
+        private String worldKey;
+        private String currencyName;
+        private List<Integer> plotPrices = new ArrayList<>();
+    }
+
+    private static final class PropertyProgressStore {
+        private int schemaVersion = 1;
+        private Map<String, Integer> highestOwned = new LinkedHashMap<>();
     }
 }

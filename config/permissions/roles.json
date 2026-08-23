@@ -24,7 +24,7 @@
     },
     "spieler": {
       "inherits": ["gast"],
-      "allowedWorlds": ["default", "himmelsinsel", "schwebende_inseln", "under", "limbo"],
+      "allowedWorlds": ["default", "himmelsinsel", "bauwelt", "schwebende_inseln", "under", "limbo"],
       "blockedActions": [],
       "blockedActionsMode": "replace",
       "permissions": []

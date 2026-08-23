@@ -25,10 +25,17 @@
       "status": "deployed-and-load-tested"
     },
     {
+      "name": "GlymeraPlotWorld",
+      "version": "17.0.0",
+      "source": "https://www.curseforge.com/hytale/mods/glymeraplotworld",
+      "sha256": "6e7355f6feabb883e3e6a1b0bd25d2c95e68af095dce6bf8f408961fe87b32b6",
+      "status": "deployed-and-load-tested"
+    },
+    {
       "name": "NonSinnPublicCore",
-      "version": "0.2.3",
+      "version": "0.3.0",
       "source": "local",
-      "sha256": "9d41e409ba1b6f218875abcda8aa160b6eccfe42e9c23f007f5c54e021e01135",
+      "sha256": "bc58038e6602f76ea989ad9d95ff809248e9d19b099a2355c79e804706a0a575",
       "status": "deployed-and-load-tested"
     }
   ],

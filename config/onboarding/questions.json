@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "rulesVersion": "2026-08-23.1",
+  "rulesVersion": "2026-08-23.2",
   "docsUrl": "https://nonsindeads.github.io/hytale-public-server/",
   "requiredCorrect": 5,
   "questionsPerAttempt": 6,
@@ -21,12 +21,23 @@
       "id": "claims",
       "question": "Wo befindet sich dein dauerhaft geschuetzter Baubereich?",
       "answers": [
-        "In deinem Claim auf der Default-Welt",
+        "Auf meinem Grundstueck in der Bauwelt",
         "Direkt im Hub",
         "In jedem Dungeon"
       ],
       "correctIndex": 0,
-      "explanation": "Dauerhafte Spielerbauten werden auf der Default-Welt mit Claims geschuetzt."
+      "explanation": "Dauerhafte Hauptbauten gehoeren in die reset-sichere Bauwelt."
+    },
+    {
+      "id": "survival-reset",
+      "question": "Was bedeutet ein Claim auf der Default-Survivalwelt?",
+      "answers": [
+        "Er schuetzt vor anderen Spielern, aber nicht vor einem angekuendigten Weltreset",
+        "Die gesamte Default-Welt kann deshalb niemals zurueckgesetzt werden",
+        "Er erlaubt mir, fremde Claims zu veraendern"
+      ],
+      "correctIndex": 0,
+      "explanation": "Default ist eine resetbare Survivalwelt. Fuer dauerhaft wichtige Bauten gibt es die Bauwelt."
     },
     {
       "id": "griefing",

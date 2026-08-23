@@ -27,15 +27,17 @@
     "worker-and-farmer-output-per-hour",
     "chunkloader-and-automation-output",
     "world-resource-differences",
-    "plot-token-sinks",
+    "survival-claim-shard-sinks",
+    "progressive-build-world-plot-sinks",
     "inventory-and-teleport-duplication"
   ],
   "releaseGates": {
     "directAndCrossMerchantAudit": "passed-2026-08-23",
     "currentMerchantCount": 7,
-    "currentTradeCount": 161,
+    "currentTradeCount": 162,
     "recipeCycleAudit": "static-rare-output-scan-passed-2026-08-23",
     "automationOutputAudit": "bounded-no-auto-crafting-live-measurement-required",
-    "floatingIslandsLootAudit": "world-and-structures-test-approved-2026-08-23"
+    "floatingIslandsLootAudit": "world-and-structures-test-approved-2026-08-23",
+    "landProgressionAudit": "3-to-9-survival-chunks-cost-960-gold-and-four-build-plots-cost-11500-gold-2026-08-23"
   }
 }
