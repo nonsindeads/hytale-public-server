@@ -27,7 +27,7 @@
       "allowedWorlds": ["default", "himmelsinsel", "bauwelt", "schwebende_inseln", "under", "limbo"],
       "blockedActions": [],
       "blockedActionsMode": "replace",
-      "permissions": ["glymerapermissions.restricted"]
+      "permissions": []
     },
     "moderator": {
       "inherits": ["spieler"],

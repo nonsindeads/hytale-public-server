@@ -122,7 +122,7 @@ public final class NonSinnPublicCore extends JavaPlugin {
         Group defaultGroup = ensureGroup(groups, "default");
 
         addParent(defaultGroup, guest);
-        addPermission(player, "glymerapermissions.restricted");
+        removePermission(player, "glymerapermissions.restricted");
         addParent(moderator, player);
         addParent(admin, moderator);
         addParent(owner, admin);
@@ -154,6 +154,10 @@ public final class NonSinnPublicCore extends JavaPlugin {
 
     private void addPermission(Group group, String permission) {
         group.data().add(PermissionNode.builder(permission).build());
+    }
+
+    private void removePermission(Group group, String permission) {
+        group.data().remove(PermissionNode.builder(permission).build());
     }
 
     @Override

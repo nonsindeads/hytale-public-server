@@ -1,7 +1,7 @@
 {
   "Group": "de.nonsinn",
   "Name": "NonSinnPublicCore",
-  "Version": "0.2.1",
+  "Version": "0.2.2",
   "Description": "Guest guard, rules quiz and player promotion for the NonSinn public server",
   "Authors": [{"Name": "NonSinn"}],
   "ServerVersion": ">=0.5.8",

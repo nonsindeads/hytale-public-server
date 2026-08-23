@@ -6,7 +6,7 @@ lp creategroup moderator
 lp creategroup admin
 lp creategroup owner
 lp group default parent set gast
-lp group spieler permission set glymerapermissions.restricted true
+lp group spieler permission unset glymerapermissions.restricted
 lp group moderator parent set spieler
 lp group admin parent set moderator
 lp group owner parent set admin
