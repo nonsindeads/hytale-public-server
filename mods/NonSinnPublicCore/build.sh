@@ -15,8 +15,8 @@ javac -encoding UTF-8 -cp "$SERVER_JAR:$LUCKPERMS_JAR" -d "$BUILD_DIR/classes" \
 cp "$ROOT_DIR/manifest.json" "$BUILD_DIR/resources/manifest.json"
 cp "$ROOT_DIR/../../config/onboarding/questions.json" "$BUILD_DIR/resources/defaults/questions.json"
 
-jar --create --file "$BUILD_DIR/NonSinnPublicCore-0.2.2.jar" \
+jar --create --file "$BUILD_DIR/NonSinnPublicCore-0.2.3.jar" \
   -C "$BUILD_DIR/classes" . \
   -C "$BUILD_DIR/resources" .
 
-echo "$BUILD_DIR/NonSinnPublicCore-0.2.2.jar"
+echo "$BUILD_DIR/NonSinnPublicCore-0.2.3.jar"

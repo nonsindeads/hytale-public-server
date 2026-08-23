@@ -7,14 +7,14 @@ Dieses Repository ist die nachvollziehbare Quelle fuer Dokumentation, freigabefa
 - Welten, Spielerdateien, Datenbanken, Zugangsdaten, Tokens und Mod-JARs werden nicht eingecheckt.
 - Neue Spieler beginnen als `gast` und werden erst nach dem Regel-Onboarding zu `spieler`.
 - Wirtschaftsaenderungen werden erst nach automatischem Zyklus- und Arbitrage-Test aktiviert.
-- `default` bleibt Abenteuerwelt. Spielergrundstuecke liegen in der separaten `bauwelt`.
+- `default` bleibt Abenteuerwelt und erhaelt geschuetzte, zusammenhaengende Spieler-Claims.
 - Floating Islands, Under und Limbo sind Hochrisiko-Welten; der Hub bleibt sicher.
 - Sicherheits- und Economy-Exploits werden nicht als oeffentliche Issues mit reproduzierbaren Details gemeldet.
 
 ## Verzeichnisstruktur
 
 - `docs/`: oeffentliche HTML-Dokumentation und Changelog
-- `config/`: freigabefaehige Rollen-, Onboarding- und Plotvorgaben
+- `config/`: freigabefaehige Rollen-, Onboarding- und Claimvorgaben
 - `economy/`: Balanceregeln und spaetere Preislisten
 - `mods/`: Mod-Lockdatei mit Versionen, Quellen und Hashes
 - `.github/`: Formulare fuer Fehler und Vorschlaege

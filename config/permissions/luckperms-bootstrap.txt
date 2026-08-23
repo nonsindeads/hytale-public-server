@@ -7,10 +7,13 @@ lp creategroup admin
 lp creategroup owner
 lp group default parent set gast
 lp group spieler permission unset glymerapermissions.restricted
+lp group spieler permission set questlinesclaims.claim.use false
+lp group spieler permission set questlinesclaims.claim.use true world=default
 lp group moderator parent set spieler
 lp group admin parent set moderator
 lp group owner parent set admin
 lp group owner permission set * true
+lp group owner permission set questlinesclaims.claim.use true
 lp user 2e07651a-2a27-4165-a440-5b3f7abb3392 parent set owner
 
 # Spielerfreischaltung durch NonSinnPublicCore:

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "rulesVersion": "2026-08-23.1",
-  "docsUrl": "https://github.com/nonsindeads/hytale-public-server/blob/main/docs/index.html",
+  "docsUrl": "https://nonsindeads.github.io/hytale-public-server/",
   "requiredCorrect": 5,
   "questionsPerAttempt": 6,
   "attemptCooldownSeconds": 300,
@@ -21,12 +21,12 @@
       "id": "claims",
       "question": "Wo befindet sich dein dauerhaft geschuetzter Baubereich?",
       "answers": [
-        "In der Bauwelt auf deinem Plot",
+        "In deinem Claim auf der Default-Welt",
         "Direkt im Hub",
         "In jedem Dungeon"
       ],
       "correctIndex": 0,
-      "explanation": "Dauerhafte Spielerbauten gehoeren in die Bauwelt."
+      "explanation": "Dauerhafte Spielerbauten werden auf der Default-Welt mit Claims geschuetzt."
     },
     {
       "id": "griefing",

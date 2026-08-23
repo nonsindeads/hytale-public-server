@@ -123,10 +123,13 @@ public final class NonSinnPublicCore extends JavaPlugin {
 
         addParent(defaultGroup, guest);
         removePermission(player, "glymerapermissions.restricted");
+        addPermission(player, "questlinesclaims.claim.use", false);
+        addPermission(player, "questlinesclaims.claim.use", true, "world", "default");
         addParent(moderator, player);
         addParent(admin, moderator);
         addParent(owner, admin);
         addPermission(owner, "*");
+        addPermission(owner, "questlinesclaims.claim.use");
 
         groups.saveGroup(defaultGroup).join();
         groups.saveGroup(player).join();
@@ -154,6 +157,25 @@ public final class NonSinnPublicCore extends JavaPlugin {
 
     private void addPermission(Group group, String permission) {
         group.data().add(PermissionNode.builder(permission).build());
+    }
+
+    private void addPermission(Group group, String permission, boolean value) {
+        group.data().add(PermissionNode.builder(permission).value(value).build());
+    }
+
+    private void addPermission(
+            Group group,
+            String permission,
+            boolean value,
+            String contextKey,
+            String contextValue
+    ) {
+        group.data().add(
+                PermissionNode.builder(permission)
+                        .value(value)
+                        .withContext(contextKey, contextValue)
+                        .build()
+        );
     }
 
     private void removePermission(Group group, String permission) {
