@@ -1,0 +1,35 @@
+name: Vorschlag
+description: Verbesserung fuer Gameplay, Dokumentation oder Serverbetrieb vorschlagen
+title: "[Vorschlag] "
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Bereich
+      options:
+        - Gameplay
+        - Economy
+        - Welten und Portale
+        - Plots
+        - Rechte und Onboarding
+        - Dokumentation
+        - Technik
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Welches Problem soll geloest werden?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Vorschlag
+    validations:
+      required: true
+  - type: textarea
+    id: tradeoffs
+    attributes:
+      label: Moegliche Nachteile oder Missbrauchsrisiken

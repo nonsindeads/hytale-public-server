@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "worldName": "bauwelt",
+  "guestAccess": false,
+  "initialPlotLimit": 1,
+  "claimRequiresToken": true,
+  "mergeRequiresToken": true,
+  "styleRequiresToken": true,
+  "claimRecipeEnabled": false,
+  "mergeRecipeEnabled": false,
+  "styleRecipeEnabled": false,
+  "notes": [
+    "Plot-, Merge- und Style-Tokens werden erst nach dem Economy-Audit ueber definierte Quellen ausgegeben.",
+    "Default und Abenteuerwelten erlauben keine Spielerclaims.",
+    "Die Bauwelt wird ueber ein Hub-Portal erreicht."
+  ]
+}

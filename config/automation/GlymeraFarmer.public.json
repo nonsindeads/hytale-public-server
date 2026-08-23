@@ -1,0 +1,15 @@
+{
+  "_info": "Public profile: one bounded farmer chest, automated crafting disabled",
+  "scanRadius": 12,
+  "chestScanRadius": 32,
+  "farmerTickMs": 3000,
+  "chestScanTickMs": 7500,
+  "workDistance": 3.5,
+  "maxActiveChests": 1,
+  "stuckTimeoutMs": 30000,
+  "returnTimeoutMs": 60000,
+  "depositThreshold": 16,
+  "maxWorkRadius": 16,
+  "enableSpecialCrops": true,
+  "craftingEnabled": false
+}

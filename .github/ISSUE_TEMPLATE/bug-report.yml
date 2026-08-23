@@ -1,0 +1,61 @@
+name: Fehler melden
+description: Reproduzierbaren Fehler auf dem Hytale-Server melden
+title: "[Bug] "
+labels: ["bug", "triage"]
+body:
+  - type: dropdown
+    id: world
+    attributes:
+      label: Welt
+      options:
+        - default
+        - himmelsinsel
+        - bauwelt
+        - schwebende_inseln
+        - under
+        - limbo
+        - Dungeon/Instanz
+        - Unbekannt
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Tatsaechliches Verhalten
+      description: Was ist passiert?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Erwartetes Verhalten
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Schritte zum Nachstellen
+      description: Keine Exploitdetails oder Zugangsdaten oeffentlich eintragen.
+    validations:
+      required: true
+  - type: input
+    id: time
+    attributes:
+      label: Zeitpunkt mit Zeitzone
+      placeholder: "2026-08-23 20:15 Europe/Berlin"
+    validations:
+      required: true
+  - type: input
+    id: coordinates
+    attributes:
+      label: Ungefaehre Koordinaten
+      description: Falls fuer den Fehler relevant.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Sicherheitspruefung
+      options:
+        - label: Der Bericht enthaelt keine Passwoerter, Tokens oder privaten Daten.
+          required: true
+        - label: Es handelt sich nicht um einen oeffentlich beschriebenen Economy- oder Duplikations-Exploit.
+          required: true

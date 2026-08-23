@@ -1,0 +1,14 @@
+{
+  "_info": "Public profile: one bounded worker chest, automated crafting disabled",
+  "scanRadius": 12,
+  "chestScanRadius": 32,
+  "workerTickMs": 3000,
+  "chestScanTickMs": 7500,
+  "miningDistance": 3.5,
+  "maxActiveChests": 1,
+  "stuckTimeoutMs": 30000,
+  "returnTimeoutMs": 60000,
+  "depositThreshold": 16,
+  "maxWorkRadius": 16,
+  "craftingEnabled": false
+}

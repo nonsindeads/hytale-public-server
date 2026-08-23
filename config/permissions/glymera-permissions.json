@@ -1,0 +1,15 @@
+{
+  "mode": "whitelist",
+  "whitelist": [
+    "help",
+    "tell",
+    "msg",
+    "w",
+    "rules",
+    "regeln",
+    "freischalten",
+    "antwort"
+  ],
+  "blacklist": [],
+  "logBlocked": true
+}

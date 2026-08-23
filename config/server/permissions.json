@@ -1,0 +1,19 @@
+{
+  "users": {
+    "2e07651a-2a27-4165-a440-5b3f7abb3392": {
+      "groups": [
+        "OP",
+        "Adventure"
+      ]
+    }
+  },
+  "groups": {
+    "Default": [],
+    "OP": [
+      "*"
+    ],
+    "Adventure": [
+      "dev.ninesliced.bettermap.command.waypoint.global"
+    ]
+  }
+}

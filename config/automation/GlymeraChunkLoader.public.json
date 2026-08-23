@@ -1,0 +1,6 @@
+{
+  "chunks": [],
+  "maxLoadersPerPlayer": 1,
+  "_comment_maxLoadersPerPlayer": "Exactly one loader per non-operator player; live state is never committed.",
+  "loaderBlocks": []
+}

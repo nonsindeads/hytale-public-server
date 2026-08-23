@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "currency": "server_primary",
+  "rules": {
+    "minimumBuySellSpreadPercent": 20,
+    "allowNegativePrices": false,
+    "zeroPriceMeansUnavailable": true,
+    "damagedItemSellFormula": "floor(baseSellPrice * remainingDurabilityRatio)",
+    "minimumDamagedItemSellValue": 0,
+    "enchantedItemPolicy": "no-extra-value-unless-explicitly-listed",
+    "unknownItemPolicy": "not-tradeable",
+    "ordinaryItemSellPolicy": "disabled",
+    "allowedSellSources": "explicit-rare-trophy-allowlist-only",
+    "recipeCycleProfitAllowed": false,
+    "crossMerchantArbitrageAllowed": false,
+    "automatedProductionRequiresRateReview": true
+  },
+  "requiredAudits": [
+    "direct-buy-sell",
+    "cross-merchant",
+    "recipe-conversion-cycles",
+    "repair-resale",
+    "enchant-resale",
+    "durability-normalization",
+    "quest-reward-per-hour",
+    "mob-and-boss-loot-per-hour",
+    "worker-and-farmer-output-per-hour",
+    "chunkloader-and-automation-output",
+    "world-resource-differences",
+    "plot-token-sinks",
+    "inventory-and-teleport-duplication"
+  ],
+  "releaseGates": {
+    "directAndCrossMerchantAudit": "passed-2026-08-23",
+    "currentMerchantCount": 7,
+    "currentTradeCount": 161,
+    "recipeCycleAudit": "static-rare-output-scan-passed-2026-08-23",
+    "automationOutputAudit": "bounded-no-auto-crafting-live-measurement-required",
+    "floatingIslandsLootAudit": "world-and-structures-test-approved-2026-08-23"
+  }
+}

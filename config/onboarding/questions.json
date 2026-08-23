@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "rulesVersion": "2026-08-23.1",
+  "docsUrl": "https://github.com/nonsindeads/hytale-public-server/blob/main/docs/index.html",
+  "requiredCorrect": 5,
+  "questionsPerAttempt": 6,
+  "attemptCooldownSeconds": 300,
+  "questions": [
+    {
+      "id": "exploit-reporting",
+      "question": "Was machst du, wenn du einen Duplikations- oder Geldfehler findest?",
+      "answers": [
+        "Unauffaellig weiterverwenden",
+        "Nicht ausnutzen und vertraulich an das Team melden",
+        "Im globalen Chat erklaeren, wie er funktioniert"
+      ],
+      "correctIndex": 1,
+      "explanation": "Exploits werden nicht genutzt oder oeffentlich verbreitet."
+    },
+    {
+      "id": "claims",
+      "question": "Wo befindet sich dein dauerhaft geschuetzter Baubereich?",
+      "answers": [
+        "In der Bauwelt auf deinem Plot",
+        "Direkt im Hub",
+        "In jedem Dungeon"
+      ],
+      "correctIndex": 0,
+      "explanation": "Dauerhafte Spielerbauten gehoeren in die Bauwelt."
+    },
+    {
+      "id": "griefing",
+      "question": "Darfst du fremde Bauten oder Tiere ohne Erlaubnis veraendern?",
+      "answers": ["Ja", "Nur nachts", "Nein"],
+      "correctIndex": 2,
+      "explanation": "Griefing und unerlaubte Eingriffe sind verboten."
+    },
+    {
+      "id": "automation",
+      "question": "Was gilt fuer automatische Farmen und Chunkloader?",
+      "answers": [
+        "Sie duerfen jede Servergrenze umgehen",
+        "Sie muessen die dokumentierten Limits und Economy-Regeln einhalten",
+        "Sie sind immer unbegrenzt erlaubt"
+      ],
+      "correctIndex": 1,
+      "explanation": "Automatisierung darf Stabilitaet und Wirtschaft nicht schaedigen."
+    },
+    {
+      "id": "portals",
+      "question": "Wie werden besondere Welten betreten?",
+      "answers": [
+        "Nur ueber die vorgesehenen Portale, Tore oder Schluessel",
+        "Durch das Ausnutzen von Teleportfehlern",
+        "Durch Adminbefehle fuer alle Spieler"
+      ],
+      "correctIndex": 0,
+      "explanation": "Zugangswege sind Teil der Progression und duerfen nicht umgangen werden."
+    },
+    {
+      "id": "guest",
+      "question": "Warum kannst du als Gast noch nicht bauen oder handeln?",
+      "answers": [
+        "Weil der Server defekt ist",
+        "Weil zuerst Regeln gelesen und bestaetigt werden muessen",
+        "Weil nur Administratoren spielen duerfen"
+      ],
+      "correctIndex": 1,
+      "explanation": "Das Gast-Onboarding schuetzt Spieler und Server."
+    },
+    {
+      "id": "respect",
+      "question": "Wie verhaeltst du dich gegenueber anderen Spielern?",
+      "answers": [
+        "Respektvoll; Belaestigung und Diskriminierung sind nicht erlaubt",
+        "Alles ist erlaubt, solange kein Moderator online ist",
+        "Andere Spieler duerfen absichtlich getaeuscht werden"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ein respektvoller Umgang ist verpflichtend."
+    },
+    {
+      "id": "bug-report",
+      "question": "Welche Angaben gehoeren in einen normalen Bugreport?",
+      "answers": [
+        "Nur 'geht nicht'",
+        "Welt, Zeitpunkt, Schritte, erwartetes und tatsaechliches Verhalten",
+        "Passwoerter und Zugangstokens"
+      ],
+      "correctIndex": 1,
+      "explanation": "Gute Berichte sind reproduzierbar und enthalten keine Geheimnisse."
+    }
+  ]
+}

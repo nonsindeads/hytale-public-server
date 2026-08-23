@@ -1,0 +1,20 @@
+# Nach dem ersten Start einmalig als Konsole ausfuehren.
+# Der vorhandenen Standardgruppe bleibt die Gastrolle zugeordnet.
+lp creategroup gast
+lp creategroup spieler
+lp creategroup moderator
+lp creategroup admin
+lp creategroup owner
+lp group default parent set gast
+lp group spieler permission set glymerapermissions.restricted true
+lp group moderator parent set spieler
+lp group admin parent set moderator
+lp group owner parent set admin
+lp group owner permission set * true
+lp user 2e07651a-2a27-4165-a440-5b3f7abb3392 parent set owner
+
+# Spielerfreischaltung durch NonSinnPublicCore:
+# lp user <uuid-oder-name> parent set spieler
+
+# Keine pauschalen Sternrechte fuer Moderator oder Admin vergeben.
+# Sternrechte bleiben ausschliesslich der einzeln zugewiesenen Owner-Rolle vorbehalten.

@@ -1,0 +1,1042 @@
+{
+  "_guide": {
+    "balanceProfile": "NonSinn Public RPG v1 - controlled reward economy",
+    "pricingRule": "Ordinary materials, food, weapons, tools and equipment have no Gold sell value. Only explicitly allowlisted rare trophies and rare fish may be sold.",
+    "placement": "Public hub: place one NPC of every merchant type at fixed stalls in himmelsinsel; keep default copies only if desired"
+  },
+  "startBalance": 25,
+  "currencyName": "Gold",
+  "currencySymbol": "G",
+  "maxBalance": 100000,
+  "allowShopCommand": true,
+  "paidCommandOpExempt": true,
+  "paidCommandTimeout": 15,
+  "paidCommands": {},
+  "merchants": {
+    "provisions": {
+      "displayName": "Miras Reiseproviant",
+      "appearance": "Klops_Merchant",
+      "trades": [
+        {
+          "itemId": "Food_Bread",
+          "displayName": "Brot",
+          "buyPrice": 12,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Food_Cheese",
+          "displayName": "Kaese",
+          "buyPrice": 16,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Food_Fish_Grilled",
+          "displayName": "Gegrillter Fisch",
+          "buyPrice": 18,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Food_Vegetable_Cooked",
+          "displayName": "Gekochtes Gemuese",
+          "buyPrice": 20,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Food_Kebab_Meat",
+          "displayName": "Fleischspiess",
+          "buyPrice": 28,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Food_Pie_Meat",
+          "displayName": "Fleischpastete",
+          "buyPrice": 32,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Food_Beef_Raw",
+          "displayName": "Rohes Rindfleisch",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Food_Chicken_Raw",
+          "displayName": "Rohes Huhn",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Food_Pork_Raw",
+          "displayName": "Rohes Schweinefleisch",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Food_Wildmeat_Raw",
+          "displayName": "Rohes Wildfleisch",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Food_Fish_Raw",
+          "displayName": "Roher Fisch",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Food_Egg",
+          "displayName": "Ei",
+          "buyPrice": 0,
+          "sellPrice": 0
+        }
+      ]
+    },
+    "smith": {
+      "displayName": "Broms Schmiede und Ankauf",
+      "appearance": "Goblin_Miner",
+      "trades": [
+        {
+          "itemId": "Tool_Pickaxe_Copper",
+          "displayName": "Kupferspitzhacke",
+          "buyPrice": 80,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Tool_Pickaxe_Iron",
+          "displayName": "Eisenspitzhacke",
+          "buyPrice": 180,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Tool_Hatchet_Copper",
+          "displayName": "Kupferaxt",
+          "buyPrice": 70,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Tool_Hatchet_Iron",
+          "displayName": "Eisenaxt",
+          "buyPrice": 160,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Tool_Shovel_Copper",
+          "displayName": "Kupferschaufel",
+          "buyPrice": 60,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Tool_Shovel_Iron",
+          "displayName": "Eisenschaufel",
+          "buyPrice": 130,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Ingredient_Bar_Copper",
+          "displayName": "Kupferbarren",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Ingredient_Bar_Bronze",
+          "displayName": "Bronzebarren",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Ingredient_Bar_Iron",
+          "displayName": "Eisenbarren",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Ingredient_Bar_Silver",
+          "displayName": "Silberbarren",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Ingredient_Bar_Gold",
+          "displayName": "Goldbarren",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Ingredient_Bar_Cobalt",
+          "displayName": "Kobaltbarren",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Ingredient_Bar_Thorium",
+          "displayName": "Thoriumbarren",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Ingredient_Bar_Mithril",
+          "displayName": "Mithrilbarren",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Ingredient_Bar_Adamantite",
+          "displayName": "Adamantitbarren",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Ingredient_Bar_Onyxium",
+          "displayName": "Onyxiumbarren",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Ingredient_Bar_Prisma",
+          "displayName": "Prismabarren",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Tool_Pickaxe_Crude",
+          "displayName": "Einfache Spitzhacke",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Tool_Pickaxe_Wood",
+          "displayName": "Holzspitzhacke",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Tool_Hatchet_Crude",
+          "displayName": "Einfaches Beil",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Tool_Hatchet_Wood",
+          "displayName": "Holzbeil",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Tool_Shovel_Crude",
+          "displayName": "Einfache Schaufel",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Tool_Hoe_Crude",
+          "displayName": "Einfache Hacke",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Tool_Sickle_Crude",
+          "displayName": "Einfache Sichel",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Tool_Hammer_Crude",
+          "displayName": "Einfacher Holzhammer",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Sword_Crude",
+          "displayName": "Einfaches Schwert",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Sword_Wood",
+          "displayName": "Holzschwert",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Sword_Stone_Trork",
+          "displayName": "Trork-Steinschwert",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Axe_Crude",
+          "displayName": "Einfache Axt",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Axe_Stone_Trork",
+          "displayName": "Trork-Steinaxt",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Battleaxe_Crude",
+          "displayName": "Einfache Streitaxt",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Battleaxe_Stone_Trork",
+          "displayName": "Trork-Streitaxt",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Club_Crude",
+          "displayName": "Einfache Keule",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Club_Stone_Trork",
+          "displayName": "Trork-Steinkeule",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Daggers_Crude",
+          "displayName": "Einfache Dolche",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Daggers_Stone_Trork",
+          "displayName": "Trork-Steindolche",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Longsword_Crude",
+          "displayName": "Einfaches Langschwert",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Longsword_Stone_Trork",
+          "displayName": "Trork-Langschwert",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Mace_Crude",
+          "displayName": "Einfacher Streitkolben",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Mace_Stone_Trork",
+          "displayName": "Trork-Streitkolben",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Spear_Crude",
+          "displayName": "Einfacher Speer",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Spear_Stone_Trork",
+          "displayName": "Trork-Steinspeer",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Shortbow_Crude",
+          "displayName": "Einfacher Kurzbogen",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Shield_Wood",
+          "displayName": "Holzschild",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Staff_Wood",
+          "displayName": "Holzstab",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Staff_Bo_Wood",
+          "displayName": "Bo-Holzstab",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Staff_Wood_Kweebec",
+          "displayName": "Kweebec-Holzstab",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Staff_Wood_Rotten",
+          "displayName": "Morscher Holzstab",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Wand_Wood",
+          "displayName": "Holzzauberstab",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Wand_Wood_Rotten",
+          "displayName": "Morscher Holzzauberstab",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Battleaxe_Wood_Fence",
+          "displayName": "Improvisierte Holzstreitaxt",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Tool_Hoe_Copper",
+          "displayName": "Kupferhacke",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Tool_Sickle_Copper",
+          "displayName": "Kupfersichel",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Sword_Copper",
+          "displayName": "Kupferschwert",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Axe_Copper",
+          "displayName": "Kupfer-Kampfaxt",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Battleaxe_Copper",
+          "displayName": "Kupferstreitaxt",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Club_Copper",
+          "displayName": "Kupferkeule",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Daggers_Copper",
+          "displayName": "Kupferdolche",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Longsword_Copper",
+          "displayName": "Kupferlangschwert",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Mace_Copper",
+          "displayName": "Kupferstreitkolben",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Shield_Copper",
+          "displayName": "Kupferschild",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Shortbow_Copper",
+          "displayName": "Kupferkurzbogen",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Spear_Copper",
+          "displayName": "Kupferspeer",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Weapon_Staff_Copper",
+          "displayName": "Kupferstab",
+          "buyPrice": 0,
+          "sellPrice": 0
+        }
+      ]
+    },
+    "alchemist": {
+      "displayName": "Yaras Alchemieladen",
+      "appearance": "Kweebec_Sapling_Treesinger",
+      "trades": [
+        {
+          "itemId": "Potion_Health_Small",
+          "displayName": "Kleiner Heiltrank",
+          "buyPrice": 20,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Potion_Health_Lesser",
+          "displayName": "Schwacher Heiltrank",
+          "buyPrice": 45,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Potion_Health",
+          "displayName": "Heiltrank",
+          "buyPrice": 90,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Potion_Health_Large",
+          "displayName": "Grosser Heiltrank",
+          "buyPrice": 180,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Potion_Health_Greater",
+          "displayName": "Maechtiger Heiltrank",
+          "buyPrice": 350,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Potion_Mana_Small",
+          "displayName": "Kleiner Manatrank",
+          "buyPrice": 20,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Potion_Mana",
+          "displayName": "Manatrank",
+          "buyPrice": 90,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Potion_Mana_Large",
+          "displayName": "Grosser Manatrank",
+          "buyPrice": 180,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Potion_Stamina_Small",
+          "displayName": "Kleiner Ausdauertrank",
+          "buyPrice": 20,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Potion_Stamina_Lesser",
+          "displayName": "Schwacher Ausdauertrank",
+          "buyPrice": 45,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Potion_Stamina",
+          "displayName": "Ausdauertrank",
+          "buyPrice": 90,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Potion_Antidote",
+          "displayName": "Gegengift",
+          "buyPrice": 60,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Potion_Purify",
+          "displayName": "Reinigungstrank",
+          "buyPrice": 100,
+          "sellPrice": 0
+        }
+      ]
+    },
+    "tavern": {
+      "displayName": "Rovas Taverne",
+      "appearance": "Tuluk_Fisherman",
+      "trades": [
+        {
+          "itemId": "Food_Kebab_Fruit",
+          "displayName": "Fruchtspiess",
+          "buyPrice": 38,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Food_Kebab_Mushroom",
+          "displayName": "Pilzspiess",
+          "buyPrice": 42,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Food_Kebab_Vegetable",
+          "displayName": "Gemuesespiess",
+          "buyPrice": 42,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Food_Pie_Apple",
+          "displayName": "Apfelpastete",
+          "buyPrice": 55,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Food_Pie_Pumpkin",
+          "displayName": "Kuerbispastete",
+          "buyPrice": 60,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Food_Salad_Berry",
+          "displayName": "Beerensalat",
+          "buyPrice": 46,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Food_Salad_Mushroom",
+          "displayName": "Pilzsalat",
+          "buyPrice": 52,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Food_Salad_Caesar",
+          "displayName": "Caesar-Salat",
+          "buyPrice": 58,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Food_Wildmeat_Cooked",
+          "displayName": "Gebratenes Wildfleisch",
+          "buyPrice": 48,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Food_Fish_Raw_Uncommon",
+          "displayName": "Ungewoehnlicher Fisch",
+          "buyPrice": 0,
+          "sellPrice": 8
+        },
+        {
+          "itemId": "Food_Fish_Raw_Rare",
+          "displayName": "Seltener Fisch",
+          "buyPrice": 0,
+          "sellPrice": 20
+        },
+        {
+          "itemId": "Food_Fish_Raw_Epic",
+          "displayName": "Epischer Fisch",
+          "buyPrice": 0,
+          "sellPrice": 50
+        },
+        {
+          "itemId": "Food_Fish_Raw_Legendary",
+          "displayName": "Legendaerer Fisch",
+          "buyPrice": 0,
+          "sellPrice": 120
+        }
+      ]
+    },
+    "builder": {
+      "displayName": "Elowens Bau- und Dekokontor",
+      "appearance": "Kweebec_Sapling_HardHat",
+      "trades": [
+        {
+          "itemId": "Mcw_Furniture_Softwood_Chair",
+          "displayName": "Softwood-Stuhl",
+          "buyPrice": 140,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Mcw_Furniture_Softwood_Desk",
+          "displayName": "Softwood-Schreibtisch",
+          "buyPrice": 320,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Mcw_Furniture_Softwood_Wardrobe_Double",
+          "displayName": "Doppelter Kleiderschrank",
+          "buyPrice": 650,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Mcw_Furniture_Couch_Large",
+          "displayName": "Grosses Sofa",
+          "buyPrice": 520,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Mcw_Lights_Classic_Lantern",
+          "displayName": "Klassische Laterne",
+          "buyPrice": 180,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Mcw_Lights_Double_Street_Lamp",
+          "displayName": "Doppelte Strassenlaterne",
+          "buyPrice": 480,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Mcw_Paintings_2x2",
+          "displayName": "Gemaelde 2x2",
+          "buyPrice": 300,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Mcw_Paintings_3x3",
+          "displayName": "Gemaelde 3x3",
+          "buyPrice": 520,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Mcw_Carpets_Large_Red_Carpet",
+          "displayName": "Grosser roter Teppich",
+          "buyPrice": 240,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Mcw_Doors_Darkwood_Medieval_Door",
+          "displayName": "Mittelalterliche Darkwood-Tuer",
+          "buyPrice": 260,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Mcw_Windows_Darkwood_Tall_Clean_Window",
+          "displayName": "Hohes Darkwood-Fenster",
+          "buyPrice": 220,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Mcw_Stairs_Marble_Classic_Stairs",
+          "displayName": "Klassische Marmortreppe",
+          "buyPrice": 300,
+          "sellPrice": 0
+        }
+      ]
+    },
+    "resources": {
+      "displayName": "Tamos Baustoff- und Rohstoffhandel",
+      "appearance": "Klops_Miner",
+      "trades": [
+        {
+          "itemId": "Soil_Dirt",
+          "displayName": "Erde",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Soil_Dirt_Dry",
+          "displayName": "Trockene Erde",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Soil_Dirt_Cold",
+          "displayName": "Kalte Erde",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Soil_Dirt_Lush",
+          "displayName": "Fruchtbare Erde",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Soil_Dirt_Wet",
+          "displayName": "Nasse Erde",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Stone",
+          "displayName": "Stein",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Stone_Cobble",
+          "displayName": "Bruchstein",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Basalt",
+          "displayName": "Basalt",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Basalt_Cobble",
+          "displayName": "Basaltbruchstein",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Calcite",
+          "displayName": "Calcit",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Calcite_Cobble",
+          "displayName": "Calcitbruchstein",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Chalk",
+          "displayName": "Kreidestein",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Chalk_Cobble",
+          "displayName": "Kreidebruchstein",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Lime",
+          "displayName": "Kalkstein",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Lime_Cobble",
+          "displayName": "Kalkbruchstein",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Marble",
+          "displayName": "Marmor",
+          "buyPrice": 3,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Marble_Cobble",
+          "displayName": "Marmorbruchstein",
+          "buyPrice": 3,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Quartzite",
+          "displayName": "Quarzit",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Quartzite_Cobble",
+          "displayName": "Quarzitbruchstein",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Sandstone",
+          "displayName": "Sandstein",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Sandstone_Cobble",
+          "displayName": "Sandsteinbruch",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Sandstone_Red",
+          "displayName": "Roter Sandstein",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Sandstone_Red_Cobble",
+          "displayName": "Roter Sandsteinbruch",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Sandstone_White",
+          "displayName": "Weisser Sandstein",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Sandstone_White_Cobble",
+          "displayName": "Weisser Sandsteinbruch",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Shale",
+          "displayName": "Schiefergestein",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Shale_Cobble",
+          "displayName": "Schieferbruchstein",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Slate",
+          "displayName": "Schiefer",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Rock_Slate_Cobble",
+          "displayName": "Schieferbruch",
+          "buyPrice": 2,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Soil_Gravel",
+          "displayName": "Kies",
+          "buyPrice": 3,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Soil_Sand",
+          "displayName": "Sand",
+          "buyPrice": 3,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Soil_Sand_Red",
+          "displayName": "Roter Sand",
+          "buyPrice": 3,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Soil_Sand_White",
+          "displayName": "Weisser Sand",
+          "buyPrice": 3,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Soil_Clay",
+          "displayName": "Lehm",
+          "buyPrice": 3,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Soil_Mud",
+          "displayName": "Schlamm",
+          "buyPrice": 3,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Soil_Mud_Dry",
+          "displayName": "Trockener Schlamm",
+          "buyPrice": 3,
+          "sellPrice": 0
+        }
+      ]
+    },
+    "curios": {
+      "displayName": "Syras Kuriositaetenankauf",
+      "appearance": "Feran_Windwalker",
+      "trades": [
+        {
+          "itemId": "Aetherhaven_Gold_Coin",
+          "displayName": "Aetherhaven-Goldmuenze",
+          "buyPrice": 8,
+          "sellPrice": 1
+        },
+        {
+          "itemId": "Ingredient_Forest_Essence",
+          "displayName": "Waldessenz",
+          "buyPrice": 0,
+          "sellPrice": 140
+        },
+        {
+          "itemId": "Hedera_Gem",
+          "displayName": "Hedera-Edelstein",
+          "buyPrice": 0,
+          "sellPrice": 320
+        },
+        {
+          "itemId": "Dragon_Heart",
+          "displayName": "Drachenherz",
+          "buyPrice": 0,
+          "sellPrice": 800
+        },
+        {
+          "itemId": "Endgame_Accessory_Hedera_Seed",
+          "displayName": "Hedera-Samen",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Endgame_Accessory_Pouch",
+          "displayName": "Seltene Zubehoertasche",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Endgame_Accessory_Pocket_Garden",
+          "displayName": "Taschergarten",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Endgame_Accessory_Frostwalkers",
+          "displayName": "Frostlaeufer",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Endgame_Accessory_Ocean_Striders",
+          "displayName": "Meereslaeufer",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Endgame_Accessory_Void_Amulet",
+          "displayName": "Leerenamulett",
+          "buyPrice": 0,
+          "sellPrice": 0
+        },
+        {
+          "itemId": "Endgame_Accessory_Blazefist",
+          "displayName": "Flammenfaust",
+          "buyPrice": 0,
+          "sellPrice": 0
+        }
+      ]
+    }
+  },
+  "_publicBalance": {
+    "ordinaryItemSales": "disabled",
+    "allowedSellItems": [
+      "Aetherhaven_Gold_Coin",
+      "Dragon_Heart",
+      "Food_Fish_Raw_Epic",
+      "Food_Fish_Raw_Legendary",
+      "Food_Fish_Raw_Rare",
+      "Food_Fish_Raw_Uncommon",
+      "Hedera_Gem",
+      "Ingredient_Forest_Essence"
+    ],
+    "auditedAt": "2026-08-23",
+    "directArbitrage": "passed",
+    "crossMerchantArbitrage": "passed",
+    "reason": "Routine gathering, mining, farming and mob gear must not bypass quest and progression rewards."
+  }
+}

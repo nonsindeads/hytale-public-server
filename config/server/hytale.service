@@ -1,0 +1,20 @@
+[Unit]
+Description=Hytale Public Server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=hytale
+Group=hytale
+WorkingDirectory=/home/hytale/hytale-server-2
+ExecStart=/bin/bash /home/hytale/hytale-server-2/start.sh --accept-early-plugins --auth-mode authenticated --bind 0.0.0.0:5520 --ignore-broken-mods
+Restart=on-failure
+RestartSec=10
+KillSignal=SIGINT
+TimeoutStopSec=180
+SuccessExitStatus=130 143
+LimitNOFILE=1048576
+
+[Install]
+WantedBy=multi-user.target

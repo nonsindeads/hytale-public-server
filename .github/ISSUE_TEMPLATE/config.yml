@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Private Sicherheitsmeldung
+    url: https://github.com/nonsindeads/hytale-public-server/security/advisories/new
+    about: Exploits, Duplikationen und Rechteumgehungen vertraulich melden

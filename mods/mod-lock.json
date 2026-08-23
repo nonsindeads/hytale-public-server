@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-23T16:50:00+02:00",
+  "serverVersion": "0.5.8",
+  "publicLayer": [
+    {
+      "name": "LuckPerms",
+      "version": "5.5.53",
+      "source": "https://www.curseforge.com/hytale/mods/luckperms",
+      "sha256": "893ca5e440ac29989594596a356a5ecac2b381a844190a29ae338fc87f9cb8d0",
+      "status": "staged-and-load-tested"
+    },
+    {
+      "name": "GlymeraPermissions",
+      "version": "2.0.0",
+      "source": "https://www.curseforge.com/hytale/mods/glymerapermissions",
+      "sha256": "02f49d668e581b6750a5aa358ddb182932a2753dd99de86ea5f6dcb37f0b961d",
+      "status": "staged-and-load-tested"
+    },
+    {
+      "name": "GlymeraPlotWorld",
+      "version": "17.0.0",
+      "source": "https://www.curseforge.com/hytale/mods/glymeraplotworld",
+      "sha256": "6e7355f6feabb883e3e6a1b0bd25d2c95e68af095dce6bf8f408961fe87b32b6",
+      "status": "staged-and-load-tested"
+    },
+    {
+      "name": "NonSinnPublicCore",
+      "version": "0.2.1",
+      "source": "local",
+      "sha256": "1ba7c71205d1084773c5fc152bd64abf25320d956f30fd0618d8da789802a15e",
+      "status": "deployed-and-load-tested"
+    }
+  ],
+  "compatibilityPatches": [
+    {
+      "name": "Aetherhaven 2.7.2 Hytale 0.5.8 Bard animation",
+      "sourceSha256": "f0b5a55862767f7057b3817de18112ab2e8339717754c8d1b74d54d87f48a937",
+      "patchedSha256": "5201f299720804b42beacd5f2d4c4d1119075d580541270da22f144e66b2c99f",
+      "script": "scripts/patch_aetherhaven_058.py",
+      "status": "applied-and-restart-tested"
+    }
+  ],
+  "fullServerLock": []
+}

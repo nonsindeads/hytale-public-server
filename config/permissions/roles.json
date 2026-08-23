@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "defaultRole": "gast",
+  "roles": {
+    "gast": {
+      "inherits": [],
+      "allowedWorlds": ["himmelsinsel"],
+      "allowedCommands": ["help", "hilfe", "rules", "regeln", "freischalten"],
+      "blockedActions": [
+        "block_break",
+        "block_place",
+        "block_interact",
+        "container_open",
+        "merchant_use",
+        "craft",
+        "item_pickup",
+        "item_drop",
+        "item_trade",
+        "portal_use",
+        "teleport",
+        "pvp",
+        "pve"
+      ]
+    },
+    "spieler": {
+      "inherits": ["gast"],
+      "allowedWorlds": ["default", "himmelsinsel", "bauwelt", "schwebende_inseln", "under", "limbo"],
+      "blockedActions": [],
+      "blockedActionsMode": "replace",
+      "permissions": ["glymerapermissions.restricted"]
+    },
+    "moderator": {
+      "inherits": ["spieler"],
+      "operator": false,
+      "notes": "Moderation ohne uneingeschraenkte Server- oder Economy-Rechte."
+    },
+    "admin": {
+      "inherits": ["moderator"],
+      "operator": false,
+      "notes": "Administrative Rechte werden einzeln vergeben."
+    },
+    "owner": {
+      "inherits": ["admin"],
+      "operator": true
+    }
+  }
+}

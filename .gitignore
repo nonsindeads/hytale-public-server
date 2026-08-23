@@ -1,0 +1,19 @@
+# Runtime and secrets
+*.jar
+*.zip
+*.log
+*.db
+*.sqlite*
+*.pem
+*.key
+.env*
+secrets/
+runtime/
+backups/
+universe/
+players/
+
+# Local tooling
+.DS_Store
+__pycache__/
+*.pyc
