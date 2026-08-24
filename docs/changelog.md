@@ -22,6 +22,7 @@
 - Worker und Farmer ohne automatisches Crafting und mit je einer aktiven Truhe; ein Chunkloader pro Spieler.
 - Bauwelt-Konfiguration und gestaffelte Grundstückspreise vorbereitet; Welt und Portal noch offen.
 - Dauerhafte Gästeanzeige im oberen Bildschirmbereich ergänzt; sie verweist auf `/regeln` und `/freischalten` und verschwindet nach bestandener Freischaltung.
+- Interaktives Ingame-Handbuch unter `/handbuch` mit sechs navigierbaren Kapiteln für Start, Regeln, Welten, Claims, Wirtschaft und Hilfe ergänzt.
 - Globalen `/shop`-Zugriff für Spieler deaktiviert; Handel findet nach der Freischaltung direkt an den Händlerständen in Glutwacht statt.
 - Leere Markt-Testwelt und kopierte Händlerpositionen zur bereinigten Neueinrichtung in Glutwacht aus dem aktiven Stand entfernt und gesichert.
 

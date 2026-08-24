@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T10:40:00+02:00",
+  "generatedAt": "2026-08-24T10:55:00+02:00",
   "serverVersion": "0.5.8",
   "publicLayer": [
     {
@@ -33,9 +33,9 @@
     },
     {
       "name": "NonSinnPublicCore",
-      "version": "0.4.0",
+      "version": "0.5.0",
       "source": "local",
-      "sha256": "b538145ea4e8cd1e9036ac54c652a9381ca2071d9eb1deda4bf6767ab602667c",
+      "sha256": "b9326cb495761319fb7445e9a36c559a3ee0134d18d26c5303d3d73638152d85",
       "status": "deployed-and-load-tested"
     }
   ],

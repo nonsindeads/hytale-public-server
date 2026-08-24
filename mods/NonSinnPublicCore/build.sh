@@ -8,7 +8,7 @@ VAULT_JAR=${4:?Aufruf: ./build.sh HytaleServer.jar LuckPerms.jar GlymeraPlotWorl
 ROOT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 BUILD_DIR="$ROOT_DIR/build"
 
-mkdir -p "$BUILD_DIR/classes" "$BUILD_DIR/resources/defaults"
+mkdir -p "$BUILD_DIR/classes" "$BUILD_DIR/resources/defaults" "$BUILD_DIR/resources/Common/UI/Custom/Pages"
 find "$BUILD_DIR/classes" -type f -delete
 
 javac -encoding UTF-8 -cp "$SERVER_JAR:$LUCKPERMS_JAR:$PLOTWORLD_JAR:$VAULT_JAR" -d "$BUILD_DIR/classes" \
@@ -17,9 +17,11 @@ javac -encoding UTF-8 -cp "$SERVER_JAR:$LUCKPERMS_JAR:$PLOTWORLD_JAR:$VAULT_JAR"
 cp "$ROOT_DIR/manifest.json" "$BUILD_DIR/resources/manifest.json"
 cp "$ROOT_DIR/../../config/onboarding/questions.json" "$BUILD_DIR/resources/defaults/questions.json"
 cp "$ROOT_DIR/../../config/plots/property-pricing.json" "$BUILD_DIR/resources/defaults/property-pricing.json"
+cp "$ROOT_DIR/src/main/resources/Common/UI/Custom/Pages/WaldbrandHandbook.ui" \
+  "$BUILD_DIR/resources/Common/UI/Custom/Pages/WaldbrandHandbook.ui"
 
-jar --create --file "$BUILD_DIR/NonSinnPublicCore-0.4.0.jar" \
+jar --create --file "$BUILD_DIR/NonSinnPublicCore-0.5.0.jar" \
   -C "$BUILD_DIR/classes" . \
   -C "$BUILD_DIR/resources" .
 
-echo "$BUILD_DIR/NonSinnPublicCore-0.4.0.jar"
+echo "$BUILD_DIR/NonSinnPublicCore-0.5.0.jar"

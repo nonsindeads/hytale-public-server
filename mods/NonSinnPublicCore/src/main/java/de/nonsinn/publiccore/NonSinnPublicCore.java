@@ -2,6 +2,9 @@ package de.nonsinn.publiccore;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.hypixel.hytale.codec.Codec;
+import com.hypixel.hytale.codec.KeyedCodec;
+import com.hypixel.hytale.codec.builder.BuilderCodec;
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.command.system.CommandContext;
 import com.hypixel.hytale.server.core.command.system.arguments.system.RequiredArg;
@@ -20,6 +23,7 @@ import com.hypixel.hytale.server.core.event.events.player.PlayerConnectEvent;
 import com.hypixel.hytale.server.core.event.events.player.PlayerInteractEvent;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.entity.entities.player.hud.CustomUIHud;
+import com.hypixel.hytale.server.core.entity.entities.player.pages.InteractiveCustomUIPage;
 import com.hypixel.hytale.server.core.permissions.PermissionsModule;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
@@ -28,6 +32,10 @@ import com.hypixel.hytale.server.core.universe.Universe;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.core.ui.builder.UICommandBuilder;
+import com.hypixel.hytale.server.core.ui.builder.EventData;
+import com.hypixel.hytale.server.core.ui.builder.UIEventBuilder;
+import com.hypixel.hytale.protocol.packets.interface_.CustomPageLifetime;
+import com.hypixel.hytale.protocol.packets.interface_.CustomUIEventBindingType;
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import de.glymera.plotworld.GlymeraPlotWorld;
@@ -98,6 +106,7 @@ public final class NonSinnPublicCore extends JavaPlugin {
         getCommandRegistry().registerCommand(new UnlockCommand(this));
         getCommandRegistry().registerCommand(new AnswerCommand(this));
         getCommandRegistry().registerCommand(new RulesCommand(this));
+        getCommandRegistry().registerCommand(new HandbookCommand());
         getCommandRegistry().registerCommand(new PropertyCommand(this));
 
         getEventRegistry().registerGlobal(PlayerConnectEvent.class, this::onPlayerConnect);
@@ -765,6 +774,168 @@ public final class NonSinnPublicCore extends JavaPlugin {
             context.sendMessage(Message.raw(
                     "Regelversion " + plugin.questions.rulesVersion + ": " + plugin.questions.docsUrl
             ));
+        }
+    }
+
+    private static final class HandbookCommand extends AbstractPlayerCommand {
+        private HandbookCommand() {
+            super("handbuch", "Ingame-Handbuch oeffnen");
+            addAliases("guide");
+        }
+
+        @Override
+        public boolean canGeneratePermission() {
+            return false;
+        }
+
+        @Override
+        protected void execute(CommandContext context, Store<EntityStore> store, Ref<EntityStore> ref,
+                               PlayerRef playerRef, World world) {
+            Player player = store.getComponent(ref, Player.getComponentType());
+            if (player == null) {
+                return;
+            }
+            if (player.getPageManager().getCustomPage() != null) {
+                context.sendMessage(Message.raw("Schliesse zuerst das bereits geoeffnete Fenster."));
+                return;
+            }
+            player.getPageManager().openCustomPage(ref, store, new HandbookPage(playerRef));
+        }
+    }
+
+    private static final class HandbookPage extends InteractiveCustomUIPage<HandbookEventData> {
+        private static final String[] NAV_IDS = {
+                "#NavStart", "#NavRules", "#NavWorlds", "#NavClaims", "#NavEconomy", "#NavHelp"
+        };
+        private static final String[] NAV_ACTIONS = {
+                "start", "rules", "worlds", "claims", "economy", "help"
+        };
+
+        private String selected = "start";
+        private boolean templateAppended;
+
+        private HandbookPage(PlayerRef playerRef) {
+            super(playerRef, CustomPageLifetime.CanDismissOrCloseThroughInteraction, HandbookEventData.CODEC);
+        }
+
+        @Override
+        public void build(Ref<EntityStore> ref, UICommandBuilder commands, UIEventBuilder events,
+                          Store<EntityStore> store) {
+            if (!templateAppended) {
+                commands.append("Pages/WaldbrandHandbook.ui");
+                for (int index = 0; index < NAV_IDS.length; index++) {
+                    events.addEventBinding(
+                            CustomUIEventBindingType.Activating,
+                            NAV_IDS[index],
+                            EventData.of("Action", NAV_ACTIONS[index]),
+                            false
+                    );
+                }
+                templateAppended = true;
+            }
+            applyContent(commands);
+        }
+
+        @Override
+        public void handleDataEvent(Ref<EntityStore> ref, Store<EntityStore> store, HandbookEventData data) {
+            if (data == null || data.action == null) {
+                return;
+            }
+            for (String action : NAV_ACTIONS) {
+                if (action.equals(data.action)) {
+                    selected = action;
+                    UICommandBuilder commands = new UICommandBuilder();
+                    applyContent(commands);
+                    sendUpdate(commands, false);
+                    return;
+                }
+            }
+        }
+
+        private void applyContent(UICommandBuilder commands) {
+            HandbookContent content = HandbookContent.forSection(selected);
+            commands.set("#ContentTitle.Text", content.title);
+            commands.set("#ContentLead.Text", content.lead);
+            commands.set("#SectionOneTitle.Text", content.sectionOneTitle);
+            commands.set("#SectionOneBody.Text", content.sectionOneBody);
+            commands.set("#SectionTwoTitle.Text", content.sectionTwoTitle);
+            commands.set("#SectionTwoBody.Text", content.sectionTwoBody);
+            commands.set("#SectionThreeTitle.Text", content.sectionThreeTitle);
+            commands.set("#SectionThreeBody.Text", content.sectionThreeBody);
+            commands.set("#SectionFourTitle.Text", content.sectionFourTitle);
+            commands.set("#SectionFourBody.Text", content.sectionFourBody);
+        }
+    }
+
+    private static final class HandbookEventData {
+        private static final BuilderCodec<HandbookEventData> CODEC = BuilderCodec
+                .builder(HandbookEventData.class, HandbookEventData::new)
+                .append(new KeyedCodec<>("Action", Codec.STRING),
+                        (data, value) -> data.action = value,
+                        data -> data.action)
+                .add()
+                .build();
+
+        private String action;
+    }
+
+    private record HandbookContent(
+            String title,
+            String lead,
+            String sectionOneTitle,
+            String sectionOneBody,
+            String sectionTwoTitle,
+            String sectionTwoBody,
+            String sectionThreeTitle,
+            String sectionThreeBody,
+            String sectionFourTitle,
+            String sectionFourBody
+    ) {
+        private static HandbookContent forSection(String section) {
+            return switch (section) {
+                case "rules" -> new HandbookContent(
+                        "Regeln", "Kurzfassung der Regeln. Mit /regeln siehst du Regelversion und Webadresse.",
+                        "Respekt", "Keine Beleidigungen, Belästigung, Diskriminierung, Drohungen oder absichtliche Störung anderer Spieler.",
+                        "Kein Griefing", "Fremde Bauten, Tiere, Kisten, Maschinen und Claims werden nur mit ausdrücklicher Erlaubnis verändert.",
+                        "Keine Exploits", "Duplikations-, Rechte- und Geldfehler nicht nutzen oder verbreiten. Bitte vertraulich über GitHub Security melden.",
+                        "Faire Nutzung", "Keine Umgehung von Weltzugängen oder Schutzsystemen. Automation darf weder Server noch Mitspieler beeinträchtigen."
+                );
+                case "worlds" -> new HandbookContent(
+                        "Welten", "Jede Welt hat eine klare Aufgabe. Dein dauerhaftes Zuhause und die Wildnis sind bewusst getrennt.",
+                        "Glutwacht", "Sicherer Hub und Stadt über den Wolken. Hier findest du Regeln, Händler und später die wichtigsten Reisewege.",
+                        "Default", "Survival, Ressourcen, Erkundung und kleine Claims. Diese Wildnis kann nach Vorankündigung erneuert werden.",
+                        "Bauwelt", "Dauerhafte 64x64-Grundstücke für wichtige Bauten. Außerhalb eigener oder freigegebener Grundstücke ist Bauen gesperrt.",
+                        "Abenteuerwelten", "Floating Islands mit Structures, Under, Limbo und Oakhaven bieten schwierigere Gegner, besondere Inhalte und bessere Beute."
+                );
+                case "claims" -> new HandbookContent(
+                        "Claims & Grundstücke", "Schütze kleine Survivalbereiche oder baue dauerhaft auf einem Grundstück in der Bauwelt.",
+                        "Survival-Claims", "In Default startest du mit 3 Claim-Chunks und kannst bis auf 9 erweitern. Die Wildnis selbst bleibt resetbar.",
+                        "Wichtige Befehle", "/claim help, /claim map, /claim info, /claim list, /claim members, /claim buychunk und /claim show.",
+                        "Bauwelt", "/grundstueck zeigt Besitz, Limit und nächsten Preis. /grundstueck kaufen beansprucht das freie Grundstück unter dir.",
+                        "Gemeinsam bauen", "Mit /plot help findest du Vertrauen, Verwaltung und weitere Plot-Funktionen. Fremde Bereiche bleiben geschützt."
+                );
+                case "economy" -> new HandbookContent(
+                        "Wirtschaft", "Gold entsteht kontrolliert und soll Fortschritt belohnen, nicht gewöhnlichen Massenloot.",
+                        "Gold", "/money zeigt dein Guthaben. Mit /pay <Spieler> <Betrag> kannst du Gold an andere Spieler übertragen.",
+                        "Händler", "Der globale /shop-Befehl ist deaktiviert. Besuche nach der Freischaltung die passenden NPC-Stände in Glutwacht.",
+                        "Verkaufen", "Gewöhnliche Materialien, Nahrung, Waffen, Werkzeuge und Ausrüstung haben keinen Ankaufspreis. Nur ausgewählte seltene Beute wird angekauft.",
+                        "Landpreise", "Bauwelt-Grundstücke kosten nacheinander 0, 1.000, 3.000 und 7.500 Gold. Survival-Erweiterungen benötigen Claim-Scherben."
+                );
+                case "help" -> new HandbookContent(
+                        "Hilfe & Kontakt", "Wenn etwas nicht funktioniert, helfen genaue Angaben schneller als nur 'geht nicht'.",
+                        "Im Spiel", "/help zeigt verfügbare Befehle. /handbuch öffnet dieses Fenster erneut. /regeln zeigt die aktuelle Regelversion.",
+                        "Fehler melden", "Nenne Welt, Zeitpunkt, ungefähre Position, Schritte sowie erwartetes und tatsächliches Verhalten.",
+                        "Webseite", "nonsindeads.github.io/hytale-public-server – dort stehen Status, Befehle, Welten, Wirtschaft und bekannte Einschränkungen.",
+                        "Sicherheit", "Exploits, Duplikation oder Rechtefehler niemals öffentlich posten. Nutze die private Sicherheitsmeldung im GitHub-Projekt."
+                );
+                default -> new HandbookContent(
+                        "Willkommen in Glutwacht", "Glutwacht ist die sichere Stadt über den Wolken und dein Ausgangspunkt auf Der Waldbrand.",
+                        "1. Regeln lesen", "Nutze /regeln. Als Gast erinnert dich die feste Anzeige im oberen Bildschirmbereich an die nächsten Schritte.",
+                        "2. Freischalten", "Starte /freischalten und beantworte sechs Fragen mit /antwort <Nummer>. Fünf richtige Antworten reichen.",
+                        "3. Abenteuer beginnen", "Nach der Freischaltung kannst du handeln, reisen, sammeln und die vorgesehenen Spielbefehle benutzen.",
+                        "Unser Versprechen", "Dein Zuhause bleibt. Die Wildnis darf sich verändern. Für WorldGen V2 planen wir eine neue Wildnis statt eines vollständigen Wipes."
+                );
+            };
         }
     }
 

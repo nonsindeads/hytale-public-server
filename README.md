@@ -21,7 +21,7 @@ Vor einem Neustart oder einer Änderung wird geprüft, ob Spieler online sind.
 ## Verifizierter Stand vom 24.08.2026
 
 - Der Community-Server läuft.
-- 5520 lädt NonSinnPublicCore 0.4.0 mit dauerhafter Gästeanzeige, LuckPerms 5.5.53, GlymeraPermissions 2.0.0, QuestLines Claims 1.5.0 und GlymeraPlotWorld 17.0.0.
+- 5520 lädt NonSinnPublicCore 0.5.0 mit Gästeanzeige und interaktivem Ingame-Handbuch, LuckPerms 5.5.53, GlymeraPermissions 2.0.0, QuestLines Claims 1.5.0 und GlymeraPlotWorld 17.0.0.
 - Vorhandene Weltdaten auf 5520: `default`, Glutwacht (technisch `himmelsinsel`), `oakhaven`, `schwebende_inseln` und `under`.
 - `bauwelt` ist konfiguriert, aber noch nicht erzeugt oder praktisch abgenommen.
 - GlymeraLimbo ist aktiv; die Limbo-Welt wird erst über ihren vorgesehenen Zugang erzeugt.

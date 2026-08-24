@@ -13,6 +13,7 @@ Diese Liste ersetzt die frühere Gemini-Ingame-Liste. Deren Warp-, Teleport- und
 - [x] Under übernommen; Limbo-Mod geladen.
 - [x] Händlerprofile, Preise und passende NPC-Skins vorbereitet.
 - [x] Gast-Onboarding, dauerhafte Gästeanzeige, Regeltest, LuckPerms und Befehls-Failsafe geladen.
+- [x] Interaktives Ingame-Handbuch mit `/handbuch` und sechs Kapiteln implementiert und gebaut.
 - [x] Globalen `/shop`-Befehl für Spieler deaktiviert; Handel erfolgt künftig direkt an den NPC-Ständen in Glutwacht.
 - [x] Leere Markt-Testwelt archiviert und sechs kopierte Händlerpositionen für den sauberen Neuaufbau entfernt.
 - [x] QuestLines Claims installiert und für Spieler auf `default` begrenzt.
@@ -35,6 +36,7 @@ Diese Liste ersetzt die frühere Gemini-Ingame-Liste. Deren Warp-, Teleport- und
 - [ ] Grundstückskauf mit allen Preisstufen 0/1.000/3.000/7.500 Gold praktisch testen.
 - [ ] Plot-Schutz, Trust/Untrust, Merge, Flüssigkeiten und Kreaturengrenzen mit zwei Accounts testen.
 - [ ] Gast- und Spielerrechte mit einem zweiten Account vollständig prüfen.
+- [ ] Ingame-Handbuch mit Gast und Spieler vollständig prüfen: Navigation, Textumbruch, Scrollen, Schließen und erneutes Öffnen.
 - [ ] Survival-Claims mit Mitgliedern, Tieren, Flüssigkeiten, Explosionen, Portalen, Ablauf und Reset-Bereinigung testen.
 - [ ] Entscheiden, ob Spieler `questlinesclaims.home.use` und damit Claim-Heimpunkte erhalten.
 - [ ] Alle Händler im Hub praktisch öffnen sowie Kauf und erlaubte Verkäufe testen.
