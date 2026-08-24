@@ -40,7 +40,7 @@ Der Waldbrand verbindet eine resetbare Survivalwelt für Rohstoffe und Erkundung
 4. **Echtes Abenteuer-Endgame:** Floating Islands mit Structures, Under und Limbo bilden getrennte Hochrisiko-Ziele statt nur höherer Zahlen in derselben Wildnis.
 5. **RPG ohne beliebiges Mod-Sammelsurium:** Skill Tree, skalierende Gegner, Quests, Kopfgelder, Affixe, Bosse, Begleiter und Aetherhaven greifen als gemeinsame Progression ineinander.
 6. **Hytale-passende Technik:** Boote, Flöße und Luftschiffe bleiben; moderne Autos wurden bewusst entfernt.
-7. **Kontrollierte Wirtschaft:** Gewöhnlicher Massenloot und Standardausrüstung erzeugen kein unbegrenztes Händlergold. Preise und Progression werden geprüft und nach echten Spielsitzungen nachjustiert.
+7. **Sorgfältig balancierte Wirtschaft:** Viele Spielweisen führen zu Gold, während Händler, Aufträge, Land und besondere Angebote sinnvolle Gründe zum Ausgeben schaffen. Preise, Belohnungen und Fortschritt sind fein abgestimmt und werden anhand echter Spielsitzungen weiterentwickelt.
 8. **Geschützter Einstieg:** Neue Accounts starten als Gäste in Glutwacht. Eine dauerhafte, unaufdringliche Anzeige führt sie zu Regeln und kurzem Freischaltungstest.
 9. **Transparenter Betrieb:** Spielerhandbuch, aktueller Ausbaustand, bekannte Einschränkungen und strukturierte Fehlerberichte sind öffentlich einsehbar.
 
@@ -62,21 +62,21 @@ Der Waldbrand verbindet eine resetbare Survivalwelt für Rohstoffe und Erkundung
 
 ### Sehr kurz
 
-**DE:** Deutscher Survival-RPG-Server mit dauerhafter Bauwelt, Claims und schweren Abenteuerwelten.
+**DE:** Deutscher Survival-RPG-Server mit dauerhafter Bauwelt, Claims, fairer Wirtschaft und schweren Abenteuerwelten.
 
-**EN:** German Survival RPG with permanent building plots, claims and hard adventure worlds.
+**EN:** German Survival RPG with permanent building plots, claims, a balanced economy and hard adventure worlds.
 
 ### Kurz
 
-**DE:** Der Waldbrand verbindet Survival, RPG-Fortschritt und dauerhaftes Bauen. Erkunde eine erneuerbare Wildnis, sichere kleine Claims und stelle dich später Floating Islands, Under, Limbo, Dungeons und Bossen.
+**DE:** Der Waldbrand verbindet Survival, RPG-Fortschritt und dauerhaftes Bauen mit einer sorgfältig abgestimmten Wirtschaft. Verdiene Gold durch unterschiedliche Spielweisen, entwickle dein Zuhause und stelle dich schweren Abenteuerwelten, Dungeons und Bossen.
 
-**EN:** Der Waldbrand combines survival, RPG progression and permanent building. Explore a renewable wilderness, protect small claims and later face Floating Islands, Under, Limbo, dungeons and bosses. German-speaking EU community.
+**EN:** Der Waldbrand combines survival, RPG progression and permanent building with a carefully balanced economy. Earn gold through different playstyles, develop your home and face dangerous worlds, dungeons and bosses. German-speaking EU community.
 
 ### Mittel – nach Freigabe
 
-**DE:** Dein Zuhause bleibt, die Wildnis darf sich verändern. Der Waldbrand ist ein deutscher Survival-RPG-Communityserver mit Glutwacht, der sicheren Stadt über den Wolken, einer resetbaren Survivalwelt, persönlichen Claims und einer dauerhaften Bauwelt. Skill Tree, skalierende Gegner, Quests, Kopfgelder, Affixe, Bosse und Begleiter führen in besonders schwere Abenteuerwelten wie die Floating Islands, Under und Limbo. Für WorldGen V2 planen wir eine neue Wildnis statt eines kompletten Server-Wipes. Die Mods laufen serverseitig; Wirtschaft, Rechte und Progression werden transparent geprüft.
+**DE:** Dein Zuhause bleibt, die Wildnis darf sich verändern. Der Waldbrand ist ein deutscher Survival-RPG-Communityserver mit Glutwacht, der sicheren Stadt über den Wolken, einer resetbaren Survivalwelt, persönlichen Claims und einer dauerhaften Bauwelt. Skill Tree, skalierende Gegner, Quests, Kopfgelder, Affixe, Bosse und Begleiter führen in besonders schwere Abenteuerwelten wie die Floating Islands, Under und Limbo. Eine fein abgestimmte Wirtschaft belohnt unterschiedliche Spielweisen und bietet sinnvolle Ziele für dein verdientes Gold. Für WorldGen V2 planen wir eine neue Wildnis statt eines kompletten Server-Wipes. Mods, Wirtschaft und Progression werden laufend geprüft und behutsam weiterentwickelt.
 
-**EN:** Your home stays while the wilderness may change. Der Waldbrand is a German-speaking EU Survival RPG server with Glutwacht, a safe city above the clouds, a resettable survival world, personal claims and a permanent building world. Skill trees, scaling enemies, quests, bounties, affixes, bosses and companions lead into dangerous worlds such as the Floating Islands, Under and Limbo. For WorldGen V2, we plan a new wilderness instead of a full server wipe. The modpack is server-side, while economy, permissions and progression are documented and actively balanced.
+**EN:** Your home stays while the wilderness may change. Der Waldbrand is a German-speaking EU Survival RPG server with Glutwacht, a safe city above the clouds, a resettable survival world, personal claims and a permanent building world. Skill trees, scaling enemies, quests, bounties, affixes, bosses and companions lead into dangerous worlds such as the Floating Islands, Under and Limbo. A carefully tuned economy rewards different playstyles and gives earned gold meaningful uses. For WorldGen V2, we plan a new wilderness instead of a full server wipe. The server-side modpack, economy and progression are continuously reviewed and refined.
 
 ### Lang – nach Freigabe
 
@@ -88,7 +88,9 @@ Unser Konzept trennt die Aufgaben der Welten klar: Glutwacht ist die sichere Sta
 
 Auch der Wechsel auf WorldGen V2 ist nach diesem Prinzip geplant: Wir wollen eine neue V2-Survivalwelt erzeugen, prüfen und anschließend über den Hub anbinden. Ein vollständiger Neuanfang mit Verlust aller Welten ist nicht vorgesehen; Hub, Bauwelt und dauerhafte Communityprojekte sollen erhalten bleiben. Mögliche Beschränkungen beim Transport einzelner V1-/V2-Gegenstände werden vor der Umschaltung getestet und veröffentlicht.
 
-MMO Skill Tree, Mob Scaling, Natural20, Aetherhaven, Quests, Kopfgelder, Bosse, Begleiter, Landwirtschaft, Dekoration und bewusst begrenzte Automation erweitern das Spiel. Fahrzeuge bleiben passend zur Welt auf Boote, Flöße und Luftschiffe beschränkt. Eine kontrollierte Wirtschaft verhindert, dass gewöhnlicher Massenloot unbegrenzt Gold erzeugt.
+MMO Skill Tree, Mob Scaling, Natural20, Aetherhaven, Quests, Kopfgelder, Bosse, Begleiter, Landwirtschaft, Dekoration und bewusst begrenzte Automation erweitern das Spiel. Fahrzeuge bleiben passend zur Welt auf Boote, Flöße und Luftschiffe beschränkt.
+
+Unsere Wirtschaft ist kein nachträglich aufgesetzter Shop. Handel, Handwerk, Abenteuer und wechselnde Aufträge bieten unterschiedliche Wege zu Gold; Land, Versorgung, Dekoration und besondere Angebote schaffen attraktive Ziele zum Ausgeben. Preise, Belohnungen und Fortschrittskurven sind fein aufeinander abgestimmt. Wir beobachten die tatsächliche Entwicklung im Spiel und justieren behutsam nach, damit weder stumpfes Massenfarmen noch eine einzelne dominante Spielweise den Wert der Wirtschaft bestimmt.
 
 Neue Spieler beginnen geschützt als Gast und schalten sich nach einem kurzen Regeltest frei. Aktueller Status, Regeln, Welthinweise und bekannte Einschränkungen sind öffentlich dokumentiert. Der Waldbrand richtet sich an Einzelspieler und kleine Gruppen, die ein überschaubares, entwickeltes Zuhause mit echter Abenteuerprogression suchen.
 
@@ -100,7 +102,9 @@ Each world has a clear purpose. Glutwacht, the city above the clouds, is a safe 
 
 The move to WorldGen V2 follows the same principle. We plan to generate and test a new V2 survival world before connecting it through the hub. A full server wipe is not planned: the hub, permanent building world and long-term community projects are intended to remain. Any restrictions on moving V1/V2 blocks or items will be tested and published before the transition.
 
-MMO Skill Tree, Mob Scaling, Natural20, Aetherhaven, quests, bounties, bosses, companions, farming, decoration and deliberately limited automation extend the experience. Vehicles are kept in theme with boats, rafts and airships instead of modern cars. A controlled economy prevents common bulk loot from generating unlimited gold.
+MMO Skill Tree, Mob Scaling, Natural20, Aetherhaven, quests, bounties, bosses, companions, farming, decoration and deliberately limited automation extend the experience. Vehicles are kept in theme with boats, rafts and airships instead of modern cars.
+
+Our economy is more than an added shop menu. Trading, crafting, exploration and rotating contracts provide varied ways to earn gold, while land, supplies, decoration and special offers create meaningful reasons to spend it. Prices, rewards and progression curves are tuned together and refined carefully using real gameplay data, so no single grind or dominant playstyle defines the entire economy.
 
 New players begin as protected guests and unlock regular play through a short rules check. Current status, rules, world information and known limitations are documented publicly. Der Waldbrand is built for solo players and small groups who want a manageable community home with meaningful adventure progression.
 

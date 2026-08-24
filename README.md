@@ -21,12 +21,12 @@ Vor einem Neustart oder einer Änderung wird geprüft, ob Spieler online sind.
 ## Verifizierter Stand vom 24.08.2026
 
 - Der Community-Server läuft.
-- 5520 lädt NonSinnPublicCore 0.5.0 mit Gästeanzeige und interaktivem Ingame-Handbuch, LuckPerms 5.5.53, GlymeraPermissions 2.0.0, QuestLines Claims 1.5.0 und GlymeraPlotWorld 17.0.0.
+- 5520 lädt NonSinnPublicCore 0.6.0 mit Gästeanzeige, interaktivem Ingame-Handbuch und abgesicherter Goldanbindung, LuckPerms 5.5.53, GlymeraPermissions 2.0.0, QuestLines Claims 1.5.0 und GlymeraPlotWorld 17.0.0.
 - Vorhandene Weltdaten auf 5520: `default`, Glutwacht (technisch `himmelsinsel`), `oakhaven`, `schwebende_inseln` und `under`.
 - `bauwelt` ist konfiguriert, aber noch nicht erzeugt oder praktisch abgenommen.
 - GlymeraLimbo ist aktiv; die Limbo-Welt wird erst über ihren vorgesehenen Zugang erzeugt.
 - Survival-Claims sind für Spieler nur in `default` freigegeben: 3 Start-Chunks, maximal 9, 32 Claim-Scherben pro Erweiterung.
-- Die öffentliche Economy besitzt 8 kontrollierte Ankaufquellen. Gewöhnliche Materialien, Waffen, Werkzeuge und Ausrüstung haben keinen Ankaufspreis.
+- Die öffentliche Economy verbindet 92 ausgewählte Händlerankäufe mit stündlichen, täglichen und wöchentlichen Aufträgen. Massenmaterial wird über begrenzte Beschaffungsaufträge statt durch unbegrenzten Händlerverkauf verwertet.
 - Worker und Farmer dürfen auf 5520 je eine aktive Truhe verwenden und nicht automatisch craften; Nicht-OP-Spieler dürfen einen Chunkloader setzen.
 - GlymeraStatues ist wegen fehlerhafter schwarzer Blöcke deaktiviert. GlymeraRaces ist wegen Überschneidungen mit MMO Skill Tree und Natural20 nicht installiert.
 
@@ -52,6 +52,7 @@ Voraussetzung ist Python 3. Die Skripte verändern weder Server noch Konfigurati
 python3 scripts/validate_configs.py
 python3 scripts/audit_merchants.py
 python3 scripts/audit_progression_economy.py
+python3 scripts/audit_bounty_economy.py /pfad/zum/MMOSkillBountyPack
 ```
 
 Die Prüfungen decken unter anderem ungültiges JSON, doppelte Waren, negative Preise, direkten Wiederverkauf, Händler-Arbitrage, nicht freigegebene Ankaufquellen, Claim-Scherben, Plotpreise und Automationsgrenzen ab.
