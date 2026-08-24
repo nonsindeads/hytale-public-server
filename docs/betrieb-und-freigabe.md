@@ -14,7 +14,7 @@ Stand: 24.08.2026
 3. Bauwelt erzeugen, Hub-Portal bauen und alle Grundstückspreise 0/1.000/3.000/7.500 Gold testen.
 4. Bauen und Abbauen außerhalb eigener oder freigegebener Bauwelt-Plots muss scheitern; Trust, Untrust, Home, Merge, Flüssigkeiten und Kreaturen prüfen.
 5. Claims in `default` mit Mitgliedern, Tieren, Flüssigkeiten, Explosionen, Portalen, 30-Tage-Ablauf und Reset-Bereinigung testen. Vor Claim-Heimteleports die Berechtigung `questlinesclaims.home.use` bewusst freigeben oder die Funktion deaktiviert lassen.
-6. Radius der Default-Spawn-Safezone festlegen, technisch schützen und mit Spielerrechten testen.
+6. Zentrum der Default-Spawn-Safezone nach Map-Besichtigung festlegen, den vorläufigen Radius von 300 Blöcken prüfen, technisch schützen und mit Spielerrechten testen.
 7. Economy-Audits ausführen und seltene Drops sowie Questbelohnungen zusätzlich über echte Spielzeit messen.
 8. Abschlussbackup erstellen und eine Wiederherstellung in einen leeren Testpfad durchspielen.
 

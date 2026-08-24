@@ -20,7 +20,7 @@ Diese Liste ersetzt die frühere Gemini-Ingame-Liste. Deren Warp-, Teleport- und
 
 ## Vor der breiten Freigabe
 
-- [ ] **Spawn-Safezone in Default anlegen.** Zentrum ist der künftige öffentliche Portal-/Spawn-Bereich. Innerhalb der Zone müssen `BUILD`, `BREAK` und `SPAWN` gesperrt sein: kein Bauen, kein Abbauen und keine Mob-Spawns. Zentrum und Radius noch festlegen.
+- [ ] **Spawn-Safezone in Default mit vorläufig 300 Blöcken Radius anlegen.** Zentrum ist der künftige öffentliche Portal-/Spawn-Bereich und wird nach Besichtigung der neuen Map festgelegt. Die kreisförmige Region soll über die gesamte Welthöhe reichen. Innerhalb der Zone müssen `BUILD`, `BREAK` und `SPAWN` gesperrt sein: kein Bauen, kein Abbauen und keine Mob-Spawns. Den Radius beim Ingame-Ausbau nochmals prüfen und bei Bedarf anpassen.
 - [ ] Entscheiden, ob in der Safezone zusätzlich PvP, Explosionen, Feuer, Flüssigkeiten und Containerzugriffe gesperrt werden.
 - [ ] Portalpaar zwischen Himmelsinsel und Default ingame bauen und beide Richtungen testen.
 - [ ] Portalpaar zwischen Himmelsinsel und Schwebenden Inseln ingame bauen und beide Richtungen testen.
