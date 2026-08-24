@@ -14,6 +14,7 @@
 ### Community-Server 5520
 
 - Frische Default-Welt und Himmelsinsel als zentraler Hub übernommen.
+- Veraltete, aus den früheren Welten übernommene Warp-Ziele vollständig entfernt.
 - Gast-/Quizsystem, LuckPerms, GlymeraPermissions und NonSinnPublicCore geladen.
 - QuestLines Claims und GlymeraPlotWorld installiert; Survival-Claims auf `default` begrenzt.
 - Öffentliche Economy auf 8 kontrollierte Ankaufquellen begrenzt; gewöhnliche Materialien und Ausrüstung unverkäuflich.

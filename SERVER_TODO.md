@@ -7,6 +7,7 @@ Diese Liste ersetzt die frühere Gemini-Ingame-Liste. Deren Warp-, Teleport- und
 ## Erledigt
 
 - [x] Community-Server mit frischer Default-Welt eingerichtet.
+- [x] Übernommene Warpdateien geleert; neue Reiseziele werden passend zu den neuen Welten ingame angelegt.
 - [x] Himmelsinsel als zentralen Hub übernommen.
 - [x] Glymera Structures auf den Schwebenden Inseln getestet und aktiviert.
 - [x] Under übernommen; Limbo-Mod geladen.
