@@ -17,6 +17,7 @@ Diese Liste ersetzt die frühere Gemini-Ingame-Liste. Deren Warp-, Teleport- und
 - [x] Öffentliche Händlerwirtschaft statisch auf Arbitrage und ungewollte Ankäufe geprüft.
 - [x] Worker, Farmer und Chunkloader für den Community-Betrieb begrenzt.
 - [x] Spielerhandbuch, Issue-Formulare und private Sicherheitsmeldungen veröffentlicht.
+- [x] Serverlisten-Paket mit Positionierung, deutschen und englischen Eintragstexten, Eintragszielen und Protokoll vorbereitet.
 
 ## Vor der breiten Freigabe
 
@@ -37,6 +38,21 @@ Diese Liste ersetzt die frühere Gemini-Ingame-Liste. Deren Warp-, Teleport- und
 - [ ] Seltene Drops, Questbelohnungen und Goldzuwachs über echte Spielsitzungen messen.
 - [ ] Limbo über den vorgesehenen Mod-Zugang erzeugen und Hin-/Rückweg testen.
 - [ ] Abschlussbackup erstellen und Wiederherstellung in einen leeren Testpfad prüfen.
+
+## Öffentliche Serverlisten
+
+Die Texte, Zielportale, bekannten Anforderungen und das Eintragsprotokoll stehen in [SERVER_LISTINGS.md](SERVER_LISTINGS.md).
+
+- [ ] Eigenen öffentlichen Server-Domainnamen festlegen und auf `65.109.56.119:5520` führen; DNS-TXT-Verifikation für die offizielle Discovery vorbereiten.
+- [ ] Öffentliche Kontaktadresse und optional Discord festlegen.
+- [ ] Altersziel, Inhaltsmerkmale und Monetarisierungsstatus verbindlich festlegen.
+- [ ] Öffentliche Seiten für Datenschutz, Support und Erstattung beziehungsweise „keine Käufe“ ergänzen und inhaltlich prüfen.
+- [ ] Logo, Banner, Screenshots und optional kurzen Trailer aus der fertig eingerichteten 5520-Welt erstellen.
+- [ ] Offizielle Hytale Server Discovery einreichen, moderieren lassen und Heartbeat sicher konfigurieren; Discovery-Token niemals versionieren.
+- [ ] Priorität-A-Serverlisten eintragen und die öffentlichen Profil-URLs dokumentieren.
+- [ ] Priorität-B-Serverlisten nach erneuter Prüfung ergänzen.
+- [ ] Vote-Belohnungen nur nach separater Economy- und Exploitprüfung aktivieren.
+- [ ] Alle öffentlichen Einträge monatlich auf Erreichbarkeit, Version, Text, Bilder und korrekte Angaben prüfen.
 
 ## Nach der Freigabe beobachten
 
