@@ -21,7 +21,7 @@ body:
   - type: textarea
     id: observed
     attributes:
-      label: Tatsaechliches Verhalten
+      label: Tatsächliches Verhalten
       description: Was ist passiert?
     validations:
       required: true
@@ -35,7 +35,7 @@ body:
     id: steps
     attributes:
       label: Schritte zum Nachstellen
-      description: Keine Exploitdetails oder Zugangsdaten oeffentlich eintragen.
+      description: Keine Exploitdetails oder Zugangsdaten öffentlich eintragen.
     validations:
       required: true
   - type: input
@@ -48,14 +48,14 @@ body:
   - type: input
     id: coordinates
     attributes:
-      label: Ungefaehre Koordinaten
-      description: Falls fuer den Fehler relevant.
+      label: Ungefähre Koordinaten
+      description: Falls für den Fehler relevant.
   - type: checkboxes
     id: safety
     attributes:
-      label: Sicherheitspruefung
+      label: Sicherheitsprüfung
       options:
-        - label: Der Bericht enthaelt keine Passwoerter, Tokens oder privaten Daten.
+        - label: Der Bericht enthält keine Passwörter, Tokens oder privaten Daten.
           required: true
-        - label: Es handelt sich nicht um einen oeffentlich beschriebenen Economy- oder Duplikations-Exploit.
+        - label: Es handelt sich nicht um einen öffentlich beschriebenen Economy- oder Duplikations-Exploit.
           required: true

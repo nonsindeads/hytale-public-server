@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Spielstart, Freischaltung, Regeln und bestätigte Spielerbefehle auf Der Waldbrand.">
+  <title>Start & Befehle · Der Waldbrand</title><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="site-header"><nav class="site-nav wrap" aria-label="Hauptnavigation"><a class="brand" href="index.html">DER WALDBRAND</a><div class="navlinks"><a href="index.html">Übersicht</a><a aria-current="page" href="start.html">Start & Befehle</a><a href="worlds.html">Welten & Claims</a><a href="economy.html">Wirtschaft</a><a href="mods.html">Mods</a><a href="status.html">Status & Änderungen</a></div></nav></header>
+  <main>
+    <div class="hero compact wrap"><div class="eyebrow">Spielerhandbuch</div><h1>Start, Freischaltung und Befehle</h1><p class="lead">Hier stehen nur Befehle, die auf dem Community-Server tatsächlich vorhanden und für Spieler vorgesehen sind. Administrative Mod-Befehle gehören bewusst nicht in diese Liste.</p></div>
+
+    <section><div class="wrap"><h2>Freischaltung</h2><div class="steps">
+      <div class="step"><strong>Als Gast ankommen.</strong> Du startest geschützt im Hub und kannst dich dort informieren.</div>
+      <div class="step"><strong><code>/regeln</code> benutzen.</strong> Der Befehl zeigt die aktuelle Regelversion und den Link zu dieser Dokumentation.</div>
+      <div class="step"><strong><code>/freischalten</code> starten.</strong> Du erhältst sechs zufällige Fragen. Ein neuer Versuch ist nach fünf Minuten möglich.</div>
+      <div class="step"><strong>Mit <code>/antwort &lt;Nummer&gt;</code> antworten.</strong> Mindestens fünf richtige Antworten sind erforderlich; danach wirst du automatisch Spieler.</div>
+    </div><div class="notice info"><strong>Warum die Einschränkungen?</strong> Gäste können nicht bauen, abbauen, craften, handeln, kämpfen, Gegenstände bewegen, Container öffnen oder Portale benutzen. Dadurch bleibt der Hub auch bei neuen und unbekannten Accounts geschützt.</div></div></section>
+
+    <section><div class="wrap"><div class="eyebrow">Bestätigte Kernbefehle</div><h2>Für alle Spieler wichtig</h2><div class="command-list">
+      <div class="command"><div><code>/regeln</code></div><p>Zeigt Regelversion und Dokumentationsadresse.</p></div>
+      <div class="command"><div><code>/freischalten</code></div><p>Startet als Gast den Regeltest.</p></div>
+      <div class="command"><div><code>/antwort &lt;Nummer&gt;</code></div><p>Beantwortet die aktuelle Frage des Regeltests.</p></div>
+      <div class="command"><div><code>/money</code></div><p>Zeigt dein Goldguthaben.</p></div>
+      <div class="command"><div><code>/pay &lt;Spieler&gt; &lt;Betrag&gt;</code></div><p>Überweist Gold an einen anderen Spieler.</p></div>
+      <div class="command"><div><code>/shop</code></div><p>Öffnet einen verfügbaren Shop. Händler im Hub werden normalerweise direkt angesprochen.</p></div>
+    </div></div></section>
+
+    <section><div class="wrap"><div class="eyebrow">Survival-Claims</div><h2>Land in Default schützen</h2><p class="section-intro">Die Claim-Funktionen sind für Spieler ausschließlich in <code>default</code> freigegeben. <code>/claim help</code> zeigt die auf dem Server verfügbare Unterbefehlsliste.</p><div class="command-list">
+      <div class="command"><div><code>/claim map</code></div><p>Öffnet die Chunk-Karte zum Anlegen und Bearbeiten eines Claims.</p></div>
+      <div class="command"><div><code>/claim info</code></div><p>Zeigt Informationen über den Claim oder Bereich an deinem Standort.</p></div>
+      <div class="command"><div><code>/claim list</code></div><p>Listet deine eigenen Claims auf.</p></div>
+      <div class="command"><div><code>/claim members</code></div><p>Öffnet als Besitzer die Mitgliederverwaltung des aktuellen Claims.</p></div>
+      <div class="command"><div><code>/claim buychunk [Anzahl]</code></div><p>Kauft zusätzliche Claim-Kapazität für jeweils 32 Claim-Scherben, höchstens bis zum Serverlimit von 9 Chunks.</p></div>
+      <div class="command"><div><code>/claim show</code></div><p>Markiert Claims in der Umgebung für 30 Sekunden.</p></div>
+    </div><div class="notice danger"><strong>Wichtig:</strong> Ein Claim schützt dein Gebiet vor anderen Spielern. Er macht die resetbare Default-Welt nicht dauerhaft. Claim-Heimpunkte sind im Mod vorhanden, aber für die Spielergruppe noch nicht ausdrücklich freigegeben und werden deshalb erst nach dem Praxistest dokumentiert.</div></div></section>
+
+    <section><div class="wrap"><div class="eyebrow">Bauwelt</div><h2>Grundstücksbefehle</h2><p class="section-intro">Diese Befehle sind bereits implementiert, werden aber erst sinnvoll nutzbar, sobald die Bauwelt erzeugt und freigegeben ist.</p><div class="command-list">
+      <div class="command"><div><code>/grundstueck</code></div><p>Zeigt Anzahl, Limit und Preis deiner nächsten 64×64-Parzelle. Alias: <code>/bauplatz</code>.</p></div>
+      <div class="command"><div><code>/grundstueck kaufen</code></div><p>Kauft und beansprucht das freie Grundstück unter deinen Füßen. Der Preis wird in einem abgesicherten Vorgang abgebucht.</p></div>
+      <div class="command"><div><code>/plot help</code></div><p>Zeigt nach Freigabe die Verwaltungsfunktionen des Plot-Mods, etwa Vertrauen, Heimreise und Zusammenlegen.</p></div>
+    </div><div class="notice"><strong>Status:</strong> Die Bauwelt ist am 24.08.2026 noch nicht erzeugt. Die früher dokumentierten Befehle <code>/warp bauwelt</code>, <code>/plot auto</code> und <code>/tp world</code> waren nicht verifiziert und wurden entfernt.</div></div></section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-grid"><div><strong>Der Waldbrand</strong><p>Spielerhandbuch · Regelversion 2026-08-23.2</p></div><div><p><a href="worlds.html">Weiter zu Welten & Claims</a></p><p><a href="https://github.com/nonsindeads/hytale-public-server/issues/new/choose">Fehler melden</a></p></div></div></footer>
+</body></html>

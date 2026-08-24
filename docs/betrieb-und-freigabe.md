@@ -1,35 +1,47 @@
 # Betrieb und Freigabe
 
-## Noch nicht aktivieren
+Stand: 24.08.2026
 
-Floating Islands mit Structures ist freigegeben. Der Zielserver auf Port 5520 bleibt bis zum abgeschlossenen Rechte-, Onboarding-, Claim-, Plot- und Economy-Abnahmetest offline. Der getrennte Ordner `/home/hytale/public-overlay` ist nur eine Bereitstellung und kein laufender Server.
+## Aktueller Betrieb
 
-## Reihenfolge nach der Inhaltsfreigabe
+- Community-Server 5520: Dienst aktiv und öffentlich gebunden; praktische Abnahme läuft.
+- Vorlagenserver 5521: Dienst aktiv; wird als Vorlage weitergeführt und nicht mit den strikten öffentlichen Regeln überschrieben.
+- Die früher beschriebene Overlay-/Wiederherstellungsphase ist beendet. `/home/hytale/hytale-server-2` ist die laufende 5520-Instanz.
 
-1. Testserver sauber stoppen und einen abschliessenden Snapshot erzeugen.
-2. Snapshot als neue Instanz `/home/hytale/hytale-server-2` wiederherstellen.
-3. Zielinstanz zunaechst nur auf `127.0.0.1` bzw. einem nicht oeffentlichen Abnahmeport starten.
-4. LuckPerms, GlymeraPermissions, QuestLines Claims und GlymeraPlotWorld aus dem geprueften Overlay installieren.
-5. `config/permissions/glymera-permissions.json` als `mods/de.glymera_GlymeraPermissions/config.json` ablegen.
-6. `config/claims/questlinesclaims.conf` als oeffentliches Claim-Profil anwenden.
-7. `config/economy/GlymeraMerchant.public.json` als Haendlerkonfiguration einspielen; gewoehnliche Gegenstaende duerfen keinen Verkaufspreis haben.
-8. LuckPerms-Gruppen mit `config/permissions/luckperms-bootstrap.txt` anlegen.
-9. Bauwelt mit unveraenderlichen 64x64-Plots erzeugen, Hub-Portal bauen und Spawn-Safezone mit dem spaeter festgelegten Umfang erstellen.
-10. Economy-, Rechte-, Duplikations- und Rollback-Tests abschliessen.
-11. Erst danach 5520 wieder oeffentlich binden und den Gastzugang freigeben.
+## Instanzgrenzen
 
-## Pflichtpruefungen
+| Bereich | 5520 Community | 5521 Vorlage |
+|---|---|---|
+| Gast-Onboarding, LuckPerms, Claims, PlotWorld | aktiv | nicht Bestandteil der Vorlage |
+| Händlerankauf | 8 kontrollierte Quellen | 124 verkäufliche Handelszeilen |
+| Worker/Farmer-Crafting | aus | an |
+| Chunkloader pro Nicht-OP-Spieler | 1 | unbegrenzt (`-1`) |
+| Bauwelt | konfiguriert, noch nicht erzeugt | nicht vorgesehen |
+| Structures-Testwelt | nicht vorhanden | entfernt; Archiv im manuellen Backup |
 
-- `gast`: nur Himmelsinsel, Regeln und Freischaltung; kein Handeln, Bauen, Crafting, Loot, Kampf, Portal oder Teleport.
-- `spieler`: Claims nur auf `default`, anfangs 3 Chunks und maximal 9; keine Moderationsbefehle.
-- `moderator`: keine Economy-, Dateisystem-, OP- oder Wildcard-Rechte.
-- Bauwelt: Bauen und Abbauen ausserhalb eigener/freigegebener Plots muss scheitern; Kaufstufen 0/1000/3000/7500 Gold und Merge pruefen.
-- Claims: Zusammenhaengende Erweiterung, Mitglieder, Fluessigkeiten, Tiere, Portale, Explosionen, Reset-Bereinigung und Spawn-Safezone testen.
-- Economy: `scripts/audit_merchants.py` und `scripts/audit_progression_economy.py` muessen bestehen; Rezeptzyklen, Worker/Farmer/Chunkloader und Beute pro Stunde werden separat gemessen.
-- Wiederherstellung: vor Freigabe einen Restore in einen leeren Testpfad durchspielen.
+## Noch offene Abnahme
 
-## Onboarding
+1. Gast- und Spielerrechte mit einem zweiten Account prüfen: Bauen, Abbauen, Interagieren, Container, Handel, Crafting, Gegenstände, Kampf, Portale und Teleports.
+2. Regeltest einschließlich Fehlversuch, Cooldown, Wiederanmeldung, Gruppenwechsel und erneuter Regelversion testen.
+3. Bauwelt erzeugen, Hub-Portal bauen und alle Grundstückspreise 0/1.000/3.000/7.500 Gold testen.
+4. Bauen und Abbauen außerhalb eigener oder freigegebener Bauwelt-Plots muss scheitern; Trust, Untrust, Home, Merge, Flüssigkeiten und Kreaturen prüfen.
+5. Claims in `default` mit Mitgliedern, Tieren, Flüssigkeiten, Explosionen, Portalen, 30-Tage-Ablauf und Reset-Bereinigung testen. Vor Claim-Heimteleports die Berechtigung `questlinesclaims.home.use` bewusst freigeben oder die Funktion deaktiviert lassen.
+6. Radius der Default-Spawn-Safezone festlegen, technisch schützen und mit Spielerrechten testen.
+7. Economy-Audits ausführen und seltene Drops sowie Questbelohnungen zusätzlich über echte Spielzeit messen.
+8. Abschlussbackup erstellen und eine Wiederherstellung in einen leeren Testpfad durchspielen.
 
-Die HTML-Seite ist Dokumentation, keine Sicherheitsgrenze. Die Freischaltung muss serverseitig erfolgen: zufaellige Fragen, Cooldown, Speicherung von UUID und Regelversion, danach Zuweisung der LuckPerms-Gruppe `spieler`. Bei einer neuen wesentlichen Regelversion kann eine erneute Bestaetigung verlangt werden.
+## Freigabekriterien
 
-Bis `NonSinnPublicCore` auf der fertigen Kopie integriert und mit zwei Testaccounts geprueft ist, bleibt der Server nicht oeffentlich erreichbar.
+- Keine Plugin-Ladefehler der öffentlichen Schutzschicht.
+- Gast kann ausschließlich den vorgesehenen Einstieg und Regeltest nutzen.
+- Spieler kann nur in `default` claimen und keine Admin-, Economy- oder Wildcard-Rechte erhalten.
+- Grundstückskauf belastet Gold und Claim atomar: entweder beides erfolgreich oder keines von beiden.
+- Gewöhnliche Materialien und Ausrüstung bleiben unverkäuflich; kein direkter oder händlerübergreifender Gewinnzyklus.
+- Backup und Restore sind mit aktuellem Stand erfolgreich geprüft.
+
+## Bekannte technische Hinweise
+
+- Der Aetherhaven-Bard-Modellfehler ist auf 5520 korrigiert. Eine fehlende optionale `bard_songs.json` wird weiterhin als Warnung protokolliert.
+- Auf der absichtlich unveränderten 5521-Vorlage besteht der alte Bard-Modellfehler noch.
+- Geladene Plugins beweisen nicht, dass abhängige Welten bereits erzeugt wurden: Das betrifft aktuell `bauwelt` und `limbo`.
+- GlymeraStatues bleibt deaktiviert; GlymeraRaces bleibt uninstalliert.

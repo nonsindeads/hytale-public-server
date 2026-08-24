@@ -3,334 +3,104 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Regeln, Welten, Mods und Hilfe fuer den Hytale-Server.">
-  <title>Hytale Abenteuerwelt</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #091018;
-      --surface: #101c28;
-      --surface-2: #152536;
-      --line: #294258;
-      --text: #edf7ff;
-      --muted: #abc0d0;
-      --gold: #f3c969;
-      --teal: #66d9c5;
-      --danger: #ff8d83;
-      --radius: 18px;
-      --shadow: 0 18px 50px rgba(0, 0, 0, .28);
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 15% -10%, rgba(102, 217, 197, .18), transparent 34rem),
-        radial-gradient(circle at 85% 10%, rgba(243, 201, 105, .14), transparent 30rem),
-        var(--bg);
-      line-height: 1.65;
-    }
-
-    a { color: var(--teal); }
-    a:hover { color: #a3f5e8; }
-    code { color: var(--gold); }
-
-    .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      border-bottom: 1px solid rgba(102, 217, 197, .16);
-      background: rgba(9, 16, 24, .86);
-      backdrop-filter: blur(16px);
-    }
-
-    nav {
-      min-height: 66px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand { color: var(--text); text-decoration: none; font-weight: 850; letter-spacing: .02em; }
-    .navlinks { display: flex; flex-wrap: wrap; gap: 16px; }
-    .navlinks a { color: var(--muted); text-decoration: none; font-size: .92rem; }
-    .navlinks a:hover { color: var(--text); }
-
-    .hero { padding: 88px 0 56px; }
-    .eyebrow { color: var(--teal); font-weight: 800; text-transform: uppercase; letter-spacing: .16em; font-size: .76rem; }
-    h1 { font-size: clamp(2.6rem, 7vw, 5.5rem); line-height: .98; letter-spacing: -.05em; margin: 16px 0 24px; max-width: 850px; }
-    .lead { max-width: 720px; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.28rem); }
-
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0 18px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      text-decoration: none;
-      font-weight: 800;
-      color: var(--text);
-      background: var(--surface);
-    }
-    .button.primary { color: #07130f; background: var(--teal); border-color: var(--teal); }
-
-    .notice {
-      margin-top: 34px;
-      padding: 18px 20px;
-      border: 1px solid rgba(243, 201, 105, .38);
-      border-radius: var(--radius);
-      background: rgba(243, 201, 105, .08);
-      color: #f9e5b2;
-    }
-
-    section { padding: 46px 0; }
-    h2 { margin: 0 0 14px; font-size: clamp(1.75rem, 4vw, 2.55rem); letter-spacing: -.025em; }
-    h3 { margin: 0 0 8px; font-size: 1.15rem; }
-    .section-intro { margin: 0 0 24px; color: var(--muted); max-width: 760px; }
-
-    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
-    .card {
-      grid-column: span 4;
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: linear-gradient(150deg, rgba(21, 37, 54, .96), rgba(16, 28, 40, .9));
-      box-shadow: var(--shadow);
-    }
-    .card.wide { grid-column: span 6; }
-    .card p, .card li { color: var(--muted); }
-    .tag { display: inline-block; margin-bottom: 12px; padding: 4px 10px; border-radius: 999px; background: rgba(102, 217, 197, .11); color: var(--teal); font-size: .78rem; font-weight: 800; }
-    .tag.danger { color: var(--danger); background: rgba(255, 141, 131, .1); }
-    ul, ol { padding-left: 1.2rem; }
-
-    .steps { counter-reset: step; display: grid; gap: 12px; }
-    .step { position: relative; padding: 18px 20px 18px 66px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
-    .step::before {
-      counter-increment: step;
-      content: counter(step);
-      position: absolute;
-      left: 18px;
-      top: 17px;
-      width: 30px;
-      height: 30px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      color: #07130f;
-      background: var(--gold);
-      font-weight: 900;
-    }
-
-    table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 14px; background: var(--surface); }
-    th, td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--line); }
-    th { color: var(--gold); font-size: .84rem; text-transform: uppercase; letter-spacing: .08em; }
-    td { color: var(--muted); }
-
-    footer { margin-top: 40px; padding: 38px 0 60px; border-top: 1px solid var(--line); color: var(--muted); }
-    .small { font-size: .88rem; color: var(--muted); }
-
-    @media (max-width: 820px) {
-      header { position: static; }
-      nav { align-items: flex-start; padding: 16px 0; flex-direction: column; }
-      .navlinks { gap: 10px 14px; }
-      .hero { padding-top: 54px; }
-      .card, .card.wide { grid-column: 1 / -1; }
-      table { display: block; overflow-x: auto; }
-    }
-  </style>
+  <meta name="description" content="Spielerhandbuch, Regeln, Welten und aktueller Ausbau des Hytale-Community-Servers Der Waldbrand.">
+  <title>Der Waldbrand · Hytale-Community-Server</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-  <header>
-    <nav class="wrap" aria-label="Hauptnavigation">
-      <a class="brand" href="#start">HYTALE ABENTEUERWELT</a>
+  <header class="site-header">
+    <nav class="site-nav wrap" aria-label="Hauptnavigation">
+      <a class="brand" href="index.html">DER WALDBRAND</a>
       <div class="navlinks">
-        <a href="#onboarding">Start</a>
-        <a href="#regeln">Regeln</a>
-        <a href="#welten">Welten</a>
-        <a href="#plots">Plots</a>
-        <a href="#befehle">Befehle</a>
-        <a href="#mods">Mods</a>
-        <a href="#hilfe">Hilfe</a>
+        <a aria-current="page" href="index.html">Übersicht</a>
+        <a href="start.html">Start & Befehle</a>
+        <a href="worlds.html">Welten & Claims</a>
+        <a href="economy.html">Wirtschaft</a>
+        <a href="mods.html">Mods</a>
+        <a href="status.html">Status & Änderungen</a>
       </div>
     </nav>
   </header>
 
-  <main id="start">
-    <div class="wrap hero">
-      <div class="eyebrow">Kooperatives Survival · Erkundung · Fortschritt</div>
-      <h1>Baue sicher. Erkunde mutig. Spiele fair.</h1>
-      <p class="lead">Diese Seite erklaert alles, was du fuer den Einstieg brauchst: Freischaltung, Regeln, Welten, Portale, Wirtschaft, Mods und Fehlermeldungen.</p>
+  <main>
+    <div class="hero wrap">
+      <div class="eyebrow">Kooperatives Survival · RPG · Erkundung</div>
+      <h1>Dein Abenteuer beginnt im Himmel.</h1>
+      <p class="lead">Die Himmelsinsel ist unser zentraler Hub. Von dort geht es in die Survivalwelt, zu Händlern, Quests und später in besonders schwere Abenteuerwelten.</p>
       <div class="actions">
-        <a class="button primary" href="#onboarding">Jetzt starten</a>
-        <a class="button" href="#regeln">Regeln lesen</a>
-        <a class="button" href="https://github.com/nonsindeads/hytale-public-server/issues/new/choose">Fehler oder Vorschlag</a>
+        <a class="button primary" href="start.html">Spielstart vorbereiten</a>
+        <a class="button" href="worlds.html">Alle Welten ansehen</a>
+        <a class="button" href="https://github.com/nonsindeads/hytale-public-server/issues/new/choose">Fehler oder Idee melden</a>
       </div>
-      <div class="notice"><strong>Status:</strong> Der Community-Server befindet sich in der Abnahme. Die hier dokumentierten Regeln gelten ab der Freigabe.</div>
+      <div class="statusbar"><strong>Aktueller Stand vom 24. August 2026:</strong> Der Community-Server läuft auf <code>65.109.56.119:5520</code> und befindet sich in der praktischen Abnahme. Noch nicht fertiggestellte Inhalte sind auf dieser Website ausdrücklich als „in Vorbereitung“ markiert.</div>
     </div>
 
-    <section id="onboarding">
+    <section>
       <div class="wrap">
-        <div class="eyebrow">Dein erster Besuch</div>
-        <h2>Vom Gast zum Spieler</h2>
-        <p class="section-intro">Neue Accounts starten geschuetzt im Hub. Als Gast kannst du dich informieren, aber noch nicht bauen, handeln oder Portale benutzen.</p>
+        <div class="eyebrow">In drei Schritten</div>
+        <h2>So kommst du ins Spiel</h2>
         <div class="steps">
-          <div class="step"><strong>Lies diese Seite vollstaendig.</strong> Besonders Regeln, Welten und Economy-Hinweise.</div>
-          <div class="step"><strong>Betritt den Server als Gast.</strong> Du startest automatisch auf der Himmelsinsel.</div>
-          <div class="step"><strong>Nutze <code>/freischalten</code>.</strong> Beantworte zufaellig ausgewaehlte Fragen zu den Regeln.</div>
-          <div class="step"><strong>Spiele als Mitglied.</strong> Nach bestandenem Test wird dein Account automatisch als Spieler freigeschaltet.</div>
+          <div class="step"><strong>Verbinde dich mit <code>65.109.56.119:5520</code>.</strong> Neue Spieler starten als Gäste auf der Himmelsinsel.</div>
+          <div class="step"><strong>Lies Regeln und Welthinweise.</strong> Als Gast kannst du noch nichts bauen, handeln, aufsammeln oder durch Portale reisen.</div>
+          <div class="step"><strong>Starte <code>/freischalten</code>.</strong> Beantworte sechs zufällige Fragen mit <code>/antwort &lt;Nummer&gt;</code>. Fünf richtige Antworten schalten dich als Spieler frei.</div>
         </div>
       </div>
     </section>
 
-    <section id="regeln">
+    <section>
       <div class="wrap">
-        <div class="eyebrow">Fair und nachvollziehbar</div>
-        <h2>Die wichtigsten Regeln</h2>
+        <div class="eyebrow">Was dich erwartet</div>
+        <h2>Eine Welt für jede Art von Abenteuer</h2>
         <div class="grid">
-          <article class="card"><span class="tag">Miteinander</span><h3>Respekt</h3><p>Keine Belaestigung, Diskriminierung, Drohungen oder absichtliche Stoerung anderer Spieler.</p></article>
-          <article class="card"><span class="tag">Eigentum</span><h3>Kein Griefing</h3><p>Fremde Bauten, Tiere, Kisten und Technik werden nicht ohne Erlaubnis veraendert.</p></article>
-          <article class="card"><span class="tag danger">Sicherheit</span><h3>Keine Exploits</h3><p>Duplikationen, Rechtefehler und unendliche Geld- oder Ressourcenzyklen werden nicht genutzt oder verbreitet.</p></article>
-          <article class="card"><span class="tag">Leistung</span><h3>Faire Automation</h3><p>Farmen, Worker und Chunkloader muessen dokumentierte Limits einhalten und duerfen den Server nicht belasten.</p></article>
-          <article class="card"><span class="tag">Progression</span><h3>Zugaenge nicht umgehen</h3><p>Welten, Dungeons und Bosse werden nur ueber ihre vorgesehenen Portale, Tore oder Schluessel betreten.</p></article>
-          <article class="card"><span class="tag">Melden</span><h3>Fehler helfen zu beheben</h3><p>Normale Bugs kommen ins GitHub-Issue. Exploits werden vertraulich und ohne oeffentliche Details gemeldet.</p></article>
+          <article class="card"><span class="tag">Hub</span><h3>Himmelsinsel</h3><p>Sicherer Treffpunkt mit Regeln, Händlern, Quests und den zentralen Reisewegen. Spielerbau ist hier nicht vorgesehen.</p></article>
+          <article class="card"><span class="tag">Survival</span><h3>Default</h3><p>Ressourcen, Erkundung, Kämpfe und kleine Claims. Diese Welt kann nach Ankündigung zurückgesetzt werden.</p></article>
+          <article class="card"><span class="tag">Endgame</span><h3>Schwebende Inseln</h3><p>Sehr schwere Expedition mit vielen Gegnern, Structures und lohnender Beute. Gute Ausrüstung wird dringend empfohlen.</p></article>
+          <article class="card"><span class="tag">RPG</span><h3>Quests & Charakter</h3><p>MMO-Fertigkeiten, Natural-20-Kampfsystem, skalierende Gegner, Kopfgelder, Begleiter und besondere Dungeons.</p></article>
+          <article class="card"><span class="tag">Bauen</span><h3>Dauerhafte Bauwelt</h3><p>Das Plot-System ist vollständig vorbereitet. Die eigentliche Welt und ihr Hub-Portal werden noch erzeugt und getestet.</p></article>
+          <article class="card"><span class="tag">Handwerk</span><h3>Mehr Möglichkeiten</h3><p>Verzaubern, Bewässerung, Bienen, Glas, Laternen, lebendige Dekoration, Fahrzeuge im Hytale-Stil und vieles mehr.</p></article>
         </div>
       </div>
     </section>
 
-    <section id="welten">
+    <section>
       <div class="wrap">
-        <div class="eyebrow">Eine Welt, mehrere Aufgaben</div>
-        <h2>Welten und Zugaenge</h2>
-        <p class="section-intro">Nicht jede Welt ist fuer Bauten oder neue Charaktere gedacht. Achte vor dem Betreten auf Ausruestung und Zugangsart.</p>
-        <table>
-          <thead><tr><th>Welt</th><th>Zweck</th><th>Zugang</th><th>Gefahr</th></tr></thead>
-          <tbody>
-            <tr><td>Himmelsinsel</td><td>Zentraler Hub, Haendler, Regeln und Portale; kein Spielerbau</td><td>Startpunkt</td><td>Sicher</td></tr>
-            <tr><td>Bauwelt</td><td>Dauerhafte Hauptbauten auf geschuetzten Grundstuecken</td><td>Hub-Portal</td><td>Sicher</td></tr>
-            <tr><td>Default</td><td>Resetbare Survivalwelt, Ressourcen, Quests und kleine Spieler-Claims</td><td>Hub-Portal</td><td>Steigend</td></tr>
-            <tr><td>Schwebende Inseln</td><td>Extrem schwere Endgame-Expedition</td><td>Hub-Portal</td><td>Extrem</td></tr>
-            <tr><td>Under</td><td>End-aehnliche Spezialwelt</td><td>Vorgesehenes Under-Tor</td><td>Sehr hoch</td></tr>
-            <tr><td>Limbo</td><td>Nether-aehnliche Spezialwelt</td><td>Vorgesehenes Limbo-Tor</td><td>Sehr hoch</td></tr>
-            <tr><td>Dungeons</td><td>Bosse, Instanzen und besondere Beute</td><td>Schluessel oder mod-eigene Portale</td><td>Variabel</td></tr>
-          </tbody>
-        </table>
+        <div class="eyebrow">Verifiziert statt versprochen</div>
+        <h2>Aktiver und geplanter Inhalt</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Bereich</th><th>Status</th><th>Hinweis</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Hub, Default, Markt, Oakhaven, Floating Islands und Under</strong></td><td><span class="state">aktiv</span></td><td>Weltdaten vorhanden; Servermodule geladen.</td></tr>
+              <tr><td><strong>Survival-Claims</strong></td><td><span class="state">konfiguriert</span></td><td>Nur in <code>default</code>, zunächst 3 und höchstens 9 Chunks.</td></tr>
+              <tr><td><strong>Bauwelt</strong></td><td><span class="state pending">in Vorbereitung</span></td><td>64×64-Plots und Preise stehen fest; Welt und Portal fehlen noch.</td></tr>
+              <tr><td><strong>Limbo</strong></td><td><span class="state module">Mod aktiv</span></td><td>Die Nether-ähnliche Welt wird über den vorgesehenen Limbo-Zugang erzeugt.</td></tr>
+              <tr><td><strong>Races und Statues</strong></td><td><span class="state disabled">deaktiviert</span></td><td>Races kollidiert mit den RPG-Systemen; Statues verursachte fehlerhafte schwarze Blöcke.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="actions"><a class="button" href="status.html">Vollständigen Status lesen</a></div>
       </div>
     </section>
 
-    <section id="plots">
+    <section>
       <div class="wrap">
-        <div class="eyebrow">Dein Zuhause</div>
-        <h2>Dauerhafte Grundstuecke und Survival-Claims</h2>
+        <div class="eyebrow">Kurz und wichtig</div>
+        <h2>Unsere Grundregeln</h2>
         <div class="grid">
-          <article class="card wide"><h3>Bauwelt bleibt dauerhaft</h3><p>Das erste 64x64-Grundstueck ist kostenlos. Weitere Grundstuecke kosten 1.000, 3.000 und 7.500 Gold. Bauen, Abbauen und Interagieren ist ausserhalb eigener oder freigegebener Grundstuecke gesperrt.</p></article>
-          <article class="card wide"><h3>Default kann zurueckgesetzt werden</h3><p>Survival-Claims schuetzen vor anderen Spielern, aber nicht vor einem angekuendigten Weltreset. Dauerhaft wichtige Hauptbauten gehoeren deshalb in die Bauwelt.</p></article>
-          <article class="card"><h3>Kleine Survival-Claims</h3><p>Spieler starten mit 3 Claim-Chunks und koennen bis auf 9 Chunks erweitern.</p></article>
-          <article class="card"><h3>Erweiterungen verdienen</h3><p>Ein weiterer Survival-Chunk kostet 32 Claim-Scherben. Diese sind beim Bauhaendler fuer je 5 Gold erhaeltlich.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="mods">
-      <div class="wrap">
-        <div class="eyebrow">Serverseitig erweitert</div>
-        <h2>Mods und Systeme</h2>
-        <p class="section-intro">Die vollstaendige, versionsgenaue Liste wird automatisch aus der Mod-Lockdatei erzeugt. Wichtige Bereiche sind:</p>
-        <div class="grid">
-          <article class="card"><h3>RPG und Beute</h3><p>MMO Skill Tree, Natural 20, skalierende Gegner, Quests, Bounties und Endgame-Dungeons.</p></article>
-          <article class="card"><h3>Welten</h3><p>Himmelsinsel-Hub, dauerhafte Bauwelt, resetbare Default-Survivalwelt, Floating Islands, Under, Limbo und instanzierte Dungeons.</p></article>
-          <article class="card"><h3>Wirtschaft</h3><p>Haendler als Goldsenken, seltene Trophaeen als kontrollierte Einnahmen sowie begrenzte Farmer und Worker. Gewoehnliche Materialien und Ausruestung koennen nicht verkauft werden. <a href="economy-audit.html">Economy-Audit ansehen</a>.</p></article>
-          <article class="card"><h3>Bauen</h3><p>Moebel, Glas, Beleuchtung, Statuen, Brunnen, Pflanzen und lebendige Dekoration.</p></article>
-          <article class="card"><h3>Landwirtschaft</h3><p>Bienen, Bewaesserung, Eimer, Komposter, Pilze, Setzlinge und Farmhilfen.</p></article>
-          <article class="card"><h3>Schutz</h3><p>LuckPerms, Command-Failsafe, Gast-Onboarding, Spieler-Claims und eine Spawn-Safezone.</p></article>
-        </div>
-      </div>
-    </section>
-
-    
-    <section id="befehle">
-      <div class="wrap">
-        <div class="eyebrow">Wichtige Ingame-Befehle</div>
-        <h2>Befehlsuebersicht fuer Spieler</h2>
-        <p class="section-intro">Hier findest du die wichtigsten Befehle fuer Navigation, Wirtschaft, GS-Verwaltung und Skills auf dem Server.</p>
-        
-        <h3>🏠 Teleportation & Navigation</h3>
-        <table>
-          <thead><tr><th>Befehl</th><th>Beschreibung</th></tr></thead>
-          <tbody>
-            <tr><td><code>/spawn</code></td><td>Teleportiert dich zum Haupt-Spawn im Hub.</td></tr>
-            <tr><td><code>/warp markt</code></td><td>Teleportiert dich zum Haendler-Marktplatz auf der Himmelsinsel.</td></tr>
-            <tr><td><code>/warp bauwelt</code></td><td>Teleportiert dich in die Bauwelt.</td></tr>
-            <tr><td><code>/sethome &lt;name&gt;</code></td><td>Setzt einen persoenlichen Home-Punkt.</td></tr>
-            <tr><td><code>/home &lt;name&gt;</code></td><td>Teleportiert dich zu deinem Home-Punkt.</td></tr>
-            <tr><td><code>/tp world &lt;weltname&gt;</code></td><td>Wechselt in eine freigegebene Welt (z. B. <code>default</code>).</td></tr>
-          </tbody>
-        </table>
-
-        <br>
-        <h3>💰 Wirtschaft & Handel</h3>
-        <table>
-          <thead><tr><th>Befehl</th><th>Beschreibung</th></tr></thead>
-          <tbody>
-            <tr><td><code>/money</code> / <code>/balance</code></td><td>Zeigt dein aktuelles Goldguthaben an.</td></tr>
-            <tr><td><code>/pay &lt;spieler&gt; &lt;betrag&gt;</code></td><td>Ueberweist Gold an einen Mitspieler.</td></tr>
-            <tr><td><code>/shop &lt;typ&gt;</code></td><td>Oeffnet den Haendler-Shop (z. B. <code>/shop smith</code>) am Marktstand.</td></tr>
-          </tbody>
-        </table>
-
-        <br>
-        <h3>🏗️ Bauwelt & Grundstuecke</h3>
-        <table>
-          <thead><tr><th>Befehl</th><th>Beschreibung</th></tr></thead>
-          <tbody>
-            <tr><td><code>/plot</code></td><td>Oeffnet das Plot-Hauptmenue.</td></tr>
-            <tr><td><code>/plot auto</code></td><td>Weist dir automatisch ein freies Grundstueck zu.</td></tr>
-            <tr><td><code>/plot claim</code></td><td>Beansprucht das aktuelle Grundstueck.</td></tr>
-            <tr><td><code>/plot add &lt;spieler&gt;</code></td><td>Gibt einem Mitspieler Baurechte.</td></tr>
-            <tr><td><code>/plot remove &lt;spieler&gt;</code></td><td>Entzieht einem Spieler Baurechte.</td></tr>
-            <tr><td><code>/plot home</code></td><td>Teleportiert dich zu deinem Grundstueck.</td></tr>
-          </tbody>
-        </table>
-
-        <br>
-        <h3>⚔️ Charakter & Skills</h3>
-        <table>
-          <thead><tr><th>Befehl</th><th>Beschreibung</th></tr></thead>
-          <tbody>
-            <tr><td><code>/skills</code></td><td>Oeffnet das Berufskonzept-Menue (Bergbau, Schmieden, Verzaubern).</td></tr>
-            <tr><td><code>/quest</code></td><td>Zeigt deine aktiven Quests und Fortschritte.</td></tr>
-            <tr><td><code>/party</code></td><td>Oeffnet das Gruppen-System fuer gemeinsamen Loot.</td></tr>
-            <tr><td><code>/trash</code></td><td>Oeffnet ein Muellfenster zum schnellen Entsorgen.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section id="hilfe">
-      <div class="wrap">
-        <div class="eyebrow">Gemeinsam verbessern</div>
-        <h2>Fehler und Vorschlaege</h2>
-        <p class="section-intro">Ein guter Bericht nennt Welt, Zeitpunkt, ungefaehre Position, Schritte, erwartetes und tatsaechliches Verhalten. Bitte niemals Passwoerter oder Tokens mitsenden.</p>
-        <div class="actions">
-          <a class="button primary" href="https://github.com/nonsindeads/hytale-public-server/issues/new/choose">GitHub Issues oeffnen</a>
-          <a class="button" href="https://github.com/nonsindeads/hytale-public-server/security/advisories/new">Exploit vertraulich melden</a>
+          <article class="card"><h3>Respekt</h3><p>Keine Belästigung, Diskriminierung, Drohungen oder absichtliche Störung anderer Spieler.</p></article>
+          <article class="card"><h3>Kein Griefing</h3><p>Fremde Bauten, Tiere, Kisten und Technik werden nicht ohne Erlaubnis verändert.</p></article>
+          <article class="card"><h3>Keine Exploits</h3><p>Duplikations-, Rechte- und Geldfehler werden nicht genutzt oder öffentlich verbreitet, sondern vertraulich gemeldet.</p></article>
+          <article class="card"><h3>Faire Automation</h3><p>Farmer, Worker und Chunkloader müssen die dokumentierten Grenzen einhalten und dürfen den Server nicht belasten.</p></article>
+          <article class="card"><h3>Zugänge einhalten</h3><p>Besondere Welten und Dungeons werden nur über ihre vorgesehenen Portale, Tore oder Schlüssel betreten.</p></article>
+          <article class="card"><h3>Reset-Hinweis</h3><p>Ein Survival-Claim schützt vor Spielern, aber nicht vor einem angekündigten Reset der Default-Welt.</p></article>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="wrap">
-      <strong>Hytale Abenteuerwelt</strong>
-      <p class="small">Regelversion 2026-08-23.2 · Dokumentation in Vorbereitung · Hytale und genannte Mods gehoeren ihren jeweiligen Rechteinhabern.</p>
-    </div>
+  <footer class="site-footer">
+    <div class="wrap footer-grid"><div><strong>Der Waldbrand</strong><p>Privat betriebener Hytale-Community-Server.</p></div><div><p>Dokumentationsstand: 24.08.2026</p><p><a href="https://github.com/nonsindeads/hytale-public-server">Technisches GitHub-Repository</a> · <a href="https://github.com/nonsindeads/hytale-public-server/security/advisories/new">Exploit vertraulich melden</a></p></div></div>
   </footer>
 </body>
 </html>

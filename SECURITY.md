@@ -1,13 +1,15 @@
 # Sicherheitsmeldungen
 
-Normale Fehler koennen ueber GitHub Issues gemeldet werden.
+Normale reproduzierbare Fehler können über die [Issue-Auswahl](https://github.com/nonsindeads/hytale-public-server/issues/new/choose) gemeldet werden.
 
-Bitte keine reproduzierbaren Details zu folgenden Themen in ein oeffentliches Issue schreiben:
+Die folgenden Themen dürfen nicht öffentlich beschrieben werden:
 
 - Duplikationsfehler
 - unbegrenzte Geld- oder Ressourcenquellen
-- Rechteumgehungen
+- Rechte- oder Claim-Umgehungen
 - Admin- oder OP-Eskalation
-- Serverzugang, Tokens oder personenbezogene Daten
+- Serverzugänge, Tokens oder personenbezogene Daten
 
-Bis die private GitHub-Meldeadresse eingerichtet ist, soll lediglich ein Issue ohne technische Details mit dem Titel `Private Sicherheitsmeldung erbeten` erstellt werden. Das Team stellt danach einen privaten Kommunikationsweg bereit.
+Bitte dafür direkt eine [private GitHub Security Advisory](https://github.com/nonsindeads/hytale-public-server/security/advisories/new) erstellen. Private Sicherheitsmeldungen sind für dieses Repository aktiviert.
+
+Der Bericht sollte betroffene Welt beziehungsweise System, Zeitpunkt, notwendige Voraussetzungen, reproduzierbare Schritte und die mögliche Auswirkung enthalten. Geheimnisse und personenbezogene Daten nur dann mitsenden, wenn sie für die Behebung zwingend erforderlich sind.
