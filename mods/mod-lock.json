@@ -33,9 +33,9 @@
     },
     {
       "name": "NonSinnPublicCore",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "source": "local",
-      "sha256": "b9326cb495761319fb7445e9a36c559a3ee0134d18d26c5303d3d73638152d85",
+      "sha256": "632b0ed0b8d4cafce040d39571331c7ac3ddb5d4b60aa934922d533f48addc9e",
       "status": "deployed-and-load-tested"
     }
   ],

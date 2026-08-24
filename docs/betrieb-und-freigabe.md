@@ -24,7 +24,7 @@ Stand: 24.08.2026
 - Gast kann ausschließlich den vorgesehenen Einstieg und Regeltest nutzen.
 - Spieler kann nur in `default` claimen und keine Admin-, Economy- oder Wildcard-Rechte erhalten.
 - Grundstückskauf belastet Gold und Claim atomar: entweder beides erfolgreich oder keines von beiden.
-- Gewöhnliche Materialien und Ausrüstung bleiben unverkäuflich; kein direkter oder händlerübergreifender Gewinnzyklus.
+- Nur die ausdrücklich freigegebenen 92 Gegenstände besitzen einen dauerhaften Ankaufspreis; Massenmaterial läuft ausschließlich über begrenzte Beschaffungsaufträge. Es gibt keinen direkten oder händlerübergreifenden Gewinnzyklus.
 - Backup und Restore sind mit aktuellem Stand erfolgreich geprüft.
 
 ## Bekannte technische Hinweise

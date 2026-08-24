@@ -62,23 +62,23 @@ def main() -> int:
                 f"sell={best['sell']} bei {best['merchant']}"
             )
 
-    allowed_sell_items = {
-        "Aetherhaven_Gold_Coin",
-        "Food_Fish_Raw_Uncommon",
-        "Food_Fish_Raw_Rare",
-        "Food_Fish_Raw_Epic",
-        "Food_Fish_Raw_Legendary",
-        "Ingredient_Forest_Essence",
-        "Hedera_Gem",
-        "Dragon_Heart",
-    }
+    allowed_sell_items = set(config.get("_publicBalance", {}).get("allowedSellItems", []))
+    if not allowed_sell_items:
+        failures.append("Die explizite Verkaufsliste fehlt")
     disallowed_sales = [
         row for row in rows if row["sell"] > 0 and row["item"] not in allowed_sell_items
     ]
     for row in disallowed_sales:
         failures.append(
-            f"{row['merchant']}/{row['item']}: Ankauf ist nicht auf der seltenen Freigabeliste"
+            f"{row['merchant']}/{row['item']}: Ankauf ist nicht auf der expliziten Freigabeliste"
         )
+
+    missing_sales = sorted(
+        allowed_sell_items
+        - {row["item"] for row in rows if row["sell"] > 0}
+    )
+    for item_id in missing_sales:
+        failures.append(f"{item_id}: freigegeben, aber ohne positiven Ankaufspreis")
 
     print(
         f"AUDIT: {len(config.get('merchants', {}))} Haendler, "

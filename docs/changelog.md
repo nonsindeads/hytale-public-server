@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.5.0 – 24.08.2026
+
+### Vernetzte Wirtschaft
+
+- Dauerhaften Händlerankauf von 8 auf 92 ausgewählte Gegenstände erweitert.
+- Nahrung, Tränke sowie Holz-, Stein- und Kupferausrüstung erhalten niedrige, geprüfte Ankaufspreise.
+- Beschädigte Ausrüstung wird nach verbleibender Haltbarkeit abgewertet.
+- Alle vorhandenen MMO-Aufträge zusätzlich mit serverweitem Gold verbunden; Bounty-Token und Skill-XP bleiben erhalten.
+- 13 persönliche Beschaffungsaufträge für Dirt, Cobble, Kies, Sand, Lehm und weitere Baustoffe ergänzt.
+- Schnellaufträge auf stündlichen Wechsel gesetzt; tägliche und wöchentliche Aufträge bleiben getrennt.
+- Unbegrenzten Rückverkauf von Massenmaterial weiterhin verhindert.
+
 ## 0.4.0 – 24.08.2026
 
 ### Dokumentation
@@ -18,7 +30,7 @@
 - Veraltete, aus den früheren Welten übernommene Warp-Ziele vollständig entfernt.
 - Gast-/Quizsystem, LuckPerms, GlymeraPermissions und NonSinnPublicCore geladen.
 - QuestLines Claims und GlymeraPlotWorld installiert; Survival-Claims auf `default` begrenzt.
-- Öffentliche Economy auf 8 kontrollierte Ankaufquellen begrenzt; gewöhnliche Materialien und Ausrüstung unverkäuflich.
+- Erste öffentliche Economy-Fassung mit 8 kontrollierten Ankaufquellen eingeführt; später durch das vernetzte Profil 0.5.0 ersetzt.
 - Worker und Farmer ohne automatisches Crafting und mit je einer aktiven Truhe; ein Chunkloader pro Spieler.
 - Bauwelt-Konfiguration und gestaffelte Grundstückspreise vorbereitet; Welt und Portal noch offen.
 - Dauerhafte Gästeanzeige im oberen Bildschirmbereich ergänzt; sie verweist auf `/regeln` und `/freischalten` und verschwindet nach bestandener Freischaltung.

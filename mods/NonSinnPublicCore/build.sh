@@ -20,8 +20,8 @@ cp "$ROOT_DIR/../../config/plots/property-pricing.json" "$BUILD_DIR/resources/de
 cp "$ROOT_DIR/src/main/resources/Common/UI/Custom/Pages/WaldbrandHandbook.ui" \
   "$BUILD_DIR/resources/Common/UI/Custom/Pages/WaldbrandHandbook.ui"
 
-jar --create --file "$BUILD_DIR/NonSinnPublicCore-0.5.0.jar" \
+jar --create --file "$BUILD_DIR/NonSinnPublicCore-0.6.0.jar" \
   -C "$BUILD_DIR/classes" . \
   -C "$BUILD_DIR/resources" .
 
-echo "$BUILD_DIR/NonSinnPublicCore-0.5.0.jar"
+echo "$BUILD_DIR/NonSinnPublicCore-0.6.0.jar"

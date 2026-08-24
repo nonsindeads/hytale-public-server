@@ -18,6 +18,8 @@ Diese Liste ersetzt die frühere Gemini-Ingame-Liste. Deren Warp-, Teleport- und
 - [x] Leere Markt-Testwelt archiviert und sechs kopierte Händlerpositionen für den sauberen Neuaufbau entfernt.
 - [x] QuestLines Claims installiert und für Spieler auf `default` begrenzt.
 - [x] Öffentliche Händlerwirtschaft statisch auf Arbitrage und ungewollte Ankäufe geprüft.
+- [x] Alle 89 MMO-Aufträge mit serverweitem Gold verbunden und 13 verbrauchende Beschaffungsaufträge für stündliche, tägliche und wöchentliche Rotation ergänzt.
+- [x] Dauerhaften Händlerankauf auf 92 ausgewählte Gegenstände erweitert; beschädigte Holz-, Stein- und Kupferausrüstung wird nach Resthaltbarkeit bewertet.
 - [x] Worker, Farmer und Chunkloader für den Community-Betrieb begrenzt.
 - [x] Spielerhandbuch, Issue-Formulare und private Sicherheitsmeldungen veröffentlicht.
 - [x] Serverlisten-Paket mit Positionierung, deutschen und englischen Eintragstexten, Eintragszielen und Protokoll vorbereitet.
@@ -40,6 +42,8 @@ Diese Liste ersetzt die frühere Gemini-Ingame-Liste. Deren Warp-, Teleport- und
 - [ ] Survival-Claims mit Mitgliedern, Tieren, Flüssigkeiten, Explosionen, Portalen, Ablauf und Reset-Bereinigung testen.
 - [ ] Entscheiden, ob Spieler `questlinesclaims.home.use` und damit Claim-Heimpunkte erhalten.
 - [ ] Alle Händler im Hub praktisch öffnen sowie Kauf und erlaubte Verkäufe testen.
+- [ ] Je einen stündlichen, täglichen und wöchentlichen Auftrag sowie einen vollständigen Beschaffungsauftrag annehmen, abschließen und Gold-/Token-/XP-Auszahlung prüfen.
+- [ ] Je ein unbeschädigtes, teilweise beschädigtes und fast zerstörtes Werkzeug verkaufen und die haltbarkeitsabhängige Abrundung kontrollieren.
 - [ ] Seltene Drops, Questbelohnungen und Goldzuwachs über echte Spielsitzungen messen.
 - [ ] Limbo über den vorgesehenen Mod-Zugang erzeugen und Hin-/Rückweg testen.
 - [ ] Abschlussbackup erstellen und Wiederherstellung in einen leeren Testpfad prüfen.

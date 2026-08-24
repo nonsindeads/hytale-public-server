@@ -6,9 +6,11 @@ import com.hypixel.hytale.codec.Codec;
 import com.hypixel.hytale.codec.KeyedCodec;
 import com.hypixel.hytale.codec.builder.BuilderCodec;
 import com.hypixel.hytale.server.core.Message;
+import com.hypixel.hytale.server.core.NameMatching;
 import com.hypixel.hytale.server.core.command.system.CommandContext;
 import com.hypixel.hytale.server.core.command.system.arguments.system.RequiredArg;
 import com.hypixel.hytale.server.core.command.system.arguments.types.ArgTypes;
+import com.hypixel.hytale.server.core.command.system.basecommands.AbstractAsyncCommand;
 import com.hypixel.hytale.server.core.command.system.basecommands.AbstractPlayerCommand;
 import com.hypixel.hytale.server.core.event.events.ecs.BreakBlockEvent;
 import com.hypixel.hytale.server.core.event.events.ecs.CraftRecipeEvent;
@@ -66,6 +68,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -108,6 +111,7 @@ public final class NonSinnPublicCore extends JavaPlugin {
         getCommandRegistry().registerCommand(new RulesCommand(this));
         getCommandRegistry().registerCommand(new HandbookCommand());
         getCommandRegistry().registerCommand(new PropertyCommand(this));
+        getCommandRegistry().registerCommand(new EconomyRewardCommand(this));
 
         getEventRegistry().registerGlobal(PlayerConnectEvent.class, this::onPlayerConnect);
         getEventRegistry().registerGlobal(AddPlayerToWorldEvent.class, this::onPlayerAddedToWorld);
@@ -128,6 +132,97 @@ public final class NonSinnPublicCore extends JavaPlugin {
                 questions.questions.size(),
                 approvals.size()
         );
+    }
+
+    /**
+     * Console-only bridge used by trusted quest rewards. Players can neither
+     * invoke this command themselves nor choose arbitrary amounts through the
+     * bounty UI; the authored quest asset supplies every argument.
+     */
+    private static final class EconomyRewardCommand extends AbstractAsyncCommand {
+        private final NonSinnPublicCore plugin;
+        private final RequiredArg<String> playerArg;
+        private final RequiredArg<String> amountArg;
+        private final RequiredArg<String> sourceArg;
+
+        private EconomyRewardCommand(NonSinnPublicCore plugin) {
+            super("nspceconomyreward", "Interne Goldbelohnung fuer Serverauftraege");
+            this.plugin = plugin;
+            this.playerArg = withRequiredArg("player", "Zielspieler", ArgTypes.STRING);
+            this.amountArg = withRequiredArg("amount", "Goldbetrag", ArgTypes.STRING);
+            this.sourceArg = withRequiredArg("source", "Belohnungsquelle", ArgTypes.STRING);
+        }
+
+        @Override
+        public boolean canGeneratePermission() {
+            return false;
+        }
+
+        @Override
+        protected CompletableFuture<Void> executeAsync(CommandContext context) {
+            if (context.isPlayer()) {
+                context.sendMessage(Message.raw("Dieser interne Befehl ist nur fuer Serverbelohnungen verfuegbar."));
+                plugin.getLogger().atWarning().log("Spieleraufruf von nspceconomyreward wurde abgewiesen");
+                return CompletableFuture.completedFuture(null);
+            }
+
+            String playerName = playerArg.get(context);
+            String source = sourceArg.get(context);
+            if (source == null || !source.matches("[a-z0-9_:-]{1,96}")) {
+                plugin.getLogger().atWarning().log("Ungueltige Goldquelle abgewiesen: %s", source);
+                return CompletableFuture.completedFuture(null);
+            }
+
+            int amount;
+            try {
+                amount = Integer.parseInt(amountArg.get(context));
+            } catch (NumberFormatException exception) {
+                plugin.getLogger().atWarning().log("Ungueltiger Goldbetrag fuer %s", playerName);
+                return CompletableFuture.completedFuture(null);
+            }
+            if (amount < 1 || amount > 1_000) {
+                plugin.getLogger().atWarning().log(
+                        "Goldbetrag ausserhalb der sicheren Grenzen: %d fuer %s", amount, playerName
+                );
+                return CompletableFuture.completedFuture(null);
+            }
+
+            PlayerRef target = Universe.get().getPlayerByUsername(playerName, NameMatching.EXACT_IGNORE_CASE);
+            if (target == null) {
+                plugin.getLogger().atWarning().log(
+                        "Goldbelohnung konnte nicht zugestellt werden: %s ist offline (%s)", playerName, source
+                );
+                return CompletableFuture.completedFuture(null);
+            }
+
+            Economy economy = VaultUnlocked.economyObj();
+            if (economy == null) {
+                plugin.getLogger().atSevere().log("Goldbelohnung fehlgeschlagen: Vault-Economy nicht verfuegbar");
+                return CompletableFuture.completedFuture(null);
+            }
+
+            UUID uuid = target.getUuid();
+            if (!economy.hasAccount(uuid)) {
+                economy.createAccount(uuid, target.getUsername(), true);
+            }
+            EconomyResponse response = economy.deposit(
+                    ECONOMY_CONTEXT + ":bounty",
+                    uuid,
+                    BigDecimal.valueOf(amount)
+            );
+            if (response == null || !response.transactionSuccess()) {
+                plugin.getLogger().atSevere().log(
+                        "Goldbelohnung abgelehnt: %d Gold fuer %s (%s)", amount, target.getUsername(), source
+                );
+                return CompletableFuture.completedFuture(null);
+            }
+
+            target.sendMessage(Message.raw("Auftragsbelohnung: +" + amount + " Gold"));
+            plugin.getLogger().atInfo().log(
+                    "Goldbelohnung: %d Gold fuer %s aus %s", amount, target.getUsername(), source
+            );
+            return CompletableFuture.completedFuture(null);
+        }
     }
 
     @Override
@@ -915,10 +1010,10 @@ public final class NonSinnPublicCore extends JavaPlugin {
                         "Gemeinsam bauen", "Mit /plot help findest du Vertrauen, Verwaltung und weitere Plot-Funktionen. Fremde Bereiche bleiben geschützt."
                 );
                 case "economy" -> new HandbookContent(
-                        "Wirtschaft", "Gold entsteht kontrolliert und soll Fortschritt belohnen, nicht gewöhnlichen Massenloot.",
-                        "Gold", "/money zeigt dein Guthaben. Mit /pay <Spieler> <Betrag> kannst du Gold an andere Spieler übertragen.",
+                        "Wirtschaft", "Gold entsteht durch viele Spielweisen. Begrenzte Aufträge schützen den Wert deiner Belohnungen.",
+                        "Gold & Aufträge", "/money zeigt dein Guthaben. Das Kopfgeldbrett bietet stündliche, tägliche und wöchentliche Aufgaben mit Gold, Token und Skill-XP.",
                         "Händler", "Der globale /shop-Befehl ist deaktiviert. Besuche nach der Freischaltung die passenden NPC-Stände in Glutwacht.",
-                        "Verkaufen", "Gewöhnliche Materialien, Nahrung, Waffen, Werkzeuge und Ausrüstung haben keinen Ankaufspreis. Nur ausgewählte seltene Beute wird angekauft.",
+                        "Verkaufen", "Händler kaufen Nahrung, Tränke sowie einfache Holz-, Stein- und Kupferausrüstung an. Beschädigte Ausrüstung bringt entsprechend weniger.",
                         "Landpreise", "Bauwelt-Grundstücke kosten nacheinander 0, 1.000, 3.000 und 7.500 Gold. Survival-Erweiterungen benötigen Claim-Scherben."
                 );
                 case "help" -> new HandbookContent(

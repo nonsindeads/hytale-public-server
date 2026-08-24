@@ -1,7 +1,7 @@
 {
   "_guide": {
-    "balanceProfile": "NonSinn Public RPG v1 - controlled reward economy",
-    "pricingRule": "Ordinary materials, food, weapons, tools and equipment have no Gold sell value. Only explicitly allowlisted rare trophies and rare fish may be sold.",
+    "balanceProfile": "NonSinn Public RPG v2 - connected reward economy",
+    "pricingRule": "Low-tier food, crafted consumables and wood/stone/copper equipment have small permanent Gold values. Damaged equipment scales by remaining durability. Mass blocks are accepted only through rotating hourly, daily and weekly procurement contracts.",
     "placement": "Place one NPC of every merchant type at fixed stalls in Glutwacht (technical world key: himmelsinsel). Remove copied or stale placements first."
   },
   "startBalance": 25,
@@ -21,73 +21,73 @@
           "itemId": "Food_Bread",
           "displayName": "Brot",
           "buyPrice": 12,
-          "sellPrice": 0
+          "sellPrice": 3
         },
         {
           "itemId": "Food_Cheese",
           "displayName": "Kaese",
           "buyPrice": 16,
-          "sellPrice": 0
+          "sellPrice": 4
         },
         {
           "itemId": "Food_Fish_Grilled",
           "displayName": "Gegrillter Fisch",
           "buyPrice": 18,
-          "sellPrice": 0
+          "sellPrice": 4
         },
         {
           "itemId": "Food_Vegetable_Cooked",
           "displayName": "Gekochtes Gemuese",
           "buyPrice": 20,
-          "sellPrice": 0
+          "sellPrice": 5
         },
         {
           "itemId": "Food_Kebab_Meat",
           "displayName": "Fleischspiess",
           "buyPrice": 28,
-          "sellPrice": 0
+          "sellPrice": 7
         },
         {
           "itemId": "Food_Pie_Meat",
           "displayName": "Fleischpastete",
           "buyPrice": 32,
-          "sellPrice": 0
+          "sellPrice": 8
         },
         {
           "itemId": "Food_Beef_Raw",
           "displayName": "Rohes Rindfleisch",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 3
         },
         {
           "itemId": "Food_Chicken_Raw",
           "displayName": "Rohes Huhn",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 2
         },
         {
           "itemId": "Food_Pork_Raw",
           "displayName": "Rohes Schweinefleisch",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 2
         },
         {
           "itemId": "Food_Wildmeat_Raw",
           "displayName": "Rohes Wildfleisch",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 3
         },
         {
           "itemId": "Food_Fish_Raw",
           "displayName": "Roher Fisch",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 2
         },
         {
           "itemId": "Food_Egg",
           "displayName": "Ei",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         }
       ]
     },
@@ -99,7 +99,7 @@
           "itemId": "Tool_Pickaxe_Copper",
           "displayName": "Kupferspitzhacke",
           "buyPrice": 80,
-          "sellPrice": 0
+          "sellPrice": 8
         },
         {
           "itemId": "Tool_Pickaxe_Iron",
@@ -111,7 +111,7 @@
           "itemId": "Tool_Hatchet_Copper",
           "displayName": "Kupferaxt",
           "buyPrice": 70,
-          "sellPrice": 0
+          "sellPrice": 7
         },
         {
           "itemId": "Tool_Hatchet_Iron",
@@ -123,7 +123,7 @@
           "itemId": "Tool_Shovel_Copper",
           "displayName": "Kupferschaufel",
           "buyPrice": 60,
-          "sellPrice": 0
+          "sellPrice": 6
         },
         {
           "itemId": "Tool_Shovel_Iron",
@@ -201,283 +201,283 @@
           "itemId": "Tool_Pickaxe_Crude",
           "displayName": "Einfache Spitzhacke",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Tool_Pickaxe_Wood",
           "displayName": "Holzspitzhacke",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Tool_Hatchet_Crude",
           "displayName": "Einfaches Beil",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Tool_Hatchet_Wood",
           "displayName": "Holzbeil",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Tool_Shovel_Crude",
           "displayName": "Einfache Schaufel",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Tool_Hoe_Crude",
           "displayName": "Einfache Hacke",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Tool_Sickle_Crude",
           "displayName": "Einfache Sichel",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Tool_Hammer_Crude",
           "displayName": "Einfacher Holzhammer",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Weapon_Sword_Crude",
           "displayName": "Einfaches Schwert",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Weapon_Sword_Wood",
           "displayName": "Holzschwert",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Weapon_Sword_Stone_Trork",
           "displayName": "Trork-Steinschwert",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 3
         },
         {
           "itemId": "Weapon_Axe_Crude",
           "displayName": "Einfache Axt",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Weapon_Axe_Stone_Trork",
           "displayName": "Trork-Steinaxt",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 3
         },
         {
           "itemId": "Weapon_Battleaxe_Crude",
           "displayName": "Einfache Streitaxt",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Weapon_Battleaxe_Stone_Trork",
           "displayName": "Trork-Streitaxt",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 3
         },
         {
           "itemId": "Weapon_Club_Crude",
           "displayName": "Einfache Keule",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Weapon_Club_Stone_Trork",
           "displayName": "Trork-Steinkeule",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 2
         },
         {
           "itemId": "Weapon_Daggers_Crude",
           "displayName": "Einfache Dolche",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Weapon_Daggers_Stone_Trork",
           "displayName": "Trork-Steindolche",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 2
         },
         {
           "itemId": "Weapon_Longsword_Crude",
           "displayName": "Einfaches Langschwert",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Weapon_Longsword_Stone_Trork",
           "displayName": "Trork-Langschwert",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 3
         },
         {
           "itemId": "Weapon_Mace_Crude",
           "displayName": "Einfacher Streitkolben",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Weapon_Mace_Stone_Trork",
           "displayName": "Trork-Streitkolben",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 3
         },
         {
           "itemId": "Weapon_Spear_Crude",
           "displayName": "Einfacher Speer",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Weapon_Spear_Stone_Trork",
           "displayName": "Trork-Steinspeer",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 3
         },
         {
           "itemId": "Weapon_Shortbow_Crude",
           "displayName": "Einfacher Kurzbogen",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Weapon_Shield_Wood",
           "displayName": "Holzschild",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Weapon_Staff_Wood",
           "displayName": "Holzstab",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Weapon_Staff_Bo_Wood",
           "displayName": "Bo-Holzstab",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Weapon_Staff_Wood_Kweebec",
           "displayName": "Kweebec-Holzstab",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 2
         },
         {
           "itemId": "Weapon_Staff_Wood_Rotten",
           "displayName": "Morscher Holzstab",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Weapon_Wand_Wood",
           "displayName": "Holzzauberstab",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Weapon_Wand_Wood_Rotten",
           "displayName": "Morscher Holzzauberstab",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Weapon_Battleaxe_Wood_Fence",
           "displayName": "Improvisierte Holzstreitaxt",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 1
         },
         {
           "itemId": "Tool_Hoe_Copper",
           "displayName": "Kupferhacke",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 5
         },
         {
           "itemId": "Tool_Sickle_Copper",
           "displayName": "Kupfersichel",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 5
         },
         {
           "itemId": "Weapon_Sword_Copper",
           "displayName": "Kupferschwert",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 7
         },
         {
           "itemId": "Weapon_Axe_Copper",
           "displayName": "Kupfer-Kampfaxt",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 7
         },
         {
           "itemId": "Weapon_Battleaxe_Copper",
           "displayName": "Kupferstreitaxt",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 8
         },
         {
           "itemId": "Weapon_Club_Copper",
           "displayName": "Kupferkeule",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 5
         },
         {
           "itemId": "Weapon_Daggers_Copper",
           "displayName": "Kupferdolche",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 6
         },
         {
           "itemId": "Weapon_Longsword_Copper",
           "displayName": "Kupferlangschwert",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 8
         },
         {
           "itemId": "Weapon_Mace_Copper",
           "displayName": "Kupferstreitkolben",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 7
         },
         {
           "itemId": "Weapon_Shield_Copper",
           "displayName": "Kupferschild",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 6
         },
         {
           "itemId": "Weapon_Shortbow_Copper",
           "displayName": "Kupferkurzbogen",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 6
         },
         {
           "itemId": "Weapon_Spear_Copper",
           "displayName": "Kupferspeer",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 7
         },
         {
           "itemId": "Weapon_Staff_Copper",
           "displayName": "Kupferstab",
           "buyPrice": 0,
-          "sellPrice": 0
+          "sellPrice": 7
         }
       ]
     },
@@ -489,79 +489,79 @@
           "itemId": "Potion_Health_Small",
           "displayName": "Kleiner Heiltrank",
           "buyPrice": 20,
-          "sellPrice": 0
+          "sellPrice": 4
         },
         {
           "itemId": "Potion_Health_Lesser",
           "displayName": "Schwacher Heiltrank",
           "buyPrice": 45,
-          "sellPrice": 0
+          "sellPrice": 9
         },
         {
           "itemId": "Potion_Health",
           "displayName": "Heiltrank",
           "buyPrice": 90,
-          "sellPrice": 0
+          "sellPrice": 18
         },
         {
           "itemId": "Potion_Health_Large",
           "displayName": "Grosser Heiltrank",
           "buyPrice": 180,
-          "sellPrice": 0
+          "sellPrice": 36
         },
         {
           "itemId": "Potion_Health_Greater",
           "displayName": "Maechtiger Heiltrank",
           "buyPrice": 350,
-          "sellPrice": 0
+          "sellPrice": 70
         },
         {
           "itemId": "Potion_Mana_Small",
           "displayName": "Kleiner Manatrank",
           "buyPrice": 20,
-          "sellPrice": 0
+          "sellPrice": 4
         },
         {
           "itemId": "Potion_Mana",
           "displayName": "Manatrank",
           "buyPrice": 90,
-          "sellPrice": 0
+          "sellPrice": 18
         },
         {
           "itemId": "Potion_Mana_Large",
           "displayName": "Grosser Manatrank",
           "buyPrice": 180,
-          "sellPrice": 0
+          "sellPrice": 36
         },
         {
           "itemId": "Potion_Stamina_Small",
           "displayName": "Kleiner Ausdauertrank",
           "buyPrice": 20,
-          "sellPrice": 0
+          "sellPrice": 4
         },
         {
           "itemId": "Potion_Stamina_Lesser",
           "displayName": "Schwacher Ausdauertrank",
           "buyPrice": 45,
-          "sellPrice": 0
+          "sellPrice": 9
         },
         {
           "itemId": "Potion_Stamina",
           "displayName": "Ausdauertrank",
           "buyPrice": 90,
-          "sellPrice": 0
+          "sellPrice": 18
         },
         {
           "itemId": "Potion_Antidote",
           "displayName": "Gegengift",
           "buyPrice": 60,
-          "sellPrice": 0
+          "sellPrice": 12
         },
         {
           "itemId": "Potion_Purify",
           "displayName": "Reinigungstrank",
           "buyPrice": 100,
-          "sellPrice": 0
+          "sellPrice": 20
         }
       ]
     },
@@ -573,55 +573,55 @@
           "itemId": "Food_Kebab_Fruit",
           "displayName": "Fruchtspiess",
           "buyPrice": 38,
-          "sellPrice": 0
+          "sellPrice": 9
         },
         {
           "itemId": "Food_Kebab_Mushroom",
           "displayName": "Pilzspiess",
           "buyPrice": 42,
-          "sellPrice": 0
+          "sellPrice": 10
         },
         {
           "itemId": "Food_Kebab_Vegetable",
           "displayName": "Gemuesespiess",
           "buyPrice": 42,
-          "sellPrice": 0
+          "sellPrice": 10
         },
         {
           "itemId": "Food_Pie_Apple",
           "displayName": "Apfelpastete",
           "buyPrice": 55,
-          "sellPrice": 0
+          "sellPrice": 13
         },
         {
           "itemId": "Food_Pie_Pumpkin",
           "displayName": "Kuerbispastete",
           "buyPrice": 60,
-          "sellPrice": 0
+          "sellPrice": 15
         },
         {
           "itemId": "Food_Salad_Berry",
           "displayName": "Beerensalat",
           "buyPrice": 46,
-          "sellPrice": 0
+          "sellPrice": 11
         },
         {
           "itemId": "Food_Salad_Mushroom",
           "displayName": "Pilzsalat",
           "buyPrice": 52,
-          "sellPrice": 0
+          "sellPrice": 13
         },
         {
           "itemId": "Food_Salad_Caesar",
           "displayName": "Caesar-Salat",
           "buyPrice": 58,
-          "sellPrice": 0
+          "sellPrice": 14
         },
         {
           "itemId": "Food_Wildmeat_Cooked",
           "displayName": "Gebratenes Wildfleisch",
           "buyPrice": 48,
-          "sellPrice": 0
+          "sellPrice": 12
         },
         {
           "itemId": "Food_Fish_Raw_Uncommon",
@@ -1029,20 +1029,106 @@
     }
   },
   "_publicBalance": {
-    "ordinaryItemSales": "disabled",
+    "ordinaryItemSales": "curated-low-value-only",
+    "massMaterialSales": "rotating-board-contracts-only",
+    "damagedEquipment": "floor(baseSellPrice * remainingDurabilityRatio)",
     "allowedSellItems": [
       "Aetherhaven_Gold_Coin",
       "Dragon_Heart",
+      "Food_Beef_Raw",
+      "Food_Bread",
+      "Food_Cheese",
+      "Food_Chicken_Raw",
+      "Food_Egg",
+      "Food_Fish_Grilled",
+      "Food_Fish_Raw",
       "Food_Fish_Raw_Epic",
       "Food_Fish_Raw_Legendary",
       "Food_Fish_Raw_Rare",
       "Food_Fish_Raw_Uncommon",
+      "Food_Kebab_Fruit",
+      "Food_Kebab_Meat",
+      "Food_Kebab_Mushroom",
+      "Food_Kebab_Vegetable",
+      "Food_Pie_Apple",
+      "Food_Pie_Meat",
+      "Food_Pie_Pumpkin",
+      "Food_Pork_Raw",
+      "Food_Salad_Berry",
+      "Food_Salad_Caesar",
+      "Food_Salad_Mushroom",
+      "Food_Vegetable_Cooked",
+      "Food_Wildmeat_Cooked",
+      "Food_Wildmeat_Raw",
       "Hedera_Gem",
-      "Ingredient_Forest_Essence"
+      "Ingredient_Forest_Essence",
+      "Potion_Antidote",
+      "Potion_Health",
+      "Potion_Health_Greater",
+      "Potion_Health_Large",
+      "Potion_Health_Lesser",
+      "Potion_Health_Small",
+      "Potion_Mana",
+      "Potion_Mana_Large",
+      "Potion_Mana_Small",
+      "Potion_Purify",
+      "Potion_Stamina",
+      "Potion_Stamina_Lesser",
+      "Potion_Stamina_Small",
+      "Tool_Hammer_Crude",
+      "Tool_Hatchet_Copper",
+      "Tool_Hatchet_Crude",
+      "Tool_Hatchet_Wood",
+      "Tool_Hoe_Copper",
+      "Tool_Hoe_Crude",
+      "Tool_Pickaxe_Copper",
+      "Tool_Pickaxe_Crude",
+      "Tool_Pickaxe_Wood",
+      "Tool_Shovel_Copper",
+      "Tool_Shovel_Crude",
+      "Tool_Sickle_Copper",
+      "Tool_Sickle_Crude",
+      "Weapon_Axe_Copper",
+      "Weapon_Axe_Crude",
+      "Weapon_Axe_Stone_Trork",
+      "Weapon_Battleaxe_Copper",
+      "Weapon_Battleaxe_Crude",
+      "Weapon_Battleaxe_Stone_Trork",
+      "Weapon_Battleaxe_Wood_Fence",
+      "Weapon_Club_Copper",
+      "Weapon_Club_Crude",
+      "Weapon_Club_Stone_Trork",
+      "Weapon_Daggers_Copper",
+      "Weapon_Daggers_Crude",
+      "Weapon_Daggers_Stone_Trork",
+      "Weapon_Longsword_Copper",
+      "Weapon_Longsword_Crude",
+      "Weapon_Longsword_Stone_Trork",
+      "Weapon_Mace_Copper",
+      "Weapon_Mace_Crude",
+      "Weapon_Mace_Stone_Trork",
+      "Weapon_Shield_Copper",
+      "Weapon_Shield_Wood",
+      "Weapon_Shortbow_Copper",
+      "Weapon_Shortbow_Crude",
+      "Weapon_Spear_Copper",
+      "Weapon_Spear_Crude",
+      "Weapon_Spear_Stone_Trork",
+      "Weapon_Staff_Bo_Wood",
+      "Weapon_Staff_Copper",
+      "Weapon_Staff_Wood",
+      "Weapon_Staff_Wood_Kweebec",
+      "Weapon_Staff_Wood_Rotten",
+      "Weapon_Sword_Copper",
+      "Weapon_Sword_Crude",
+      "Weapon_Sword_Stone_Trork",
+      "Weapon_Sword_Wood",
+      "Weapon_Wand_Wood",
+      "Weapon_Wand_Wood_Rotten"
     ],
-    "auditedAt": "2026-08-23",
-    "directArbitrage": "passed",
-    "crossMerchantArbitrage": "passed",
-    "reason": "Routine gathering, mining, farming and mob gear must not bypass quest and progression rewards."
+    "auditedAt": "2026-08-24",
+    "directArbitrage": "pending-script-audit",
+    "crossMerchantArbitrage": "pending-script-audit",
+    "reason": "Everyday play should produce modest Gold while quotas on procurement contracts protect the economy from unlimited bulk and automation output."
   }
 }

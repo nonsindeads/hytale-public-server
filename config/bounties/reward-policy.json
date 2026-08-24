@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "hourlyBoardId": "bihourly",
+  "hourlyRotationSeconds": 3600,
+  "goldByBoardAndDifficulty": {
+    "bihourly": {
+      "easy": 15
+    },
+    "daily": {
+      "training": 25,
+      "easy": 40,
+      "normal": 80,
+      "hard": 160
+    },
+    "weekly": {
+      "normal": 350,
+      "hard": 650
+    }
+  },
+  "maximumSingleReward": 1000,
+  "command": "/nspceconomyreward {player} {amount} bounty",
+  "notes": [
+    "Bounty Tokens and skill XP remain unchanged.",
+    "Gold is an additional Vault-backed reward delivered by NonSinnPublicCore.",
+    "Mass resources are accepted only by rotating TURN_IN contracts, never by an unlimited merchant sale."
+  ]
+}

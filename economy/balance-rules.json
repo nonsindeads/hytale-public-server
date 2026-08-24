@@ -9,8 +9,8 @@
     "minimumDamagedItemSellValue": 0,
     "enchantedItemPolicy": "no-extra-value-unless-explicitly-listed",
     "unknownItemPolicy": "not-tradeable",
-    "ordinaryItemSellPolicy": "disabled",
-    "allowedSellSources": "explicit-rare-trophy-allowlist-only",
+    "ordinaryItemSellPolicy": "curated-low-value-food-consumables-and-low-tier-equipment",
+    "allowedSellSources": "explicit-allowlist-plus-rotating-procurement-contracts",
     "recipeCycleProfitAllowed": false,
     "crossMerchantArbitrageAllowed": false,
     "automatedProductionRequiresRateReview": true
@@ -32,9 +32,12 @@
     "inventory-and-teleport-duplication"
   ],
   "releaseGates": {
-    "directAndCrossMerchantAudit": "passed-2026-08-23",
+    "directAndCrossMerchantAudit": "passed-v2-2026-08-24",
     "currentMerchantCount": 7,
     "currentTradeCount": 162,
+    "bountyGoldBridge": "console-only-vault-deposit-command-fixed-source-max-1000-gold",
+    "procurementContracts": "hourly-daily-weekly-turn-in-with-personal-cooldowns",
+    "bountyAssetLoadAudit": "89-board-quests-13-procurement-3-boards-loaded-2026-08-24",
     "recipeCycleAudit": "static-rare-output-scan-passed-2026-08-23",
     "automationOutputAudit": "bounded-no-auto-crafting-live-measurement-required",
     "floatingIslandsLootAudit": "world-and-structures-test-approved-2026-08-23",
