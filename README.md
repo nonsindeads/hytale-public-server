@@ -8,18 +8,17 @@ Nachvollziehbare Konfiguration, Dokumentation und Prüfwerkzeuge für den privat
 
 Dieses Repository ist keine vollständige Serversicherung und enthält keine Weltdaten, Spielerdaten, Zugangsdaten oder privaten Backups. Es dokumentiert die bewusst angepassten Teile reproduzierbar.
 
-## Instanzen
+## Server
 
-| Instanz | Port | Aufgabe | Besonderheiten |
-|---|---:|---|---|
-| Community | 5520 | Öffentlicher Server und Abnahme | Gast-Onboarding, Claims, geplante Bauwelt, strenge Economy, begrenzte Automation |
-| Vorlage | 5521 | Bestehende private Vorlage | Keine öffentlichen Rollen/Claims, lockerere Economy, unbegrenzte Chunkloader |
+| Port | Aufgabe | Besonderheiten |
+|---:|---|---|
+| 5520 | Community-Server und Abnahme | Gast-Onboarding, Claims, geplante Bauwelt, kontrollierte Economy und begrenzte Automation |
 
-Änderungen für den Community-Server werden nicht ungeprüft auf 5521 übertragen. Vor einem Neustart oder einer Änderung wird die betroffene Instanz eindeutig bestimmt und geprüft, ob Spieler online sind.
+Vor einem Neustart oder einer Änderung wird geprüft, ob Spieler online sind.
 
 ## Verifizierter Stand vom 24.08.2026
 
-- Beide Serverdienste laufen.
+- Der Community-Server läuft.
 - 5520 lädt LuckPerms 5.5.53, GlymeraPermissions 2.0.0, QuestLines Claims 1.5.0, GlymeraPlotWorld 17.0.0 und NonSinnPublicCore 0.3.0.
 - Vorhandene Weltdaten auf 5520: `default`, `himmelsinsel`, `markt`, `oakhaven`, `schwebende_inseln` und `under`.
 - `bauwelt` ist konfiguriert, aber noch nicht erzeugt oder praktisch abgenommen.

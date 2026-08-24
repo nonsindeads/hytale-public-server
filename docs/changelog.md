@@ -6,7 +6,7 @@
 
 - GitHub Pages als vollständiges, responsives Spielerhandbuch neu aufgebaut.
 - Eigene Seiten für Einstieg und Befehle, Welten und Claims, Wirtschaft, Mods sowie Status und Änderungen ergänzt.
-- Inhalte mit laufenden Diensten, Weltordnern, aktiven Plugins, Konfigurationen und Startprotokollen von 5520 und 5521 abgeglichen.
+- Inhalte mit laufendem Dienst, Weltordnern, aktiven Plugins, Konfigurationen und Startprotokollen des Community-Servers abgeglichen.
 - Unbestätigte Gemini-Befehle wie `/warp`, `/tp world`, `/sethome` und mehrere falsche `/plot`-Varianten entfernt.
 - Aktive, konfigurierte, noch nicht erzeugte und deaktivierte Inhalte sichtbar voneinander getrennt.
 - Technisches README und Betriebsdokument an den realen Stand angepasst.
@@ -28,13 +28,6 @@
 - Fahrzeuge auf Boote, Flöße und Luftschiffe begrenzt; Autos deaktiviert.
 - GlymeraStatues wegen fehlerhafter schwarzer Blöcke deaktiviert.
 - GlymeraRaces wegen Konflikten mit MMO Skill Tree und Natural20 nicht installiert.
-
-### Vorlagenserver 5521
-
-- Structures-Testwelt nach erfolgreicher Prüfung entfernt; Structures bleibt auf den Floating Islands aktiv.
-- Chunkloaderbegrenzung aufgehoben und lockere bestehende Economy beibehalten.
-- Portal-Konfigurationsmodus nach erfolgreichem Portalbau wieder deaktiviert.
-- 5521 bleibt ansonsten unveränderte Vorlage und erhält nicht die strikten öffentlichen Rollen- und Economyregeln von 5520.
 
 ## 0.3.0 – 23.08.2026
 

@@ -5,19 +5,7 @@ Stand: 24.08.2026
 ## Aktueller Betrieb
 
 - Community-Server 5520: Dienst aktiv und öffentlich gebunden; praktische Abnahme läuft.
-- Vorlagenserver 5521: Dienst aktiv; wird als Vorlage weitergeführt und nicht mit den strikten öffentlichen Regeln überschrieben.
 - Die früher beschriebene Overlay-/Wiederherstellungsphase ist beendet. `/home/hytale/hytale-server-2` ist die laufende 5520-Instanz.
-
-## Instanzgrenzen
-
-| Bereich | 5520 Community | 5521 Vorlage |
-|---|---|---|
-| Gast-Onboarding, LuckPerms, Claims, PlotWorld | aktiv | nicht Bestandteil der Vorlage |
-| Händlerankauf | 8 kontrollierte Quellen | 124 verkäufliche Handelszeilen |
-| Worker/Farmer-Crafting | aus | an |
-| Chunkloader pro Nicht-OP-Spieler | 1 | unbegrenzt (`-1`) |
-| Bauwelt | konfiguriert, noch nicht erzeugt | nicht vorgesehen |
-| Structures-Testwelt | nicht vorhanden | entfernt; Archiv im manuellen Backup |
 
 ## Noch offene Abnahme
 
@@ -42,6 +30,5 @@ Stand: 24.08.2026
 ## Bekannte technische Hinweise
 
 - Der Aetherhaven-Bard-Modellfehler ist auf 5520 korrigiert. Eine fehlende optionale `bard_songs.json` wird weiterhin als Warnung protokolliert.
-- Auf der absichtlich unveränderten 5521-Vorlage besteht der alte Bard-Modellfehler noch.
 - Geladene Plugins beweisen nicht, dass abhängige Welten bereits erzeugt wurden: Das betrifft aktuell `bauwelt` und `limbo`.
 - GlymeraStatues bleibt deaktiviert; GlymeraRaces bleibt uninstalliert.

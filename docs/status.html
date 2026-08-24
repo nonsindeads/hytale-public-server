@@ -5,7 +5,6 @@
 
 <section><div class="wrap"><h2>Systemstatus</h2><div class="table-wrap"><table><thead><tr><th>Komponente</th><th>Status</th><th>Geprüfter Stand</th></tr></thead><tbody>
   <tr><td><strong>Community-Server 5520</strong></td><td><span class="state">läuft</span></td><td>Aktiv, öffentlich gebunden, maximal 25 Spieler.</td></tr>
-  <tr><td><strong>Vorlagenserver 5521</strong></td><td><span class="state">läuft</span></td><td>Unveränderte Vorlage mit lockerer Economy und unbegrenzten Chunkloadern.</td></tr>
   <tr><td><strong>Gastschutz und Regeltest</strong></td><td><span class="state">geladen</span></td><td>NonSinnPublicCore 0.3.0, LuckPerms und GlymeraPermissions aktiv.</td></tr>
   <tr><td><strong>Survival-Claims</strong></td><td><span class="state">geladen</span></td><td>QuestLines Claims 1.5.0 aktiv; Spielerfreigabe auf <code>default</code> begrenzt.</td></tr>
   <tr><td><strong>Bauwelt</strong></td><td><span class="state pending">offen</span></td><td>Konfiguration und Preislogik vorhanden; Welt, Portal und Praxistest fehlen.</td></tr>
@@ -23,16 +22,15 @@
 </ul></div></section>
 
 <section><div class="wrap"><div class="eyebrow">Bekannte Hinweise</div><h2>Keine versteckten Versprechen</h2><div class="grid">
-  <article class="card wide"><h3>Aetherhaven-Barde</h3><p>Der fehlerhafte Bard-Modellverweis ist auf 5520 korrigiert; dort laden Bard-Rolle und Modell ohne den früheren Fehler. Aetherhaven meldet weiterhin lediglich eine fehlende optionale Lieddatei. Auf der unveränderten 5521-Vorlage besteht der alte Modellfehler noch.</p></article>
+  <article class="card wide"><h3>Aetherhaven-Barde</h3><p>Der fehlerhafte Bard-Modellverweis ist korrigiert; Bard-Rolle und Modell laden ohne den früheren Fehler. Aetherhaven meldet weiterhin lediglich eine fehlende optionale Lieddatei.</p></article>
   <article class="card wide"><h3>Aktive Mod heißt nicht aktive Welt</h3><p>Limbo ist geladen, aber noch nicht erzeugt. Ebenso ist GlymeraPlotWorld geladen, obwohl die Bauwelt noch fehlt. Die Weltenseite kennzeichnet diesen Unterschied.</p></article>
   <article class="card wide"><h3>Statues und Races</h3><p>Statues bleibt wegen schwarzer Testblöcke aus. Races bleibt wegen Überschneidungen mit dem vorhandenen RPG-Fortschritt uninstalliert.</p></article>
   <article class="card wide"><h3>Serverseitige Mods</h3><p>Ein geladenes Paket ist nicht automatisch für jeden Befehl freigegeben. Administrative Befehle wie <code>/merchant</code>, Rechteverwaltung und Weltsetup bleiben gesperrt.</p></article>
 </div></div></section>
 
 <section><div class="wrap"><div class="eyebrow">Neu aufgebaut</div><h2>Änderungen vom 24.08.2026</h2><div class="grid">
-  <article class="card full"><h3>Dokumentation</h3><ul><li>GitHub Pages in ein vollständiges Spielerhandbuch mit gemeinsamer Navigation aufgeteilt.</li><li>Start, Befehle, Welten, Claims, Wirtschaft, Mods, Status und bekannte Probleme jeweils separat dokumentiert.</li><li>Falsche Gemini-Angaben zu <code>/warp</code>, <code>/tp world</code>, <code>/sethome</code> und nicht bestätigten Plot-Befehlen entfernt.</li><li>Alle Statusangaben mit laufenden Diensten, Weltordnern, Modlisten, Konfigurationen und Startprotokollen von 5520 und 5521 abgeglichen.</li></ul></article>
-  <article class="card wide"><h3>Community-Server 5520</h3><ul><li>Frische Default-Welt und Himmelsinsel als Hub.</li><li>Gast-/Quizsystem, LuckPerms und Befehls-Failsafe.</li><li>QuestLines Claims, Bauwelt-Plugin und gestaffelte Landpreise.</li><li>Strenge Händlerwirtschaft, begrenzte Automation und ein Chunkloader pro Spieler.</li></ul></article>
-  <article class="card wide"><h3>Vorlagenserver 5521</h3><ul><li>Structures-Testwelt entfernt; Structures bleibt auf den Floating Islands aktiv.</li><li>Keine Chunkloaderbegrenzung und deutlich lockerere Händlerwirtschaft.</li><li>Portal-Konfigurationsmodus nach erfolgreichem Aufbau wieder deaktiviert.</li><li>Races nach Konfliktprüfung nicht installiert.</li></ul></article>
+  <article class="card full"><h3>Dokumentation</h3><ul><li>GitHub Pages in ein vollständiges Spielerhandbuch mit gemeinsamer Navigation aufgeteilt.</li><li>Start, Befehle, Welten, Claims, Wirtschaft, Mods, Status und bekannte Probleme jeweils separat dokumentiert.</li><li>Falsche Gemini-Angaben zu <code>/warp</code>, <code>/tp world</code>, <code>/sethome</code> und nicht bestätigten Plot-Befehlen entfernt.</li><li>Alle Statusangaben mit Dienst, Weltordnern, Modlisten, Konfigurationen und Startprotokollen des Community-Servers abgeglichen.</li></ul></article>
+  <article class="card full"><h3>Community-Server</h3><ul><li>Frische Default-Welt und Himmelsinsel als Hub.</li><li>Gast-/Quizsystem, LuckPerms und Befehls-Failsafe.</li><li>QuestLines Claims, Bauwelt-Plugin und gestaffelte Landpreise.</li><li>Kontrollierte Händlerwirtschaft, begrenzte Automation und ein Chunkloader pro Spieler.</li></ul></article>
   <article class="card full"><h3>Welten und Inhalte</h3><ul><li>Hub-Portalpaar zwischen Himmelsinsel und Default sowie Portalpaar zu den Floating Islands eingerichtet.</li><li>Floating Islands mit Structures als extrem schwere Abenteuerwelt bestätigt.</li><li>Under und Limbo als getrennte End-/Nether-ähnliche Modwelten eingeordnet; Zugang nur über ihre vorgesehenen Tore.</li><li>Fahrzeuge auf Boote, Flöße und Luftschiffe begrenzt; Autorezepte deaktiviert.</li></ul></article>
 </div></div></section>
 
