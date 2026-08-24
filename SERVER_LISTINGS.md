@@ -30,7 +30,7 @@ Noch festzulegen: öffentliche Kontaktadresse, Discord, eigener Server-Domainnam
 
 **Dein Zuhause bleibt. Die Wildnis darf sich verändern.**
 
-Der Waldbrand verbindet eine resetbare Survivalwelt für Rohstoffe und Erkundung mit einer dauerhaften Bauwelt, einem sicheren Himmelsinsel-Hub und getrennten, deutlich schwierigeren Abenteuerwelten. Spieler müssen sich nicht zwischen langfristigem Bauen und gefährlicher Progression entscheiden.
+Der Waldbrand verbindet eine resetbare Survivalwelt für Rohstoffe und Erkundung mit einer dauerhaften Bauwelt, der sicheren Wolkenstadt Glutwacht und getrennten, deutlich schwierigeren Abenteuerwelten. Spieler müssen sich nicht zwischen langfristigem Bauen und gefährlicher Progression entscheiden.
 
 ### Was uns unterscheidet
 
@@ -41,7 +41,7 @@ Der Waldbrand verbindet eine resetbare Survivalwelt für Rohstoffe und Erkundung
 5. **RPG ohne beliebiges Mod-Sammelsurium:** Skill Tree, skalierende Gegner, Quests, Kopfgelder, Affixe, Bosse, Begleiter und Aetherhaven greifen als gemeinsame Progression ineinander.
 6. **Hytale-passende Technik:** Boote, Flöße und Luftschiffe bleiben; moderne Autos wurden bewusst entfernt.
 7. **Kontrollierte Wirtschaft:** Gewöhnlicher Massenloot und Standardausrüstung erzeugen kein unbegrenztes Händlergold. Preise und Progression werden geprüft und nach echten Spielsitzungen nachjustiert.
-8. **Geschützter Einstieg:** Neue Accounts starten als Gäste im sicheren Hub, lesen Regeln und schalten sich über den kurzen Regeltest frei.
+8. **Geschützter Einstieg:** Neue Accounts starten als Gäste in Glutwacht. Eine dauerhafte, unaufdringliche Anzeige führt sie zu Regeln und kurzem Freischaltungstest.
 9. **Transparenter Betrieb:** Spielerhandbuch, aktueller Ausbaustand, bekannte Einschränkungen und strukturierte Fehlerberichte sind öffentlich einsehbar.
 
 ### Für wen der Server gedacht ist
@@ -74,9 +74,9 @@ Der Waldbrand verbindet eine resetbare Survivalwelt für Rohstoffe und Erkundung
 
 ### Mittel – nach Freigabe
 
-**DE:** Dein Zuhause bleibt, die Wildnis darf sich verändern. Der Waldbrand ist ein deutscher Survival-RPG-Communityserver mit sicherem Himmelsinsel-Hub, resetbarer Survivalwelt, persönlichen Claims und einer dauerhaften Bauwelt. Skill Tree, skalierende Gegner, Quests, Kopfgelder, Affixe, Bosse und Begleiter führen in besonders schwere Abenteuerwelten wie die Floating Islands, Under und Limbo. Für WorldGen V2 planen wir eine neue Wildnis statt eines kompletten Server-Wipes. Die Mods laufen serverseitig; Wirtschaft, Rechte und Progression werden transparent geprüft.
+**DE:** Dein Zuhause bleibt, die Wildnis darf sich verändern. Der Waldbrand ist ein deutscher Survival-RPG-Communityserver mit Glutwacht, der sicheren Stadt über den Wolken, einer resetbaren Survivalwelt, persönlichen Claims und einer dauerhaften Bauwelt. Skill Tree, skalierende Gegner, Quests, Kopfgelder, Affixe, Bosse und Begleiter führen in besonders schwere Abenteuerwelten wie die Floating Islands, Under und Limbo. Für WorldGen V2 planen wir eine neue Wildnis statt eines kompletten Server-Wipes. Die Mods laufen serverseitig; Wirtschaft, Rechte und Progression werden transparent geprüft.
 
-**EN:** Your home stays while the wilderness may change. Der Waldbrand is a German-speaking EU Survival RPG server with a safe sky-island hub, a resettable survival world, personal claims and a permanent building world. Skill trees, scaling enemies, quests, bounties, affixes, bosses and companions lead into dangerous worlds such as the Floating Islands, Under and Limbo. For WorldGen V2, we plan a new wilderness instead of a full server wipe. The modpack is server-side, while economy, permissions and progression are documented and actively balanced.
+**EN:** Your home stays while the wilderness may change. Der Waldbrand is a German-speaking EU Survival RPG server with Glutwacht, a safe city above the clouds, a resettable survival world, personal claims and a permanent building world. Skill trees, scaling enemies, quests, bounties, affixes, bosses and companions lead into dangerous worlds such as the Floating Islands, Under and Limbo. For WorldGen V2, we plan a new wilderness instead of a full server wipe. The modpack is server-side, while economy, permissions and progression are documented and actively balanced.
 
 ### Lang – nach Freigabe
 
@@ -84,7 +84,7 @@ Der Waldbrand verbindet eine resetbare Survivalwelt für Rohstoffe und Erkundung
 
 Willkommen bei **Der Waldbrand** – einem deutschsprachigen Hytale-Communityserver für Spieler, die erkunden, sammeln, bauen und sich langfristig entwickeln möchten.
 
-Unser Konzept trennt die Aufgaben der Welten klar: Die Himmelsinsel ist ein sicherer Hub. In `default` warten Survival, Ressourcen, Erkundung und kleine persönliche Claims; diese Welt kann nach Ankündigung erneuert werden. Dauerhaft wichtige Bauten entstehen auf geschützten 64×64-Grundstücken in der Bauwelt. Wer größere Risiken sucht, reist zu den Floating Islands mit zusätzlichen Structures, nach Under oder Limbo und stellt sich stärkeren Gegnern, Dungeons und wertvollerer Beute.
+Unser Konzept trennt die Aufgaben der Welten klar: Glutwacht ist die sichere Stadt über den Wolken und unser zentraler Hub. In `default` warten Survival, Ressourcen, Erkundung und kleine persönliche Claims; diese Welt kann nach Ankündigung erneuert werden. Dauerhaft wichtige Bauten entstehen auf geschützten 64×64-Grundstücken in der Bauwelt. Wer größere Risiken sucht, reist zu den Floating Islands mit zusätzlichen Structures, nach Under oder Limbo und stellt sich stärkeren Gegnern, Dungeons und wertvollerer Beute.
 
 Auch der Wechsel auf WorldGen V2 ist nach diesem Prinzip geplant: Wir wollen eine neue V2-Survivalwelt erzeugen, prüfen und anschließend über den Hub anbinden. Ein vollständiger Neuanfang mit Verlust aller Welten ist nicht vorgesehen; Hub, Bauwelt und dauerhafte Communityprojekte sollen erhalten bleiben. Mögliche Beschränkungen beim Transport einzelner V1-/V2-Gegenstände werden vor der Umschaltung getestet und veröffentlicht.
 
@@ -96,7 +96,7 @@ Neue Spieler beginnen geschützt als Gast und schalten sich nach einem kurzen Re
 
 Welcome to **Der Waldbrand**, a German-speaking Hytale community server for players who enjoy exploration, gathering, building and long-term progression.
 
-Each world has a clear purpose. The sky island is a safe central hub. `default` offers survival, resources, exploration and small personal claims, and may be renewed after advance notice. Important long-term creations belong on protected 64×64 plots in the permanent building world. Players looking for greater danger can travel to the Floating Islands with extra structures, Under or Limbo for stronger enemies, dungeons and better loot.
+Each world has a clear purpose. Glutwacht, the city above the clouds, is a safe central hub. `default` offers survival, resources, exploration and small personal claims, and may be renewed after advance notice. Important long-term creations belong on protected 64×64 plots in the permanent building world. Players looking for greater danger can travel to the Floating Islands with extra structures, Under or Limbo for stronger enemies, dungeons and better loot.
 
 The move to WorldGen V2 follows the same principle. We plan to generate and test a new V2 survival world before connecting it through the hub. A full server wipe is not planned: the hub, permanent building world and long-term community projects are intended to remain. Any restrictions on moving V1/V2 blocks or items will be tested and published before the transition.
 
@@ -124,7 +124,7 @@ Für Drittanbieterlisten werden mindestens folgende Motive benötigt:
 - Quadratisches Icon/Logo, gut lesbar auch bei 64×64 Pixeln.
 - Breites Masterbanner in 1920×600 ohne schnelle Animation und ohne kleingedruckten Text.
 - Ableitungen in 1200×400, 500×60 und 468×60 sowie ein 256×256-Logo exportieren.
-- Himmelsinsel-Hub als Erkennungsmotiv.
+- Glutwacht als Erkennungsmotiv: Stadt über den Wolken.
 - Gruppenbild oder Markt-/Communitybereich.
 - Survival-Claim und dauerhaftes Baugrundstück als Gegenüberstellung.
 - Floating Islands mit sichtbarer Structure und Gegnern.

@@ -8,11 +8,13 @@ Diese Liste ersetzt die frühere Gemini-Ingame-Liste. Deren Warp-, Teleport- und
 
 - [x] Community-Server mit frischer Default-Welt eingerichtet.
 - [x] Übernommene Warpdateien geleert; neue Reiseziele werden passend zu den neuen Welten ingame angelegt.
-- [x] Himmelsinsel als zentralen Hub übernommen.
+- [x] Glutwacht als Namen des zentralen Hubs festgelegt; der technische Weltname `himmelsinsel` bleibt zur Kompatibilität bestehen.
 - [x] Glymera Structures auf den Schwebenden Inseln getestet und aktiviert.
 - [x] Under übernommen; Limbo-Mod geladen.
 - [x] Händlerprofile, Preise und passende NPC-Skins vorbereitet.
-- [x] Gast-Onboarding, Regeltest, LuckPerms und Befehls-Failsafe geladen.
+- [x] Gast-Onboarding, dauerhafte Gästeanzeige, Regeltest, LuckPerms und Befehls-Failsafe geladen.
+- [x] Globalen `/shop`-Befehl für Spieler deaktiviert; Handel erfolgt künftig direkt an den NPC-Ständen in Glutwacht.
+- [x] Leere Markt-Testwelt archiviert und sechs kopierte Händlerpositionen für den sauberen Neuaufbau entfernt.
 - [x] QuestLines Claims installiert und für Spieler auf `default` begrenzt.
 - [x] Öffentliche Händlerwirtschaft statisch auf Arbitrage und ungewollte Ankäufe geprüft.
 - [x] Worker, Farmer und Chunkloader für den Community-Betrieb begrenzt.
@@ -23,10 +25,11 @@ Diese Liste ersetzt die frühere Gemini-Ingame-Liste. Deren Warp-, Teleport- und
 
 - [ ] **Spawn-Safezone in Default mit vorläufig 300 Blöcken Radius anlegen.** Zentrum ist der künftige öffentliche Portal-/Spawn-Bereich und wird nach Besichtigung der neuen Map festgelegt. Die kreisförmige Region soll über die gesamte Welthöhe reichen. Innerhalb der Zone müssen `BUILD`, `BREAK` und `SPAWN` gesperrt sein: kein Bauen, kein Abbauen und keine Mob-Spawns. Den Radius beim Ingame-Ausbau nochmals prüfen und bei Bedarf anpassen.
 - [ ] Entscheiden, ob in der Safezone zusätzlich PvP, Explosionen, Feuer, Flüssigkeiten und Containerzugriffe gesperrt werden.
-- [ ] Portalpaar zwischen Himmelsinsel und Default ingame bauen und beide Richtungen testen.
-- [ ] Portalpaar zwischen Himmelsinsel und Schwebenden Inseln ingame bauen und beide Richtungen testen.
+- [ ] Portalpaar zwischen Glutwacht und Default ingame bauen und beide Richtungen testen.
+- [ ] Portalpaar zwischen Glutwacht und Schwebenden Inseln ingame bauen und beide Richtungen testen.
 - [ ] Vorgesehene Zugänge für Under und Limbo ingame aufbauen und testen.
-- [ ] Händler an ihren Marktständen auf der Himmelsinsel ingame erzeugen, Aussehen kontrollieren und ausrichten.
+- [ ] Händler an ihren Marktständen in Glutwacht ingame erzeugen, Aussehen kontrollieren und ausrichten.
+- [ ] Mit Gast und Spieler prüfen: Gäste können Händler nicht benutzen; Spieler handeln am NPC; `/shop` ist gesperrt.
 - [ ] Bauwelt erzeugen und Generierung kontrollieren.
 - [ ] Hub-Portal zur Bauwelt bauen und beide Richtungen testen.
 - [ ] Grundstückskauf mit allen Preisstufen 0/1.000/3.000/7.500 Gold praktisch testen.
@@ -63,7 +66,7 @@ Die Texte, Zielportale, bekannten Anforderungen und das Eintragsprotokoll stehen
 
 ## Übergang auf WorldGen V2
 
-Ziel: Eine neue Wildnis ohne vollständigen Server-Wipe. Himmelsinsel, Bauwelt und dauerhafte Communityprojekte bleiben bestehen.
+Ziel: Eine neue Wildnis ohne vollständigen Server-Wipe. Glutwacht, Bauwelt und dauerhafte Communityprojekte bleiben bestehen.
 
 - [ ] WorldGen V2 zunächst auf einer Serverkopie mit allen Welt-, RPG-, Structure-, Claim-, Portal- und Economy-Mods testen.
 - [ ] Vollständiges Backup und geprüften Wiederherstellungspunkt vor der ersten V2-Welterzeugung anlegen.

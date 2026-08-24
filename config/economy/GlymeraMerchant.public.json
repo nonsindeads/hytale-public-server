@@ -2,13 +2,13 @@
   "_guide": {
     "balanceProfile": "NonSinn Public RPG v1 - controlled reward economy",
     "pricingRule": "Ordinary materials, food, weapons, tools and equipment have no Gold sell value. Only explicitly allowlisted rare trophies and rare fish may be sold.",
-    "placement": "Public hub: place one NPC of every merchant type at fixed stalls in himmelsinsel; keep default copies only if desired"
+    "placement": "Place one NPC of every merchant type at fixed stalls in Glutwacht (technical world key: himmelsinsel). Remove copied or stale placements first."
   },
   "startBalance": 25,
   "currencyName": "Gold",
   "currencySymbol": "G",
   "maxBalance": 100000,
-  "allowShopCommand": true,
+  "allowShopCommand": false,
   "paidCommandOpExempt": true,
   "paidCommandTimeout": 15,
   "paidCommands": {},

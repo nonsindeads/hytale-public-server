@@ -15,8 +15,11 @@ import com.hypixel.hytale.server.core.event.events.ecs.InteractivelyPickupItemEv
 import com.hypixel.hytale.server.core.event.events.ecs.PlaceBlockEvent;
 import com.hypixel.hytale.server.core.event.events.ecs.UseBlockEvent;
 import com.hypixel.hytale.server.core.event.events.player.DrainPlayerFromWorldEvent;
+import com.hypixel.hytale.server.core.event.events.player.AddPlayerToWorldEvent;
 import com.hypixel.hytale.server.core.event.events.player.PlayerConnectEvent;
 import com.hypixel.hytale.server.core.event.events.player.PlayerInteractEvent;
+import com.hypixel.hytale.server.core.entity.entities.Player;
+import com.hypixel.hytale.server.core.entity.entities.player.hud.CustomUIHud;
 import com.hypixel.hytale.server.core.permissions.PermissionsModule;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
@@ -24,6 +27,7 @@ import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.Universe;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
+import com.hypixel.hytale.server.core.ui.builder.UICommandBuilder;
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import de.glymera.plotworld.GlymeraPlotWorld;
@@ -62,6 +66,7 @@ public final class NonSinnPublicCore extends JavaPlugin {
     private static final String PLAYER_GROUP = "spieler";
     private static final String PLOT_DEED_ID = "GlymeraPlotWorld_Deed";
     private static final String ECONOMY_CONTEXT = "NonSinnPublicCore";
+    private static final String GUEST_HUD_KEY = "nonsinnGuestNotice";
     private static final UUID OWNER_UUID = UUID.fromString("2e07651a-2a27-4165-a440-5b3f7abb3392");
     private static final long NOTICE_INTERVAL_MS = 3_000L;
 
@@ -96,6 +101,7 @@ public final class NonSinnPublicCore extends JavaPlugin {
         getCommandRegistry().registerCommand(new PropertyCommand(this));
 
         getEventRegistry().registerGlobal(PlayerConnectEvent.class, this::onPlayerConnect);
+        getEventRegistry().registerGlobal(AddPlayerToWorldEvent.class, this::onPlayerAddedToWorld);
         getEventRegistry().registerGlobal(DrainPlayerFromWorldEvent.class, this::onPlayerDrain);
         getEventRegistry().registerGlobal(PlayerInteractEvent.class, this::onPlayerInteract);
 
@@ -234,6 +240,28 @@ public final class NonSinnPublicCore extends JavaPlugin {
         }
     }
 
+    private void onPlayerAddedToWorld(AddPlayerToWorldEvent event) {
+        PlayerRef playerRef = event.getHolder().getComponent(PlayerRef.getComponentType());
+        Player player = event.getHolder().getComponent(Player.getComponentType());
+        if (playerRef == null || player == null) {
+            return;
+        }
+        if (isGuest(playerRef.getUuid())) {
+            if (player.getHudManager().getCustomHud(GUEST_HUD_KEY) == null) {
+                player.getHudManager().addCustomHud(playerRef, new GuestNoticeHud(playerRef));
+            }
+        } else {
+            player.getHudManager().removeCustomHud(playerRef, GUEST_HUD_KEY);
+        }
+    }
+
+    private void hideGuestNotice(PlayerRef playerRef) {
+        Player player = playerRef.getComponent(Player.getComponentType());
+        if (player != null) {
+            player.getHudManager().removeCustomHud(playerRef, GUEST_HUD_KEY);
+        }
+    }
+
     private void onPlayerDrain(DrainPlayerFromWorldEvent event) {
         PlayerRef playerRef = event.getHolder().getComponent(PlayerRef.getComponentType());
         if (playerRef == null || !isGuest(playerRef.getUuid())) {
@@ -339,11 +367,36 @@ public final class NonSinnPublicCore extends JavaPlugin {
         saveApprovals();
         PermissionsModule.get().setUserGroup(uuid, PLAYER_GROUP);
         cooldowns.remove(uuid);
+        hideGuestNotice(playerRef);
 
         playerRef.sendMessage(Message.raw(
                 "Bestanden: " + session.correct + "/" + session.order.size()
                         + ". Du bist jetzt als Spieler freigeschaltet. Willkommen!"
         ));
+    }
+
+    private static final class GuestNoticeHud extends CustomUIHud {
+        private GuestNoticeHud(PlayerRef playerRef) {
+            super(playerRef, GUEST_HUD_KEY, 20);
+        }
+
+        @Override
+        protected void build(UICommandBuilder builder) {
+            builder.appendInline(null,
+                    "Group #GuestNoticeRoot { "
+                            + "Anchor: (Full: 0); LayoutMode: Top; HitTestVisible: false; "
+                            + "Group { Anchor: (Top: 105, Horizontal: 0, Width: 500, Height: 58); "
+                            + "Background: #101722(0.88); Padding: (Horizontal: 14, Vertical: 7); "
+                            + "LayoutMode: Top; "
+                            + "Label { Anchor: (Height: 23); Text: \"DU BIST NOCH GAST\"; "
+                            + "Style: (FontSize: 16, TextColor: #F2C66D, RenderBold: true, "
+                            + "HorizontalAlignment: Center, VerticalAlignment: Center); } "
+                            + "Label { Anchor: (Height: 21); Text: \"Lies /regeln - Starte /freischalten\"; "
+                            + "Style: (FontSize: 14, TextColor: #FFFFFF, "
+                            + "HorizontalAlignment: Center, VerticalAlignment: Center); } "
+                            + "} }"
+            );
+        }
     }
 
     private void sendQuestion(PlayerRef playerRef, QuizSession session) {

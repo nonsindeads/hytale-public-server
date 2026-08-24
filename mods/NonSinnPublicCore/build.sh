@@ -18,8 +18,8 @@ cp "$ROOT_DIR/manifest.json" "$BUILD_DIR/resources/manifest.json"
 cp "$ROOT_DIR/../../config/onboarding/questions.json" "$BUILD_DIR/resources/defaults/questions.json"
 cp "$ROOT_DIR/../../config/plots/property-pricing.json" "$BUILD_DIR/resources/defaults/property-pricing.json"
 
-jar --create --file "$BUILD_DIR/NonSinnPublicCore-0.3.0.jar" \
+jar --create --file "$BUILD_DIR/NonSinnPublicCore-0.4.0.jar" \
   -C "$BUILD_DIR/classes" . \
   -C "$BUILD_DIR/resources" .
 
-echo "$BUILD_DIR/NonSinnPublicCore-0.3.0.jar"
+echo "$BUILD_DIR/NonSinnPublicCore-0.4.0.jar"

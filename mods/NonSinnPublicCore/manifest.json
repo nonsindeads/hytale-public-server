@@ -1,8 +1,8 @@
 {
   "Group": "de.nonsinn",
   "Name": "NonSinnPublicCore",
-  "Version": "0.3.0",
-  "Description": "Guest guard, rules quiz, player promotion and tiered build-world plots for the NonSinn public server",
+  "Version": "0.4.0",
+  "Description": "Guest guard and notice, rules quiz, player promotion and tiered build-world plots for the NonSinn public server",
   "Authors": [{"Name": "NonSinn"}],
   "ServerVersion": ">=0.5.8",
   "Dependencies": {
