@@ -4,6 +4,7 @@ Nachvollziehbare Konfiguration, Dokumentation und Prüfwerkzeuge für den privat
 
 - [Spielerhandbuch auf GitHub Pages](https://nonsindeads.github.io/hytale-public-server/)
 - [Aktueller Ausbau und bekannte Einschränkungen](https://nonsindeads.github.io/hytale-public-server/status.html)
+- [Technische Server-To-do-Liste](SERVER_TODO.md)
 - [Fehler oder Vorschlag melden](https://github.com/nonsindeads/hytale-public-server/issues/new/choose)
 
 Dieses Repository ist keine vollständige Serversicherung und enthält keine Weltdaten, Spielerdaten, Zugangsdaten oder privaten Backups. Es dokumentiert die bewusst angepassten Teile reproduzierbar.
