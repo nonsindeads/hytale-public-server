@@ -60,3 +60,15 @@ Die Texte, Zielportale, bekannten Anforderungen und das Eintragsprotokoll stehen
 - [ ] Goldmenge pro aktiver Spielstunde und tatsächliche Landkaufdauer beobachten.
 - [ ] Fehlerberichte nach Welt und Mod auswerten und reproduzierbare Regressionstests ergänzen.
 - [ ] Reset der Default-Welt rechtzeitig ankündigen und Claims vor dem Reset dokumentiert bereinigen.
+
+## Übergang auf WorldGen V2
+
+Ziel: Eine neue Wildnis ohne vollständigen Server-Wipe. Himmelsinsel, Bauwelt und dauerhafte Communityprojekte bleiben bestehen.
+
+- [ ] WorldGen V2 zunächst auf einer Serverkopie mit allen Welt-, RPG-, Structure-, Claim-, Portal- und Economy-Mods testen.
+- [ ] Vollständiges Backup und geprüften Wiederherstellungspunkt vor der ersten V2-Welterzeugung anlegen.
+- [ ] Neue V2-Survivalwelt unter einem eigenen Namen erzeugen; die bestehende `default`-Welt nicht überschreiben.
+- [ ] Transport von Inventar, Blöcken und Gegenständen zwischen V1, V2, Hub und Bauwelt prüfen und nicht übertragbare Inhalte dokumentieren.
+- [ ] Claims, LuckPerms-Weltkontexte, Spawn-Safezone und Hub-Portal erst nach erfolgreicher Abnahme auf die neue V2-Welt umstellen.
+- [ ] Alte Survivalwelt während einer angekündigten Übergangsfrist erhalten und anschließend kontrolliert archivieren; kein unangekündigter Komplett-Wipe.
+- [ ] Spielerhandbuch, Serverlisten und Reset-/Transferregeln vor der öffentlichen Umschaltung aktualisieren.

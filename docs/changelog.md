@@ -10,6 +10,7 @@
 - Unbestätigte Gemini-Befehle wie `/warp`, `/tp world`, `/sethome` und mehrere falsche `/plot`-Varianten entfernt.
 - Aktive, konfigurierte, noch nicht erzeugte und deaktivierte Inhalte sichtbar voneinander getrennt.
 - Technisches README und Betriebsdokument an den realen Stand angepasst.
+- WorldGen-V2-Strategie dokumentiert: neue Survivalwelt statt vollständigem Server-Wipe; Hub, Bauwelt und dauerhafte Projekte bleiben bestehen.
 
 ### Community-Server 5520
 

@@ -36,12 +36,13 @@ Der Waldbrand verbindet eine resetbare Survivalwelt für Rohstoffe und Erkundung
 
 1. **Welten mit klarer Aufgabe:** Hub, Survival, dauerhaftes Bauen und gefährliches Endgame werden nicht in eine einzige überladene Welt gepresst.
 2. **Dauerhaft bauen, frisch erkunden:** Persönliche Survival-Claims schützen vor Mitspielern; wichtige Langzeitprojekte gehören in die nicht resetbare Bauwelt.
-3. **Echtes Abenteuer-Endgame:** Floating Islands mit Structures, Under und Limbo bilden getrennte Hochrisiko-Ziele statt nur höherer Zahlen in derselben Wildnis.
-4. **RPG ohne beliebiges Mod-Sammelsurium:** Skill Tree, skalierende Gegner, Quests, Kopfgelder, Affixe, Bosse, Begleiter und Aetherhaven greifen als gemeinsame Progression ineinander.
-5. **Hytale-passende Technik:** Boote, Flöße und Luftschiffe bleiben; moderne Autos wurden bewusst entfernt.
-6. **Kontrollierte Wirtschaft:** Gewöhnlicher Massenloot und Standardausrüstung erzeugen kein unbegrenztes Händlergold. Preise und Progression werden geprüft und nach echten Spielsitzungen nachjustiert.
-7. **Geschützter Einstieg:** Neue Accounts starten als Gäste im sicheren Hub, lesen Regeln und schalten sich über den kurzen Regeltest frei.
-8. **Transparenter Betrieb:** Spielerhandbuch, aktueller Ausbaustand, bekannte Einschränkungen und strukturierte Fehlerberichte sind öffentlich einsehbar.
+3. **Für WorldGen V2 vorbereitet:** Statt eines vollständigen Server-Wipes ist eine neue V2-Survivalwelt vorgesehen. Hub, Bauwelt und dauerhafte Communityprojekte bleiben bestehen.
+4. **Echtes Abenteuer-Endgame:** Floating Islands mit Structures, Under und Limbo bilden getrennte Hochrisiko-Ziele statt nur höherer Zahlen in derselben Wildnis.
+5. **RPG ohne beliebiges Mod-Sammelsurium:** Skill Tree, skalierende Gegner, Quests, Kopfgelder, Affixe, Bosse, Begleiter und Aetherhaven greifen als gemeinsame Progression ineinander.
+6. **Hytale-passende Technik:** Boote, Flöße und Luftschiffe bleiben; moderne Autos wurden bewusst entfernt.
+7. **Kontrollierte Wirtschaft:** Gewöhnlicher Massenloot und Standardausrüstung erzeugen kein unbegrenztes Händlergold. Preise und Progression werden geprüft und nach echten Spielsitzungen nachjustiert.
+8. **Geschützter Einstieg:** Neue Accounts starten als Gäste im sicheren Hub, lesen Regeln und schalten sich über den kurzen Regeltest frei.
+9. **Transparenter Betrieb:** Spielerhandbuch, aktueller Ausbaustand, bekannte Einschränkungen und strukturierte Fehlerberichte sind öffentlich einsehbar.
 
 ### Für wen der Server gedacht ist
 
@@ -73,9 +74,9 @@ Der Waldbrand verbindet eine resetbare Survivalwelt für Rohstoffe und Erkundung
 
 ### Mittel – nach Freigabe
 
-**DE:** Dein Zuhause bleibt, die Wildnis darf sich verändern. Der Waldbrand ist ein deutscher Survival-RPG-Communityserver mit sicherem Himmelsinsel-Hub, resetbarer Survivalwelt, persönlichen Claims und einer dauerhaften Bauwelt. Skill Tree, skalierende Gegner, Quests, Kopfgelder, Affixe, Bosse und Begleiter führen in besonders schwere Abenteuerwelten wie die Floating Islands, Under und Limbo. Die Mods laufen serverseitig; Wirtschaft, Rechte und Progression werden transparent geprüft.
+**DE:** Dein Zuhause bleibt, die Wildnis darf sich verändern. Der Waldbrand ist ein deutscher Survival-RPG-Communityserver mit sicherem Himmelsinsel-Hub, resetbarer Survivalwelt, persönlichen Claims und einer dauerhaften Bauwelt. Skill Tree, skalierende Gegner, Quests, Kopfgelder, Affixe, Bosse und Begleiter führen in besonders schwere Abenteuerwelten wie die Floating Islands, Under und Limbo. Für WorldGen V2 planen wir eine neue Wildnis statt eines kompletten Server-Wipes. Die Mods laufen serverseitig; Wirtschaft, Rechte und Progression werden transparent geprüft.
 
-**EN:** Your home stays while the wilderness may change. Der Waldbrand is a German-speaking EU Survival RPG server with a safe sky-island hub, a resettable survival world, personal claims and a permanent building world. Skill trees, scaling enemies, quests, bounties, affixes, bosses and companions lead into dangerous worlds such as the Floating Islands, Under and Limbo. The modpack is server-side, while economy, permissions and progression are documented and actively balanced.
+**EN:** Your home stays while the wilderness may change. Der Waldbrand is a German-speaking EU Survival RPG server with a safe sky-island hub, a resettable survival world, personal claims and a permanent building world. Skill trees, scaling enemies, quests, bounties, affixes, bosses and companions lead into dangerous worlds such as the Floating Islands, Under and Limbo. For WorldGen V2, we plan a new wilderness instead of a full server wipe. The modpack is server-side, while economy, permissions and progression are documented and actively balanced.
 
 ### Lang – nach Freigabe
 
@@ -84,6 +85,8 @@ Der Waldbrand verbindet eine resetbare Survivalwelt für Rohstoffe und Erkundung
 Willkommen bei **Der Waldbrand** – einem deutschsprachigen Hytale-Communityserver für Spieler, die erkunden, sammeln, bauen und sich langfristig entwickeln möchten.
 
 Unser Konzept trennt die Aufgaben der Welten klar: Die Himmelsinsel ist ein sicherer Hub. In `default` warten Survival, Ressourcen, Erkundung und kleine persönliche Claims; diese Welt kann nach Ankündigung erneuert werden. Dauerhaft wichtige Bauten entstehen auf geschützten 64×64-Grundstücken in der Bauwelt. Wer größere Risiken sucht, reist zu den Floating Islands mit zusätzlichen Structures, nach Under oder Limbo und stellt sich stärkeren Gegnern, Dungeons und wertvollerer Beute.
+
+Auch der Wechsel auf WorldGen V2 ist nach diesem Prinzip geplant: Wir wollen eine neue V2-Survivalwelt erzeugen, prüfen und anschließend über den Hub anbinden. Ein vollständiger Neuanfang mit Verlust aller Welten ist nicht vorgesehen; Hub, Bauwelt und dauerhafte Communityprojekte sollen erhalten bleiben. Mögliche Beschränkungen beim Transport einzelner V1-/V2-Gegenstände werden vor der Umschaltung getestet und veröffentlicht.
 
 MMO Skill Tree, Mob Scaling, Natural20, Aetherhaven, Quests, Kopfgelder, Bosse, Begleiter, Landwirtschaft, Dekoration und bewusst begrenzte Automation erweitern das Spiel. Fahrzeuge bleiben passend zur Welt auf Boote, Flöße und Luftschiffe beschränkt. Eine kontrollierte Wirtschaft verhindert, dass gewöhnlicher Massenloot unbegrenzt Gold erzeugt.
 
@@ -94,6 +97,8 @@ Neue Spieler beginnen geschützt als Gast und schalten sich nach einem kurzen Re
 Welcome to **Der Waldbrand**, a German-speaking Hytale community server for players who enjoy exploration, gathering, building and long-term progression.
 
 Each world has a clear purpose. The sky island is a safe central hub. `default` offers survival, resources, exploration and small personal claims, and may be renewed after advance notice. Important long-term creations belong on protected 64×64 plots in the permanent building world. Players looking for greater danger can travel to the Floating Islands with extra structures, Under or Limbo for stronger enemies, dungeons and better loot.
+
+The move to WorldGen V2 follows the same principle. We plan to generate and test a new V2 survival world before connecting it through the hub. A full server wipe is not planned: the hub, permanent building world and long-term community projects are intended to remain. Any restrictions on moving V1/V2 blocks or items will be tested and published before the transition.
 
 MMO Skill Tree, Mob Scaling, Natural20, Aetherhaven, quests, bounties, bosses, companions, farming, decoration and deliberately limited automation extend the experience. Vehicles are kept in theme with boats, rafts and airships instead of modern cars. A controlled economy prevents common bulk loot from generating unlimited gold.
 
