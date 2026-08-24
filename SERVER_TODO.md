@@ -8,8 +8,6 @@ Diese Liste ersetzt die frühere Gemini-Ingame-Liste. Deren Warp-, Teleport- und
 
 - [x] Community-Server mit frischer Default-Welt eingerichtet.
 - [x] Himmelsinsel als zentralen Hub übernommen.
-- [x] Portalpaar zwischen Hub und Default eingerichtet und getestet.
-- [x] Portalpaar zwischen Hub und Schwebenden Inseln eingerichtet und getestet.
 - [x] Glymera Structures auf den Schwebenden Inseln getestet und aktiviert.
 - [x] Under übernommen; Limbo-Mod geladen.
 - [x] Händlerprofile, Preise und passende NPC-Skins vorbereitet.
@@ -21,8 +19,12 @@ Diese Liste ersetzt die frühere Gemini-Ingame-Liste. Deren Warp-, Teleport- und
 
 ## Vor der breiten Freigabe
 
-- [ ] **Spawn-Safezone in Default anlegen.** Zentrum ist der öffentliche Portal-/Spawn-Bereich. Innerhalb der Zone müssen `BUILD`, `BREAK` und `SPAWN` gesperrt sein: kein Bauen, kein Abbauen und keine Mob-Spawns. Radius noch festlegen.
+- [ ] **Spawn-Safezone in Default anlegen.** Zentrum ist der künftige öffentliche Portal-/Spawn-Bereich. Innerhalb der Zone müssen `BUILD`, `BREAK` und `SPAWN` gesperrt sein: kein Bauen, kein Abbauen und keine Mob-Spawns. Zentrum und Radius noch festlegen.
 - [ ] Entscheiden, ob in der Safezone zusätzlich PvP, Explosionen, Feuer, Flüssigkeiten und Containerzugriffe gesperrt werden.
+- [ ] Portalpaar zwischen Himmelsinsel und Default ingame bauen und beide Richtungen testen.
+- [ ] Portalpaar zwischen Himmelsinsel und Schwebenden Inseln ingame bauen und beide Richtungen testen.
+- [ ] Vorgesehene Zugänge für Under und Limbo ingame aufbauen und testen.
+- [ ] Händler an ihren Marktständen auf der Himmelsinsel ingame erzeugen, Aussehen kontrollieren und ausrichten.
 - [ ] Bauwelt erzeugen und Generierung kontrollieren.
 - [ ] Hub-Portal zur Bauwelt bauen und beide Richtungen testen.
 - [ ] Grundstückskauf mit allen Preisstufen 0/1.000/3.000/7.500 Gold praktisch testen.

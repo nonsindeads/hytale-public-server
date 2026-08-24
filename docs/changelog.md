@@ -22,7 +22,7 @@
 
 ### Welten und Modpack
 
-- Himmelsinsel als Hub sowie Portale zu Default und den Floating Islands eingerichtet.
+- Himmelsinsel als künftigen Hub übernommen; Portale zu Default und den Floating Islands müssen auf 5520 noch ingame gebaut werden.
 - Floating Islands zusammen mit Glymera Structures als extrem schwere Abenteuerwelt bestätigt.
 - Under als End-ähnliche und Limbo als Nether-ähnliche Spezialwelt eingeordnet; beide nutzen ihre mod-eigenen Zugänge.
 - Fahrzeuge auf Boote, Flöße und Luftschiffe begrenzt; Autos deaktiviert.
