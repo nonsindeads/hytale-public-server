@@ -12,7 +12,7 @@ Dieses Dokument enthält die vorbereiteten Texte, Merkmale, Eintragsziele und of
 | Öffentliche Adresse | `65.109.56.119:5520` |
 | Region | Europa / Deutschland |
 | Hauptsprache | Deutsch |
-| Maximale Spielerzahl | 25 |
+| Maximale Spielerzahl | 100 |
 | Primärer Typ | Adventure/RPG |
 | Weitere passende Typen | Survival, PvE, MMO/RPG, Modded, Economy, Building, Community |
 | Nicht verwenden, solange unbestätigt | PvP, Roleplay, Hardcore, Minigames, Towny, Factions, Pay-to-Win-frei |
