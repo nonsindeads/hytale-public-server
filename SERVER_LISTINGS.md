@@ -1,6 +1,6 @@
 # Serverlisten-Paket
 
-Stand: 24.08.2026
+Stand: 25.08.2026
 
 Dieses Dokument enthält die vorbereiteten Texte, Merkmale, Eintragsziele und offenen Arbeiten für die öffentliche Bewerbung von **Der Waldbrand**. Die Werbetexte beschreiben den geplanten Freigabestand und dürfen erst verwendet werden, wenn die darin genannten Funktionen laut [SERVER_TODO.md](SERVER_TODO.md) praktisch abgenommen sind.
 
@@ -210,7 +210,7 @@ Quellen: [Ankündigung und Einreichungsablauf](https://hytale.com/news/2026/4/of
 
 | Portal | Eingereicht | Freigeschaltet | Öffentliche Profil-URL | Letzte Prüfung | Notiz |
 |---|---|---|---|---|---|
-| Offizielle Discovery | nein | nein | – | 24.08.2026 | Vorbereitung läuft |
+| Offizielle Discovery | ja (Review) | ausstehend | – | 25.08.2026 | Eingereicht, steht im Review |
 | Hytale-Hub Deutschland | nein | nein | – | 24.08.2026 | DACH-Priorität |
 | HytaleCommunity | nein | nein | – | 24.08.2026 | DACH-Priorität |
 | Hyvote | nein | nein | – | 24.08.2026 | Vorbereitung läuft |
