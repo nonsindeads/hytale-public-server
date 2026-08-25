@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.6.0 – 25.08.2026
+
+### Hub-Ausbau, Portale & Händler
+
+- **Globaler Standard-Spawn:** Neuer Standard-Einstiegspunkt für alle Erstbesucher von `default` auf die Himmelsinsel (`Glutwacht`) umgestellt – exakt ausgerichtet auf Position und Blickwinkel von `/warp hub`.
+- **Welten-Portale & Schwebeschrift:** Portale zu Bauwelt, Survival und den Schwebenden Inseln (Endgame) auf der Himmelsinsel platziert, mit Wächter-NPCs (`Klops_Miner`, `Feran_Windwalker`, `Temple_Mithril_Guard`) besetzt und mit 3D-Schwebetiteln versehen.
+- **Rückreise-Portale:** Safezone-Rechte in der Survival-Welt (`default`) aktualisiert (`PORTAL: ALLOW`), sodass die Rückkehr zur Himmelsinsel für alle freigeschalteten Spieler funktioniert.
+- **Händler & Kopfgelder:** Alle 6 offiziellen Glymera-Händler (`smith`, `provisions`, `alchemist`, `tavern`, `builder`, `curios`) im Hub aufgestellt; stündliche, tägliche und wöchentliche MMO-Kopfgeld-Boards aufgestellt.
+
+### Bauwelt & Grundstücke
+
+- **Bauwelt frisch initialisiert:** Bauwelt mit unzerstörbaren 64×64-Grundstücken über `GlymeraPlotWorld` sauber generiert.
+- **Spawnschutz vor Dörfern & NPCs:** Unerwünschte Dorf-, Struktur- und Monster-Spawns in der Bauwelt dauerhaft unterbunden (`IsSpawningNPC: false`, `protectStructure: true`, `Env_Default_Flat`, Natural20 World-Boundaries).
+- **Admin-Reserve gesperrt:** Die zentralen 9 Grundstücke rund um den Bauwelt-Spawn (`0:0`, `0:1`, `1:0`, `0:-1`, `1:1`, `1:-1`, `-1:-1`, `-1:1`, `-1:0`) dauerhaft als `NonSinn-Adminreserve` blockiert.
+
+### Server-Listing & Discovery
+
+- **Hytale Discovery:** Server-Listing für *Der Waldbrand* im offiziellen Hytale Serververzeichnis eingereicht (`EU Central`, Port 5520, RPG/Adventure, Audience: Teen); Server befindet sich im Review-Prozess.
+- **Gast-Onboarding validiert:** Vollständiger First-Join-Ablauf (Regelwerk, Fragebogen-Freischaltung `/freischalten`, Klassenauswahl, Teleport) erfolgreich getestet und verifiziert.
+
 ## 0.5.0 – 24.08.2026
 
 ### Vernetzte Wirtschaft
