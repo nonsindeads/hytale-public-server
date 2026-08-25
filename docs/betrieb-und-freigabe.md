@@ -36,5 +36,4 @@ Stand: 25.08.2026
 ## Bekannte technische Hinweise
 
 - Der Aetherhaven-Bard-Modellfehler ist auf 5520 korrigiert. Eine fehlende optionale `bard_songs.json` wird weiterhin als Warnung protokolliert.
-- GlymeraStatues bleibt deaktiviert; GlymeraRaces bleibt uninstalliert.
 - Zur Gastprüfung von Betreiber-Accounts kann die Test-Flagge `mods/de.nonsinn_NonSinnPublicCore/owner-as-guest.flag` genutzt werden.

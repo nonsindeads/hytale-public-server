@@ -28,7 +28,6 @@ Vor einem Neustart oder einer Änderung wird geprüft, ob Spieler online sind.
 - Survival-Claims sind für Spieler nur in `default` freigegeben: 3 Start-Chunks, maximal 9, 32 Claim-Scherben pro Erweiterung.
 - Die öffentliche Economy verbindet 92 ausgewählte Händlerankäufe mit stündlichen, täglichen und wöchentlichen Aufträgen. Massenmaterial wird über begrenzte Beschaffungsaufträge statt durch unbegrenzten Händlerverkauf verwertet.
 - Worker und Farmer dürfen auf 5520 je eine aktive Truhe verwenden und nicht automatisch craften; Nicht-OP-Spieler dürfen einen Chunkloader setzen.
-- GlymeraStatues ist wegen fehlerhafter schwarzer Blöcke deaktiviert. GlymeraRaces ist wegen Überschneidungen mit MMO Skill Tree und Natural20 nicht installiert.
 
 Die aktuelle Spieleransicht steht im [Statusbereich der Website](https://nonsindeads.github.io/hytale-public-server/status.html). Technische Abnahmepunkte stehen in [docs/betrieb-und-freigabe.md](docs/betrieb-und-freigabe.md).
 
