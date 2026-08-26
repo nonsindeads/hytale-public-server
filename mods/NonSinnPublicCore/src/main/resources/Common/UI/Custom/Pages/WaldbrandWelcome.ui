@@ -1,138 +1,161 @@
 $C = "../Common.ui";
 
-$C.@PageOverlay {
-  LayoutMode: Middle;
+$C.@PageOverlay {}
 
-  $C.@DecoratedContainer {
-    Anchor: (Width: 920, Height: 680);
+$C.@DecoratedContainer {
+  Anchor: (Width: 980, Height: 720);
 
-    #Title {
-      Label #WelcomeTitle {
-        Text: "WILLKOMMEN BEI DER WALDBRAND";
-        Style: (...$C.@TitleStyle, FontSize: 20, TextColor: #FFB347, HorizontalAlignment: Center);
-        Padding: (Horizontal: 16);
+  #Title {
+    Label #WelcomeHeader {
+      Text: "DER WALDBRAND - WILLKOMMEN";
+      Style: (...$C.@TitleStyle, HorizontalAlignment: Center);
+      Padding: (Horizontal: 19);
+    }
+  }
+
+  #Content {
+    LayoutMode: Top;
+    Padding: (Full: 20);
+
+    Group {
+      Anchor: (Height: 84, Bottom: 12);
+      LayoutMode: Top;
+
+      Label {
+        Text: "WILLKOMMEN AUF DEM HYTALE COMMUNITY-SERVER";
+        Anchor: (Height: 28);
+        Style: (FontSize: 16, TextColor: #C7D7E5, RenderBold: true, HorizontalAlignment: Center);
+      }
+
+      Label {
+        Text: "DER WALDBRAND";
+        Anchor: (Height: 48);
+        Style: (FontSize: 34, TextColor: #FFAA00, RenderBold: true, HorizontalAlignment: Center);
       }
     }
 
-    #Content {
-      LayoutMode: Top;
-      Padding: (Full: 20);
+    Group {
+      Anchor: (Height: 2, Bottom: 16);
+      Background: #3E2F1E;
+    }
 
-      #HeroHeader {
+    Group {
+      Anchor: (Height: 330, Bottom: 14);
+      LayoutMode: Left;
+
+      Group {
+        FlexWeight: 1;
         LayoutMode: Top;
-        Anchor: (Height: 80, Bottom: 14);
-
-        Label #MainHero {
-          Text: "WILLKOMMEN";
-          Anchor: (Height: 34);
-          Style: (FontSize: 28, TextColor: #FFFFFF, RenderBold: true, HorizontalAlignment: Center);
-        }
-
-        Label #SubHero {
-          Text: "DER WALDBRAND";
-          Anchor: (Height: 38);
-          Style: (FontSize: 32, TextColor: #FFAA00, RenderBold: true, HorizontalAlignment: Center);
-        }
-      }
-
-      Group { Anchor: (Height: 2, Bottom: 14); Background: #3E2F1E; }
-
-      #InfoCards {
-        LayoutMode: Left;
-        Anchor: (Height: 230, Bottom: 14);
-
-        #CardRules {
-          FlexWeight: 1;
-          LayoutMode: Top;
-          Background: #141A24;
-          Padding: (Full: 12);
-          Anchor: (Right: 10);
-
-          Label {
-            Text: "1. FREISCHALTUNG";
-            Anchor: (Height: 24);
-            Style: (FontSize: 15, TextColor: #55FF88, RenderBold: true);
-          }
-          Label {
-            Text: "Unser 1-Minuten-Quiz (/freischalten) schuetzt den Server vor Bots.\n\nBeantworte 6 kurze Fragen mit /antwort <Nummer> und werde sofort vollwertiger Spieler!";
-            Anchor: (Height: 160);
-            Style: (FontSize: 13, TextColor: #C7D7E5, Wrap: true);
-          }
-        }
-
-        #CardGameplay {
-          FlexWeight: 1;
-          LayoutMode: Top;
-          Background: #141A24;
-          Padding: (Full: 12);
-          Anchor: (Right: 10);
-
-          Label {
-            Text: "2. WELTEN & SCHUTZ";
-            Anchor: (Height: 24);
-            Style: (FontSize: 15, TextColor: #4DA6FF, RenderBold: true);
-          }
-          Label {
-            Text: "Sichere dir persoenliches Land in der Survivalwelt mit /claim.\n\nErstelle dir ein dauerhaftes 64x64 Grundstueck in der Bauwelt mit /grundstueck kaufen!";
-            Anchor: (Height: 160);
-            Style: (FontSize: 13, TextColor: #C7D7E5, Wrap: true);
-          }
-        }
-
-        #CardTeam {
-          FlexWeight: 1;
-          LayoutMode: Top;
-          Background: #141A24;
-          Padding: (Full: 12);
-
-          Label {
-            Text: "3. TEAM & COMMUNITY";
-            Anchor: (Height: 24);
-            Style: (FontSize: 15, TextColor: #FFD700, RenderBold: true);
-          }
-          Label {
-            Text: "Server-Neustarts taeglich um 00:00, 08:00 und 16:00 Uhr.\n\nWir suchen Verstaerkung: Moechtest du als Builder, Modder oder Guide mitgestalten?";
-            Anchor: (Height: 160);
-            Style: (FontSize: 13, TextColor: #C7D7E5, Wrap: true);
-          }
-        }
-      }
-
-      #PatchnotesBox {
-        LayoutMode: Left;
-        Background: #0E141D;
-        Padding: (Horizontal: 12, Vertical: 8);
-        Anchor: (Height: 46, Bottom: 16);
+        Background: #141A24;
+        Padding: (Full: 14);
+        Anchor: (Right: 12);
 
         Label {
-          Text: "Patchnotes v0.5.8: 100 Slots live • HyQuery Discovery aktiv • 100x100 RPG Bauwelt-Spawn • View-Radius optimiert (12).";
-          Anchor: (Height: 30);
-          Style: (FontSize: 12, TextColor: #94A3B8, Wrap: true, VerticalAlignment: Center);
+          Text: "1. FREISCHALTUNG";
+          Anchor: (Height: 28, Bottom: 6);
+          Style: (FontSize: 16, TextColor: #55FF88, RenderBold: true);
+        }
+
+        Label {
+          Text: "Unser 1-Minuten-Quiz schuetzt vor Bots. Lies kurz die Regeln mit /regeln und starte die 6 Fragen mit /freischalten.";
+          Anchor: (Height: 80, Bottom: 8);
+          Style: (FontSize: 13, TextColor: #E6EDF3, Wrap: true);
+        }
+
+        Label {
+          Text: "Antworte einfach mit /antwort <Nummer> (z.B. /antwort 1). Sobald du 5 Fragen richtig hast, bist du sofort vollwertiger Spieler!";
+          Anchor: (Height: 110);
+          Style: (FontSize: 13, TextColor: #C7D7E5, Wrap: true);
         }
       }
 
-      #ActionButtons {
-        LayoutMode: Left;
-        Anchor: (Height: 44);
+      Group {
+        FlexWeight: 1;
+        LayoutMode: Top;
+        Background: #141A24;
+        Padding: (Full: 14);
+        Anchor: (Right: 12);
 
-        $C.@TextButton #StartGameButton {
-          Text: "LOSLEGEN & SPIELEN";
-          FlexWeight: 2;
-          Anchor: (Right: 10, Height: 44);
+        Label {
+          Text: "2. WELTEN & SCHUTZ";
+          Anchor: (Height: 28, Bottom: 6);
+          Style: (FontSize: 16, TextColor: #4DA6FF, RenderBold: true);
         }
 
-        $C.@SecondaryTextButton #OpenHandbookButton {
-          Text: "HANDBUCH OEFFNEN";
-          FlexWeight: 1;
-          Anchor: (Right: 10, Height: 44);
+        Label {
+          Text: "In der Survivalwelt sicherst du dein Land mit /claim ab. Dein Zuhause bleibt fuer immer geschuetzt.";
+          Anchor: (Height: 80, Bottom: 8);
+          Style: (FontSize: 13, TextColor: #E6EDF3, Wrap: true);
         }
 
-        $C.@SecondaryTextButton #WebsiteButton {
-          Text: "WEBSITE & GITHUB";
-          FlexWeight: 1;
-          Anchor: (Height: 44);
+        Label {
+          Text: "In der friedlichen Bauwelt kannst du dir mit /grundstueck kaufen dein eigenes 64x64 Baugrundstueck freischalten!";
+          Anchor: (Height: 110);
+          Style: (FontSize: 13, TextColor: #C7D7E5, Wrap: true);
         }
+      }
+
+      Group {
+        FlexWeight: 1;
+        LayoutMode: Top;
+        Background: #141A24;
+        Padding: (Full: 14);
+
+        Label {
+          Text: "3. NEUSTARTS & TEAM";
+          Anchor: (Height: 28, Bottom: 6);
+          Style: (FontSize: 16, TextColor: #FFD700, RenderBold: true);
+        }
+
+        Label {
+          Text: "Feste Server-Neustarts finden taeglich um 00:00, 08:00 und 16:00 Uhr statt (inkl. automatischem Backup & Optimierung).";
+          Anchor: (Height: 80, Bottom: 8);
+          Style: (FontSize: 13, TextColor: #E6EDF3, Wrap: true);
+        }
+
+        Label {
+          Text: "Moechtest du den Server mitgestalten? Wir suchen Builder, Modder und Guides! Melde dich im Discord oder auf GitHub.";
+          Anchor: (Height: 110);
+          Style: (FontSize: 13, TextColor: #C7D7E5, Wrap: true);
+        }
+      }
+    }
+
+    Group {
+      Anchor: (Height: 46, Bottom: 16);
+      Background: #0E141D;
+      Padding: (Horizontal: 14, Vertical: 8);
+
+      Label {
+        Text: "Patchnotes v0.5.8: 100 Slots • HyQuery Discovery aktiv • 100x100 RPG Bauwelt-Spawn • Latenz-Optimierung (ViewRadius 12).";
+        Anchor: (Height: 30);
+        Style: (FontSize: 12, TextColor: #94A3B8, Wrap: true, VerticalAlignment: Center);
+      }
+    }
+
+    Group {
+      Anchor: (Height: 46);
+      LayoutMode: Left;
+
+      $C.@TextButton #StartGameButton {
+        Text: "LOSLEGEN & SPIELEN";
+        FlexWeight: 2;
+        Anchor: (Right: 12, Height: 46);
+      }
+
+      $C.@SecondaryTextButton #OpenHandbookButton {
+        Text: "HANDBUCH OEFFNEN";
+        FlexWeight: 1;
+        Anchor: (Right: 12, Height: 46);
+      }
+
+      $C.@SecondaryTextButton #WebsiteButton {
+        Text: "WEBSITE & GITHUB";
+        FlexWeight: 1;
+        Anchor: (Height: 46);
       }
     }
   }
 }
+
+$C.@BackButton {}
