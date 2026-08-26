@@ -23,6 +23,7 @@ import com.hypixel.hytale.server.core.event.events.player.DrainPlayerFromWorldEv
 import com.hypixel.hytale.server.core.event.events.player.AddPlayerToWorldEvent;
 import com.hypixel.hytale.server.core.event.events.player.PlayerConnectEvent;
 import com.hypixel.hytale.server.core.event.events.player.PlayerDisconnectEvent;
+import com.hypixel.hytale.server.core.event.events.player.PlayerReadyEvent;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -99,6 +100,7 @@ public final class NonSinnPublicCore extends JavaPlugin {
     private final Map<UUID, Long> lastGuardNotice = new ConcurrentHashMap<>();
     private final Map<UUID, Long> joinTimes = new ConcurrentHashMap<>();
     private final Map<UUID, Boolean> welcomeSent = new ConcurrentHashMap<>();
+    private final Map<UUID, Boolean> welcomeGuiOpened = new ConcurrentHashMap<>();
     private final AtomicInteger minuteCounter = new AtomicInteger(0);
     private final AtomicInteger broadcastIndex = new AtomicInteger(0);
     private ScheduledExecutorService announcementExecutor;
@@ -136,6 +138,7 @@ public final class NonSinnPublicCore extends JavaPlugin {
 
         getEventRegistry().registerGlobal(PlayerConnectEvent.class, this::onPlayerConnect);
         getEventRegistry().registerGlobal(PlayerDisconnectEvent.class, this::onPlayerDisconnect);
+        getEventRegistry().registerGlobal(PlayerReadyEvent.class, this::onPlayerReady);
 
         getEventRegistry().registerGlobal(AllWorldsLoadedEvent.class, this::onAllWorldsLoaded);
         getEventRegistry().registerGlobal(AddPlayerToWorldEvent.class, this::onPlayerAddedToWorld);
@@ -385,12 +388,43 @@ public final class NonSinnPublicCore extends JavaPlugin {
         }
     }
 
+        private void onPlayerReady(PlayerReadyEvent event) {
+        Ref<EntityStore> ref = event.getPlayerRef();
+        if (ref == null) {
+            return;
+        }
+        Store<EntityStore> store = ref.getStore();
+        Player player = event.getPlayer();
+        if (player == null) {
+            return;
+        }
+        PlayerRef playerRef = store.getComponent(ref, PlayerRef.getComponentType());
+        if (playerRef == null) {
+            return;
+        }
+
+        UUID uuid = playerRef.getUuid();
+        if (isGuest(uuid) && !welcomeGuiOpened.getOrDefault(uuid, false)) {
+            welcomeGuiOpened.put(uuid, true);
+            CompletableFuture.runAsync(() -> {
+                try {
+                    Thread.sleep(800);
+                } catch (InterruptedException ignored) {}
+
+                if (player.getPageManager().getCustomPage() == null) {
+                    player.getPageManager().openCustomPage(ref, store, new WelcomePage(this, playerRef));
+                }
+            });
+        }
+    }
+
     private void onPlayerDisconnect(PlayerDisconnectEvent event) {
         PlayerRef playerRef = event.getPlayerRef();
         if (playerRef != null) {
             UUID uuid = playerRef.getUuid();
             joinTimes.remove(uuid);
             welcomeSent.remove(uuid);
+            welcomeGuiOpened.remove(uuid);
             lastGuardNotice.remove(uuid);
         }
     }
