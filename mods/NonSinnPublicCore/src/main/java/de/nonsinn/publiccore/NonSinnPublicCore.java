@@ -128,6 +128,7 @@ public final class NonSinnPublicCore extends JavaPlugin {
         getCommandRegistry().registerCommand(new AnswerCommand(this));
         getCommandRegistry().registerCommand(new RulesCommand(this));
         getCommandRegistry().registerCommand(new HandbookCommand());
+        getCommandRegistry().registerCommand(new WelcomeCommand(this));
         getCommandRegistry().registerCommand(new WebsiteCommand(this));
         getCommandRegistry().registerCommand(new PropertyCommand(this));
         getCommandRegistry().registerCommand(new EconomyRewardCommand(this));
@@ -394,6 +395,13 @@ public final class NonSinnPublicCore extends JavaPlugin {
         }
     }
 
+        private static Message buildColoredPrefix() {
+        Message prefix = Message.raw("[").color("#FFAA00");
+        prefix.insert(Message.raw("Der Waldbrand").color("#FF7700").bold(true));
+        prefix.insert(Message.raw("] ").color("#FFAA00"));
+        return prefix;
+    }
+
     private void tickAnnouncements() {
         try {
             int minute = minuteCounter.incrementAndGet();
@@ -407,33 +415,50 @@ public final class NonSinnPublicCore extends JavaPlugin {
                 UUID uuid = playerRef.getUuid();
                 Long joinTime = joinTimes.get(uuid);
                 if (joinTime != null && !welcomeSent.getOrDefault(uuid, false)) {
-                    if (now - joinTime >= 300_000L) {
+                    if (now - joinTime >= 300_000L) { // 5 Minuten
                         welcomeSent.put(uuid, true);
-                        playerRef.sendMessage(Message.raw(
-                                "[Der Waldbrand] Willkommen! Schau dir mit /handbuch alle Guides an. Bei Fragen oder Vorschlaegen: https://nonsindeads.github.io/hytale-public-server/"
-                        ));
+                        Message welcome = buildColoredPrefix();
+                        welcome.insert(Message.raw("👋 Willkommen! ").color("#55FF88").bold(true));
+                        welcome.insert(Message.raw("Schau dir mit ").color("#FFFFFF"));
+                        welcome.insert(Message.raw("/handbuch ").color("#FFAA00").bold(true));
+                        welcome.insert(Message.raw("alle Guides an. Bei Fragen oder Vorschlaegen: ").color("#FFFFFF"));
+                        welcome.insert(Message.raw("https://nonsindeads.github.io/hytale-public-server/").color("#55FF55").bold(true).link("https://nonsindeads.github.io/hytale-public-server/"));
+                        playerRef.sendMessage(welcome);
                     }
                 }
             }
 
-            // 2. Rotierende globale Server-Ankuendigungen alle 15 Minuten
-            if (minute % 15 == 0) {
+            // 2. Rotierende globale Server-Ankuendigungen alle 10 Minuten
+            if (minute % 10 == 0) {
                 int idx = broadcastIndex.getAndIncrement() % 3;
-                String msg;
+                Message msg = buildColoredPrefix();
                 switch (idx) {
                     case 0:
-                        msg = "[Der Waldbrand] Server-Neustarts finden taeglich um 00:00, 08:00 und 16:00 Uhr statt (inkl. automatischem Backup & Performance-Optimierung).";
+                        msg.insert(Message.raw("⚙ Server-Neustarts: ").color("#00D0FF").bold(true));
+                        msg.insert(Message.raw("Taeglich um ").color("#FFFFFF"));
+                        msg.insert(Message.raw("00:00, 08:00 und 16:00 Uhr ").color("#FFAA00").bold(true));
+                        msg.insert(Message.raw("(inkl. automatischem Backup & Performance-Optimierung).").color("#94A3B8"));
                         break;
                     case 1:
-                        msg = "[Der Waldbrand] Moechtest du mit ins Team und den Server mitgestalten? Wir suchen Builder, Modder & Guides! Discord & GitHub: https://nonsindeads.github.io/hytale-public-server/";
+                        msg.insert(Message.raw("🔨 Team & Mitgestaltung: ").color("#FFD700").bold(true));
+                        msg.insert(Message.raw("Moechtest du mitgestalten (Builder, Modder, Guide)? Melde dich bei uns: ").color("#FFFFFF"));
+                        msg.insert(Message.raw("https://nonsindeads.github.io/hytale-public-server/").color("#55FF55").bold(true).link("https://nonsindeads.github.io/hytale-public-server/"));
                         break;
                     default:
-                        msg = "[Der Waldbrand] Nuetzliche Befehle: /handbuch (Spieler-Guide), /claim (Survival-Land sichern), /grundstueck (64x64 Bauwelt) & /money (Gold & Haendler).";
+                        msg.insert(Message.raw("📜 Nuetzliche Befehle: ").color("#55FF55").bold(true));
+                        msg.insert(Message.raw("/handbuch ").color("#FFAA00").bold(true));
+                        msg.insert(Message.raw("(Guide) • ").color("#FFFFFF"));
+                        msg.insert(Message.raw("/claim ").color("#FFAA00").bold(true));
+                        msg.insert(Message.raw("(Survival-Land) • ").color("#FFFFFF"));
+                        msg.insert(Message.raw("/grundstueck ").color("#FFAA00").bold(true));
+                        msg.insert(Message.raw("(64x64 Bauwelt) • ").color("#FFFFFF"));
+                        msg.insert(Message.raw("/money ").color("#FFAA00").bold(true));
+                        msg.insert(Message.raw("(Gold)").color("#FFFFFF"));
                         break;
                 }
                 for (PlayerRef playerRef : Universe.get().getPlayers()) {
                     if (playerRef != null) {
-                        playerRef.sendMessage(Message.raw(msg));
+                        playerRef.sendMessage(msg);
                     }
                 }
             }
@@ -1089,6 +1114,112 @@ public final class NonSinnPublicCore extends JavaPlugin {
                 return;
             }
             player.getPageManager().openCustomPage(ref, store, new HandbookPage(playerRef, "start"));
+        }
+    }
+
+    public static final class WelcomeEventData {
+        private static final BuilderCodec<WelcomeEventData> CODEC = BuilderCodec
+                .builder(WelcomeEventData.class, WelcomeEventData::new)
+                .append(new KeyedCodec<>("Action", Codec.STRING),
+                        (data, value) -> data.action = value,
+                        data -> data.action)
+                .add()
+                .build();
+
+        private String action;
+    }
+
+    public static final class WelcomePage extends InteractiveCustomUIPage<WelcomeEventData> {
+        private final NonSinnPublicCore plugin;
+        private boolean templateAppended;
+
+        public WelcomePage(NonSinnPublicCore plugin, PlayerRef playerRef) {
+            super(playerRef, CustomPageLifetime.CanDismissOrCloseThroughInteraction, WelcomeEventData.CODEC);
+            this.plugin = plugin;
+        }
+
+        @Override
+        public void build(Ref<EntityStore> ref, UICommandBuilder commands, UIEventBuilder events,
+                          Store<EntityStore> store) {
+            if (!templateAppended) {
+                commands.append("Pages/WaldbrandWelcome.ui");
+                events.addEventBinding(
+                        CustomUIEventBindingType.Activating,
+                        "#StartGameButton",
+                        EventData.of("Action", "start"),
+                        false
+                );
+                events.addEventBinding(
+                        CustomUIEventBindingType.Activating,
+                        "#OpenHandbookButton",
+                        EventData.of("Action", "handbook"),
+                        false
+                );
+                events.addEventBinding(
+                        CustomUIEventBindingType.Activating,
+                        "#WebsiteButton",
+                        EventData.of("Action", "website"),
+                        false
+                );
+                templateAppended = true;
+            }
+        }
+
+        @Override
+        public void handleDataEvent(Ref<EntityStore> ref, Store<EntityStore> store, WelcomeEventData data) {
+            if (data == null || data.action == null) {
+                return;
+            }
+            Player player = store.getComponent(ref, Player.getComponentType());
+            if (player == null) {
+                return;
+            }
+            switch (data.action) {
+                case "start":
+                    player.getPageManager().setPage(ref, store, Page.None);
+                    playerRef.sendMessage(NonSinnPublicCore.buildColoredPrefix()
+                            .insert(Message.raw("Viel Spass auf Der Waldbrand! Nutze jederzeit ").color("#FFFFFF"))
+                            .insert(Message.raw("/handbuch ").color("#FFAA00").bold(true))
+                            .insert(Message.raw("fuer Hilfe.").color("#FFFFFF")));
+                    break;
+                case "handbook":
+                    player.getPageManager().openCustomPage(ref, store, new HandbookPage(playerRef, "start"));
+                    break;
+                case "website":
+                    playerRef.sendMessage(NonSinnPublicCore.buildColoredPrefix()
+                            .insert(Message.raw("Website & GitHub: ").color("#FFFFFF"))
+                            .insert(Message.raw("https://nonsindeads.github.io/hytale-public-server/").color("#55FF55").bold(true).link("https://nonsindeads.github.io/hytale-public-server/")));
+                    break;
+            }
+        }
+    }
+
+    private static final class WelcomeCommand extends AbstractPlayerCommand {
+        private final NonSinnPublicCore plugin;
+
+        private WelcomeCommand(NonSinnPublicCore plugin) {
+            super("willkommen", "Willkommens-Bildschirm oeffnen");
+            this.plugin = plugin;
+            addAliases("welcome");
+        }
+
+        @Override
+        public boolean canGeneratePermission() {
+            return false;
+        }
+
+        @Override
+        protected void execute(CommandContext context, Store<EntityStore> store, Ref<EntityStore> ref,
+                               PlayerRef playerRef, World world) {
+            Player player = store.getComponent(ref, Player.getComponentType());
+            if (player == null) {
+                return;
+            }
+            if (player.getPageManager().getCustomPage() != null) {
+                context.sendMessage(Message.raw("Schliesse zuerst das geoeffnete Fenster."));
+                return;
+            }
+            player.getPageManager().openCustomPage(ref, store, new WelcomePage(plugin, playerRef));
         }
     }
 
