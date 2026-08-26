@@ -4,7 +4,7 @@
   "MOTD": "Oeffentlicher RPG-Server: Hub, dauerhafte Bauwelt, Survival-Claims und schwere Abenteuerwelten.",
   "Password": "",
   "MaxPlayers": 25,
-  "MaxViewRadius": 32,
+  "MaxViewRadius": 12,
   "Defaults": {
     "World": "himmelsinsel",
     "GameMode": "Adventure"
