@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.7.0 – 27.08.2026
+## 0.9.0 – 27.08.2026
 
 ### Einstieg, Welten & Freischaltung
 
