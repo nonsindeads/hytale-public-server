@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.7.0 – 27.08.2026
+
+### Einstieg, Welten & Freischaltung
+
+- **Bauwelt zurückgesetzt:** Die frühere zentrale Baufläche und der provisorische 100×100-Aufbau wurden entfernt. Die Bauwelt ist wieder leer und kann neu gestaltet werden.
+- **Weltportale vorbereitet:** Die Reisen zwischen den verfügbaren Welten sind wieder sauber nutzbar; die Portalverwaltung bleibt geschützt.
+- **Willkommen für neue Spieler:** Neue Gäste erhalten die Willkommensseite beim ersten Beitritt automatisch.
+- **Bürgerquiz-Freischaltung:** Eine bestandene Freischaltung wird jetzt eindeutig erkannt und nicht mehrfach als neuer Abschluss behandelt.
+- **Weniger Benachrichtigungsrauschen:** Weltwechsel und wiederholte Standardmeldungen erscheinen nicht mehr einzeln im Discord-Kanal; wichtige Erfolge und echte Freischaltungen bleiben sichtbar.
+
 ## 0.6.0 – 25.08.2026
 
 ### Hub-Ausbau, Portale & Händler
